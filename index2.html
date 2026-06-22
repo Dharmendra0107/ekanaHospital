@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ekana Hospital Multispeciality Hospital & Research Center</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0a1628;
+      --deep-blue: #0d2952;
+      --blue: #1151a0;
+      --sky: #1e90d6;
+      --teal: #00b4a6;
+      --gold: #c8962a;
+      --gold-light: #f0c040;
+      --white: #ffffff;
+      --light: #f4f8ff;
+      --gray: #6b7c99;
+      --text: #1a2540;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); overflow-x: hidden; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 10px; }
+
+    /* ===== TOP BAR ===== */
+    .topbar {
+      background: var(--navy);
+      padding: 8px 0;
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+    }
+    .topbar a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color .2s; }
+    .topbar a:hover { color: var(--gold-light); }
+    .topbar .emergency { color: var(--gold-light); font-weight: 700; letter-spacing: .5px; }
+    .topbar .divider { color: rgba(255,255,255,0.2); margin: 0 12px; }
+
+    /* ===== NAVBAR ===== */
+    .navbar-main {
+      background: var(--white);
+      box-shadow: 0 2px 30px rgba(10,22,40,.1);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all .3s;
+    }
+    .navbar-main.scrolled {
+      box-shadow: 0 4px 40px rgba(10,22,40,.2);
+    }
+    .navbar-brand-wrap { padding: 12px 0; }
+    .brand-logo {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: white; font-weight: 900;
+      box-shadow: 0 4px 15px rgba(17,81,160,.35);
+      flex-shrink: 0;
+    }
+    .brand-text .name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--deep-blue); line-height: 1.2; }
+    .brand-text .sub { font-size: 11px; color: var(--gray); letter-spacing: .5px; text-transform: uppercase; }
+    .nav-link-custom {
+      font-size: 14px; font-weight: 500; color: var(--text) !important;
+      padding: 28px 14px !important; position: relative;
+      transition: color .2s;
+    }
+    .nav-link-custom:hover, .nav-link-custom.active { color: var(--blue) !important; }
+    .nav-link-custom::after {
+      content: ''; position: absolute; bottom: 0; left: 14px; right: 14px;
+      height: 3px; background: var(--teal); border-radius: 3px 3px 0 0;
+      transform: scaleX(0); transition: transform .3s;
+    }
+    .nav-link-custom:hover::after, .nav-link-custom.active::after { transform: scaleX(1); }
+    .btn-appointment {
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: white !important; border-radius: 50px;
+      padding: 10px 24px !important; font-weight: 600; font-size: 14px;
+      box-shadow: 0 4px 18px rgba(17,81,160,.35);
+      transition: all .3s; border: none;
+    }
+    .btn-appointment:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(17,81,160,.5);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      background:
+        linear-gradient(rgba(10,22,40,.72), rgba(10,22,40,.62)),
+        url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      overflow: hidden;
+      display: flex; align-items: center;
+      text-align: center;
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(0,180,166,.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(17,81,160,.15) 0%, transparent 50%),
+        radial-gradient(circle at 60% 80%, rgba(30,144,214,.1) 0%, transparent 40%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0; overflow: hidden;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-circles {
+      position: absolute; right: 50%; top: 50%;
+      width: 650px; height: 650px;
+      transform: translate(50%,-50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-circles .ring {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.06);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+    }
+    .hero-circles .ring:nth-child(1) { width: 200px; height: 200px; }
+    .hero-circles .ring:nth-child(2) { width: 320px; height: 320px; animation: ringPulse 4s ease-in-out infinite; }
+    .hero-circles .ring:nth-child(3) { width: 450px; height: 450px; animation: ringPulse 4s ease-in-out infinite .5s; }
+    .hero-circles .ring:nth-child(4) { width: 580px; height: 580px; animation: ringPulse 4s ease-in-out infinite 1s; }
+    @keyframes ringPulse {
+      0%,100% { opacity: .4; } 50% { opacity: 1; }
+    }
+    .hero-image-container {
+      display: none;
+    }
+    .hero-image-container img {
+      width: 100%; border-radius: 20px 20px 0 0;
+      filter: drop-shadow(0 -20px 60px rgba(0,180,166,.2));
+      animation: heroFloat 6s ease-in-out infinite;
+    }
+    @keyframes heroFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.08); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50px; padding: 8px 18px;
+      font-size: 13px; color: white;
+      margin-bottom: 24px;
+      animation: fadeInUp .6s ease both;
+    }
+    .hero-badge .dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 900; color: white;
+      line-height: 1.1; margin-bottom: 20px;
+      animation: fadeInUp .7s ease .1s both;
+
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(90deg, var(--teal), var(--sky));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 16px; color: rgba(255,255,255,.86); max-width: 760px;
+      line-height: 1.7; margin: 0 auto 36px;
+      animation: fadeInUp .7s ease .2s both;
+    }
+    .hero-actions { justify-content: center; animation: fadeInUp .7s ease .3s both; }
+    .btn-hero-primary {
+      background: linear-gradient(135deg, var(--teal), var(--sky));
+      color: white; border: none; border-radius: 50px;
+      padding: 14px 36px; font-size: 15px; font-weight: 600;
+      box-shadow: 0 8px 30px rgba(0,180,166,.4);
+      transition: all .3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-hero-primary:hover { transform: translateY(-3px); color: white; box-shadow: 0 14px 40px rgba(0,180,166,.55); }
+    .btn-hero-outline {
+      background: rgba(255,255,255,.08); color: white;
+      border: 2px solid rgba(255,255,255,.7); border-radius: 50px;
+      padding: 13px 32px; font-size: 15px; font-weight: 600;
+      transition: all .3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-hero-outline:hover { background: white; color: var(--deep-blue); border-color: white; }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 40px; margin-top: 48px;
+      animation: fadeInUp .7s ease .4s both;
+    }
+    .hero-stat .num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px; font-weight: 800; color: var(--teal);
+      line-height: 1;
+    }
+    .hero-stat .num span { color: var(--teal); }
+    .hero-stat .label { font-size: 12px; color: rgba(255,255,255,.78); margin-top: 4px; text-transform: uppercase; letter-spacing: .5px; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== EMERGENCY STRIP ===== */
+    .emergency-strip {
+      background: linear-gradient(90deg, var(--gold) 0%, #e0a820 100%);
+      padding: 14px 0;
+    }
+    .emergency-strip .inner {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; font-weight: 600; color: var(--navy);
+    }
+    .emergency-strip i { font-size: 20px; animation: heartbeat 1.5s infinite; }
+    @keyframes heartbeat {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* ===== SECTION STYLES ===== */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .section-label::before, .section-label::after {
+      content: ''; display: block; height: 2px; width: 24px; background: var(--teal); border-radius: 2px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700; color: var(--deep-blue);
+      line-height: 1.2;
+    }
+    .section-title .accent { color: var(--teal); }
+    section { padding: 90px 0; }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-section { background: var(--light); }
+    .about-img-stack { position: relative; }
+    .about-img-main {
+      border-radius: 20px;
+      width: 100%; object-fit: cover; height: 480px;
+      box-shadow: 0 20px 60px rgba(10,22,40,.15);
+    }
+    .about-img-badge {
+      position: absolute; bottom: 24px; left: -24px;
+      background: var(--white); border-radius: 16px;
+      padding: 18px 24px;
+      box-shadow: 0 10px 40px rgba(10,22,40,.12);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .about-img-badge .icon-wrap {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: white;
+    }
+    .about-img-badge .big { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: var(--deep-blue); }
+    .about-img-badge .sm { font-size: 12px; color: var(--gray); }
+    .about-accreditation {
+      position: absolute; top: 24px; right: -12px;
+      background: var(--navy); border-radius: 12px;
+      padding: 12px 18px; color: white; font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .about-feature { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 22px; }
+    .about-feature .icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(17,81,160,.1), rgba(0,180,166,.1));
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--blue);
+    }
+    .about-feature h6 { font-size: 15px; font-weight: 600; color: var(--deep-blue); margin-bottom: 4px; }
+    .about-feature p { font-size: 13.5px; color: var(--gray); margin: 0; line-height: 1.6; }
+
+    /* ===== DEPARTMENTS ===== */
+    .dept-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all .35s cubic-bezier(.25,.8,.25,1);
+      border: 1px solid rgba(17,81,160,.08);
+      position: relative; overflow: hidden;
+      cursor: pointer;
+    }
+    .dept-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      opacity: 0; transition: opacity .35s;
+    }
+    .dept-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(17,81,160,.18); }
+    .dept-card:hover::before { opacity: 1; }
+    .dept-card:hover .dept-icon, .dept-card:hover h5, .dept-card:hover p { color: white !important; }
+    .dept-card:hover .dept-icon-wrap { background: rgba(255,255,255,.2); }
+    .dept-card > * { position: relative; z-index: 1; }
+    .dept-icon-wrap {
+      width: 72px; height: 72px; margin: 0 auto 18px;
+      background: linear-gradient(135deg, rgba(17,81,160,.08), rgba(0,180,166,.08));
+      border-radius: 20px; display: flex; align-items: center; justify-content: center;
+      transition: background .35s;
+    }
+    .dept-icon { font-size: 30px; color: var(--blue); transition: color .35s; }
+    .dept-card h5 { font-size: 15px; font-weight: 700; color: var(--deep-blue); margin-bottom: 8px; transition: color .35s; }
+    .dept-card p { font-size: 13px; color: var(--gray); margin: 0; line-height: 1.5; transition: color .35s; }
+
+    /* ===== STATS SECTION ===== */
+    .stats-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+      position: relative; overflow: hidden;
+    }
+    .stats-section::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(0,180,166,.12), transparent 40%),
+        radial-gradient(circle at 80% 50%, rgba(17,81,160,.15), transparent 40%);
+    }
+    .stat-card {
+      text-align: center; padding: 40px 20px;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-card .icon { font-size: 36px; color: var(--teal); margin-bottom: 14px; }
+    .stat-card .number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 44px; font-weight: 800; color: white;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .stat-card .number span { color: var(--gold-light); }
+    .stat-card .label { font-size: 13px; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; }
+
+    /* ===== DOCTORS ===== */
+    .doctors-section { background: var(--light); }
+    .doctor-card {
+      background: white; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(10,22,40,.07);
+      transition: all .3s;
+    }
+    .doctor-card:hover { transform: translateY(-6px); box-shadow: 0 16px 45px rgba(10,22,40,.14); }
+    .doctor-img { width: 100%; height: 260px; object-fit: cover; object-position: top; }
+    .doctor-img-placeholder {
+      width: 100%; height: 260px;
+      background: linear-gradient(135deg, #e8f0fb, #d0e8f5);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--blue); font-size: 60px;
+    }
+    .doctor-body { padding: 20px 22px; }
+    .doctor-specialty {
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--teal); margin-bottom: 6px;
+    }
+    .doctor-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--deep-blue); margin-bottom: 4px; }
+    .doctor-qual { font-size: 13px; color: var(--gray); margin-bottom: 14px; }
+    .doctor-meta { display: flex; gap: 16px; }
+    .doctor-meta span { font-size: 12px; color: var(--gray); display: flex; align-items: center; gap: 4px; }
+    .doctor-meta i { color: var(--blue); }
+    .doctor-card .btn-book {
+      display: block; width: 100%; margin-top: 16px;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: white; border: none; border-radius: 10px; padding: 10px;
+      font-size: 14px; font-weight: 600; cursor: pointer; transition: all .3s;
+      text-align: center; text-decoration: none;
+    }
+    .doctor-card .btn-book:hover { box-shadow: 0 6px 20px rgba(17,81,160,.4); transform: translateY(-2px); }
+
+    /* ===== SERVICES SECTION ===== */
+    .service-row {
+      display: flex; align-items: center; gap: 60px;
+    }
+    .service-image {
+      flex: 0 0 45%; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(10,22,40,.12);
+    }
+    .service-image img { width: 100%; height: 400px; object-fit: cover; }
+    .service-list { flex: 1; }
+    .service-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 18px; border-radius: 14px; margin-bottom: 12px;
+      transition: all .3s; cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .service-item:hover, .service-item.active {
+      background: white; border-color: rgba(0,180,166,.2);
+      box-shadow: 0 8px 30px rgba(0,180,166,.1);
+    }
+    .service-item .si-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: white;
+    }
+    .service-item h6 { font-size: 15px; font-weight: 700; color: var(--deep-blue); margin-bottom: 4px; }
+    .service-item p { font-size: 13px; color: var(--gray); margin: 0; }
+
+    /* ===== FACILITIES ===== */
+    .facility-card {
+      position: relative; border-radius: 16px; overflow: hidden;
+      height: 220px; cursor: pointer;
+    }
+    .facility-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .facility-card:hover img { transform: scale(1.08); }
+    .facility-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,22,40,.85) 0%, transparent 60%);
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+    .facility-overlay h6 { color: white; font-size: 15px; font-weight: 700; margin: 0; }
+    .facility-overlay span { color: rgba(255,255,255,.6); font-size: 12px; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-section { background: var(--light); }
+    .testimonial-card {
+      background: white; border-radius: 20px; padding: 32px;
+      box-shadow: 0 4px 20px rgba(10,22,40,.07);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-size: 80px; line-height: .7;
+      color: var(--teal); opacity: .2;
+      position: absolute; top: 20px; left: 24px;
+      font-family: Georgia, serif;
+    }
+    .rating { color: var(--gold); font-size: 14px; margin-bottom: 14px; }
+    .testimonial-text { font-size: 14.5px; color: var(--gray); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700; color: white; flex-shrink: 0;
+    }
+    .reviewer-name { font-size: 14px; font-weight: 700; color: var(--deep-blue); }
+    .reviewer-info { font-size: 12px; color: var(--gray); }
+
+    /* ===== WHY CHOOSE US ===== */
+    .why-section {
+      background: linear-gradient(135deg, var(--deep-blue) 0%, #0a3070 100%);
+      position: relative; overflow: hidden;
+    }
+    .why-card {
+      background: rgba(255,255,255,.06); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px; padding: 32px 24px; text-align: center;
+      transition: all .3s;
+    }
+    .why-card:hover {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(0,180,166,.5);
+      transform: translateY(-6px);
+    }
+    .why-icon {
+      width: 70px; height: 70px; margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(0,180,166,.25), rgba(30,144,214,.25));
+      border-radius: 20px; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; color: var(--teal);
+    }
+    .why-card h5 { color: white; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .why-card p { color: rgba(255,255,255,.6); font-size: 13.5px; line-height: 1.6; margin: 0; }
+
+    /* ===== APPOINTMENT SECTION ===== */
+    .appointment-section {
+      background: var(--light);
+    }
+    .appointment-form-card {
+      background: white; border-radius: 24px;
+      box-shadow: 0 20px 70px rgba(10,22,40,.1);
+      overflow: hidden;
+    }
+    .appt-left {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+      padding: 48px 40px; color: white;
+      position: relative; overflow: hidden;
+    }
+    .appt-left::before {
+      content: ''; position: absolute; bottom: -60px; right: -60px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: rgba(0,180,166,.12);
+    }
+    .appt-info { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px; }
+    .appt-info .icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(0,180,166,.2); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--teal);
+    }
+    .appt-info h6 { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: 2px; }
+    .appt-info p { font-size: 14px; font-weight: 600; color: white; margin: 0; }
+    .appt-right { padding: 48px 40px; }
+    .form-control-custom {
+      background: var(--light); border: 1.5px solid rgba(17,81,160,.1);
+      border-radius: 12px; padding: 12px 16px; font-size: 14px;
+      transition: all .3s; color: var(--text);
+    }
+    .form-control-custom:focus {
+      outline: none; border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(0,180,166,.1);
+      background: white;
+    }
+    .form-label-custom { font-size: 13px; font-weight: 600; color: var(--deep-blue); margin-bottom: 6px; }
+    .btn-submit {
+      width: 100%; background: linear-gradient(135deg, var(--blue), var(--teal));
+      color: white; border: none; border-radius: 12px;
+      padding: 14px; font-size: 15px; font-weight: 700;
+      cursor: pointer; transition: all .3s;
+    }
+    .btn-submit:hover { box-shadow: 0 8px 30px rgba(17,81,160,.4); transform: translateY(-2px); }
+
+    /* ===== BLOG ===== */
+    .blog-card {
+      background: white; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(10,22,40,.07); transition: all .3s;
+    }
+    .blog-card:hover { transform: translateY(-6px); box-shadow: 0 16px 45px rgba(10,22,40,.14); }
+    .blog-img { height: 200px; object-fit: cover; width: 100%; }
+    .blog-img-placeholder {
+      height: 200px; background: linear-gradient(135deg, #e8f0fb, #d0e8f5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; color: var(--blue);
+    }
+    .blog-body { padding: 22px; }
+    .blog-tag {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px; color: var(--teal);
+      background: rgba(0,180,166,.1); border-radius: 50px;
+      padding: 4px 12px; margin-bottom: 12px;
+    }
+    .blog-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--deep-blue); margin-bottom: 10px; line-height: 1.4; }
+    .blog-meta { display: flex; gap: 16px; font-size: 12px; color: var(--gray); }
+    .blog-meta i { color: var(--blue); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy);
+      padding-top: 70px;
+    }
+    .footer-brand .name { font-family: 'Playfair Display', serif; font-size: 22px; color: white; font-weight: 700; }
+    .footer-brand .sub { font-size: 12px; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: 1px; }
+    .footer-desc { font-size: 13.5px; color: rgba(255,255,255,.55); line-height: 1.7; margin: 16px 0 20px; }
+    .footer-social a {
+      width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 10px; background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.6); font-size: 15px; transition: all .3s;
+      text-decoration: none; margin-right: 8px;
+    }
+    .footer-social a:hover { background: var(--teal); color: white; transform: translateY(-3px); }
+    .footer-heading { font-size: 14px; font-weight: 700; color: white; margin-bottom: 20px; letter-spacing: .5px; }
+    .footer-links { list-style: none; padding: 0; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: 13.5px; color: rgba(255,255,255,.55); text-decoration: none; transition: all .3s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .footer-links a:hover { color: var(--teal); padding-left: 6px; }
+    .footer-links a i { font-size: 10px; color: var(--teal); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+    .footer-contact-item .icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(0,180,166,.15); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--teal);
+    }
+    .footer-contact-item p { font-size: 13px; color: rgba(255,255,255,.55); margin: 0; line-height: 1.5; }
+    .footer-contact-item strong { color: rgba(255,255,255,.8); font-size: 13px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 20px 0; margin-top: 50px;
+    }
+    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,.4); margin: 0; }
+    .footer-bottom a { color: var(--teal); text-decoration: none; }
+
+    /* ===== FLOATING CTA ===== */
+    .floating-cta {
+      position: fixed; bottom: 30px; right: 30px; z-index: 999;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .fcta-btn {
+      width: 54px; height: 54px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: white; cursor: pointer;
+      box-shadow: 0 6px 25px rgba(0,0,0,.25);
+      transition: all .3s; border: none; text-decoration: none;
+    }
+    .fcta-phone { background: linear-gradient(135deg, var(--teal), var(--sky)); }
+    .fcta-wa { background: linear-gradient(135deg, #25d366, #128c7e); }
+    .fcta-btn:hover { transform: scale(1.12) translateY(-3px); color: white; }
+
+    /* ===== SCROLL PROGRESS ===== */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+      background: linear-gradient(90deg, var(--teal), var(--sky));
+      transition: width .1s;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: all .7s cubic-bezier(.25,.8,.25,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: all .7s cubic-bezier(.25,.8,.25,1); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: all .7s cubic-bezier(.25,.8,.25,1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 991px) {
+      .hero-image-container { display: none; }
+      .hero { min-height: 75vh; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+      .service-row { flex-direction: column; gap: 30px; }
+      .service-image { flex: 0 0 auto; width: 100%; }
+      .appt-left { padding: 36px 28px; }
+      .appt-right { padding: 36px 28px; }
+      .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .about-img-badge { left: 0; bottom: -20px; }
+      .about-img-main { height: 360px; }
+    }
+    @media (max-width: 767px) {
+      section { padding: 60px 0; }
+      .topbar .d-md-none { display: none; }
+      .hero-stats { gap: 20px; }
+      .hero-stat .num { font-size: 22px; }
+      .hero-actions { display: flex; flex-direction: column; gap: 12px; }
+      .btn-hero-primary, .btn-hero-outline { text-align: center; justify-content: center; }
+      .floating-cta { bottom: 20px; right: 16px; }
+    }
+
+    /* ===== COUNTER ANIMATION ===== */
+    .counter { display: inline; }
+  </style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Floating CTAs -->
+<div class="floating-cta">
+  <a href="tel:+918756835776" class="fcta-btn fcta-phone" title="Call Us"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/918401280823" class="fcta-btn fcta-wa" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<!-- Top Bar -->
+<div class="topbar">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div class="d-flex align-items-center flex-wrap gap-2">
+        <span><i class="fas fa-map-marker-alt me-1"></i>4/1311, Amar Shaheed Path, Sector 4, Gomti Nagar, Lucknow</span>
+        <span class="divider d-none d-md-inline">|</span>
+        <a href="mailto:info@ekanaHospital.com" class="d-none d-md-inline"><i class="fas fa-envelope me-1"></i>info@ekanaHospital.com</a>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span class="emergency"><i class="fas fa-ambulance me-1"></i>Emergency: 087568 35776</span>
+        <span class="d-none d-md-inline"><i class="fas fa-clock me-1"></i>Open 24 Hours</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar-main" id="mainNav">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between w-100 py-0">
+      <a href="#" class="d-flex align-items-center gap-3 text-decoration-none navbar-brand-wrap">
+        <div class="brand-logo"><i class="fas fa-hospital-symbol"></i></div>
+        <div class="brand-text">
+          <div class="name">Ekana Hospital</div>
+          <div class="sub">Multispeciality Hospital & Research Center</div>
+        </div>
+      </a>
+      <div class="d-none d-xl-flex align-items-center">
+        <nav class="d-flex">
+          <a href="#" class="nav-link-custom active">Home</a>
+          <a href="#about" class="nav-link-custom">About</a>
+          <a href="#departments" class="nav-link-custom">Departments</a>
+          <a href="#doctors" class="nav-link-custom">Doctors</a>
+          <a href="#services" class="nav-link-custom">Services</a>
+          <a href="#contact" class="nav-link-custom">Contact</a>
+        </nav>
+        <a href="#appointment" class="btn-appointment ms-4">Book Appointment <i class="fas fa-calendar-check ms-1"></i></a>
+      </div>
+      <button class="btn btn-outline-primary d-xl-none" onclick="document.getElementById('mobileMenu').classList.toggle('show')" style="border-radius:10px; font-size:18px; padding:6px 12px;">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="display:none;" class="bg-white border-top px-3 py-3">
+    <div class="d-flex flex-column gap-1">
+      <a href="#" class="text-decoration-none py-2 px-3 rounded" style="color:var(--deep-blue);font-weight:600;">Home</a>
+      <a href="#about" class="text-decoration-none py-2 px-3 rounded" style="color:var(--gray);">About</a>
+      <a href="#departments" class="text-decoration-none py-2 px-3 rounded" style="color:var(--gray);">Departments</a>
+      <a href="#doctors" class="text-decoration-none py-2 px-3 rounded" style="color:var(--gray);">Doctors</a>
+      <a href="#services" class="text-decoration-none py-2 px-3 rounded" style="color:var(--gray);">Services</a>
+      <a href="#contact" class="text-decoration-none py-2 px-3 rounded" style="color:var(--gray);">Contact</a>
+      <a href="#appointment" class="btn-appointment mt-2 text-center" style="display:block;">Book Appointment</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-circles">
+    <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div>
+  </div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="col-lg-8 col-xl-7 mx-auto">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Rated 4.8★ — Lucknow's Trusted Multispeciality Hospital
+      </div>
+      <h1>Advanced Healthcare<br>with <span class="highlight">Compassionate</span><br>Excellence</h1>
+      <p class="hero-desc">
+        Ekana Hospital Multispeciality Hospital & Research Center — delivering world-class medical care across 15+ specialties with 100 beds, cutting-edge technology, and round-the-clock emergency services in Gomti Nagar, Lucknow.
+      </p>
+      <div class="hero-actions d-flex flex-wrap gap-3">
+        <a href="#appointment" class="btn-hero-primary"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+        <a href="#departments" class="btn-hero-outline"><i class="fas fa-stethoscope"></i> Explore Departments</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">100<span>+</span></div><div class="label">Hospital Beds</div></div>
+        <div class="hero-stat"><div class="num">4.8<span>★</span></div><div class="label">Patient Rating</div></div>
+        <div class="hero-stat"><div class="num">15<span>+</span></div><div class="label">Specialties</div></div>
+        <div class="hero-stat"><div class="num">24<span>/7</span></div><div class="label">Emergency</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Emergency Strip -->
+<div class="emergency-strip">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+      <div class="inner">
+        <i class="fas fa-heartbeat"></i>
+        <span>24/7 Emergency & Critical Care — We're Always Here For You</span>
+      </div>
+      <div class="d-flex gap-4 flex-wrap">
+        <div class="inner"><i class="fas fa-phone-alt"></i><span>087568 35776</span></div>
+        <div class="inner"><i class="fas fa-ambulance"></i><span>Ambulance Available 24/7</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About Section -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 reveal-left">
+        <div class="about-img-stack">
+          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80" alt="Hospital Building" class="about-img-main" />
+          <div class="about-img-badge">
+            <div class="icon-wrap"><i class="fas fa-award"></i></div>
+            <div>
+              <div class="big">5+</div>
+              <div class="sm">Years of Excellence</div>
+            </div>
+          </div>
+          <div class="about-accreditation">
+            <i class="fas fa-shield-alt" style="color:var(--teal)"></i>
+            NABH Certified Facility
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 reveal-right">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title mb-4">Where Healing Meets <span class="accent">Innovation</span></h2>
+        <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:28px;">
+          Ekana Hospital Multispeciality Hospital & Research Center is an integrated and synergistic medical facility located at the heart of Gomti Nagar, Lucknow. With 100 beds and a team of senior consultants across 15+ specialties, we provide accessible, compassionate, and cutting-edge medical care to patients from across Uttar Pradesh and beyond.
+        </p>
+        <div class="row g-3 mb-28">
+          <div class="col-md-6">
+            <div class="about-feature">
+              <div class="icon"><i class="fas fa-user-md"></i></div>
+              <div>
+                <h6>Senior Consultants</h6>
+                <p>Board-certified specialists with decades of clinical experience across all major departments.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about-feature">
+              <div class="icon"><i class="fas fa-microscope"></i></div>
+              <div>
+                <h6>Research Center</h6>
+                <p>Dedicated to advancing medical science through clinical research and evidence-based treatment protocols.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about-feature">
+              <div class="icon"><i class="fas fa-procedures"></i></div>
+              <div>
+                <h6>Fully Modular OT</h6>
+                <p>State-of-the-art modular operation theatres equipped with the latest surgical technology.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about-feature">
+              <div class="icon"><i class="fas fa-baby"></i></div>
+              <div>
+                <h6>NICU & ICU</h6>
+                <p>24/7 intensive care for critical and neonatal patients with round-the-clock specialist monitoring.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#appointment" class="btn-hero-primary d-inline-flex mt-3">
+          <i class="fas fa-calendar-check"></i> Book Your Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Departments -->
+<section id="departments" style="background:white;">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="section-label" style="justify-content:center;">Our Specialties</div>
+      <h2 class="section-title">World-Class <span class="accent">Departments</span></h2>
+      <p class="mt-3" style="max-width:540px;margin:auto;color:var(--gray);font-size:15px;">Comprehensive care across all major medical specialties, staffed by experienced consultants dedicated to your health.</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-brain dept-icon"></i></div><h5>Neurology & Neurosurgery</h5><p>Brain, spine & nervous system care</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-heartbeat dept-icon"></i></div><h5>Cardiology</h5><p>Heart disease diagnosis & treatment</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-venus dept-icon"></i></div><h5>Gynaecology & Obstetrics</h5><p>Women's health & maternity care</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-bone dept-icon"></i></div><h5>Orthopaedics</h5><p>Bone, joint & sports injury care</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-baby dept-icon"></i></div><h5>Paediatrics</h5><p>Expert childcare from birth onward</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-syringe dept-icon"></i></div><h5>Diabetes & Endocrinology</h5><p>Comprehensive diabetic management</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-cut dept-icon"></i></div><h5>General & Laparoscopic Surgery</h5><p>Minimally invasive procedures</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-radiation dept-icon"></i></div><h5>Radiology & Imaging</h5><p>X-Ray, CT Scan, precision diagnostics</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-ear-listen dept-icon"></i></div><h5>ENT</h5><p>Ear, nose & throat speciality care</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-spa dept-icon"></i></div><h5>Dermatology</h5><p>Skin, hair & cosmetic treatments</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-tooth dept-icon"></i></div><h5>Dental</h5><p>Complete dental & oral health care</p></div></div>
+      <div class="col-6 col-md-4 col-lg-3 reveal"><div class="dept-card h-100"><div class="dept-icon-wrap"><i class="fas fa-dumbbell dept-icon"></i></div><h5>Physiotherapy</h5><p>Rehab, mobility & pain management</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats-section" style="padding:60px 0;">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="row g-0">
+      <div class="col-6 col-md-3"><div class="stat-card"><div class="icon"><i class="fas fa-procedures"></i></div><div class="number"><span class="counter" data-target="100">0</span><span>+</span></div><div class="label">Hospital Beds</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-card"><div class="icon"><i class="fas fa-user-md"></i></div><div class="number"><span class="counter" data-target="50">0</span><span>+</span></div><div class="label">Expert Doctors</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-card"><div class="icon"><i class="fas fa-smile"></i></div><div class="number"><span class="counter" data-target="10000">0</span><span>+</span></div><div class="label">Happy Patients</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-card"><div class="icon"><i class="fas fa-star"></i></div><div class="number">4.<span>8</span></div><div class="label">Patient Rating</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctors -->
+<section class="doctors-section" id="doctors">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3 reveal">
+      <div>
+        <div class="section-label">Our Medical Team</div>
+        <h2 class="section-title">Meet Our <span class="accent">Specialists</span></h2>
+      </div>
+      <a href="#" style="color:var(--teal);font-weight:600;font-size:14px;text-decoration:none;">View All Doctors <i class="fas fa-arrow-right ms-1"></i></a>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="doctor-card">
+          <div class="doctor-img-placeholder"><i class="fas fa-user-md"></i></div>
+          <div class="doctor-body">
+            <div class="doctor-specialty">Gynaecology & Obstetrics</div>
+            <div class="doctor-name">Dr. Priya Sharma</div>
+            <div class="doctor-qual">MS, MBBS — 12 Years Experience</div>
+            <div class="doctor-meta">
+              <span><i class="fas fa-star" style="color:var(--gold)"></i> 4.9</span>
+              <span><i class="fas fa-users"></i> 2,400+ Patients</span>
+            </div>
+            <a href="#appointment" class="btn-book">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="doctor-card">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=260&fit=crop&q=80" alt="Doctor" class="doctor-img" />
+          <div class="doctor-body">
+            <div class="doctor-specialty">Orthopaedics</div>
+            <div class="doctor-name">Dr. Rajesh Kumar</div>
+            <div class="doctor-qual">MS Ortho, MBBS — 15 Years Experience</div>
+            <div class="doctor-meta">
+              <span><i class="fas fa-star" style="color:var(--gold)"></i> 4.8</span>
+              <span><i class="fas fa-users"></i> 3,100+ Patients</span>
+            </div>
+            <a href="#appointment" class="btn-book">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="doctor-card">
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=260&fit=crop&q=80" alt="Doctor" class="doctor-img" />
+          <div class="doctor-body">
+            <div class="doctor-specialty">Neurology</div>
+            <div class="doctor-name">Dr. Amit Singh</div>
+            <div class="doctor-qual">DM Neurology, MD — 10 Years Experience</div>
+            <div class="doctor-meta">
+              <span><i class="fas fa-star" style="color:var(--gold)"></i> 4.7</span>
+              <span><i class="fas fa-users"></i> 1,800+ Patients</span>
+            </div>
+            <a href="#appointment" class="btn-book">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="doctor-card">
+          <div class="doctor-img-placeholder"><i class="fas fa-user-md"></i></div>
+          <div class="doctor-body">
+            <div class="doctor-specialty">Paediatrics</div>
+            <div class="doctor-name">Dr. Sunita Verma</div>
+            <div class="doctor-qual">MD Paediatrics, MBBS — 8 Years</div>
+            <div class="doctor-meta">
+              <span><i class="fas fa-star" style="color:var(--gold)"></i> 4.9</span>
+              <span><i class="fas fa-users"></i> 2,200+ Patients</span>
+            </div>
+            <a href="#appointment" class="btn-book">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" style="background:white;">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="section-label" style="justify-content:center;">What We Offer</div>
+      <h2 class="section-title">Comprehensive <span class="accent">Medical Services</span></h2>
+    </div>
+    <div class="service-row reveal">
+      <div class="service-image">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=700&q=80" alt="Hospital Services" />
+      </div>
+      <div class="service-list">
+        <div class="service-item active">
+          <div class="si-icon"><i class="fas fa-ambulance"></i></div>
+          <div><h6>24/7 Emergency & Trauma Care</h6><p>Immediate response with dedicated trauma specialists and fully equipped emergency wards.</p></div>
+        </div>
+        <div class="service-item">
+          <div class="si-icon"><i class="fas fa-procedures"></i></div>
+          <div><h6>ICU & NICU Services</h6><p>Round-the-clock intensive care for critical adults and newborns with specialist monitoring.</p></div>
+        </div>
+        <div class="service-item">
+          <div class="si-icon"><i class="fas fa-cut"></i></div>
+          <div><h6>Modular Operation Theatres</h6><p>Fully equipped modular OTs for all surgical procedures including laparoscopic surgery.</p></div>
+        </div>
+        <div class="service-item">
+          <div class="si-icon"><i class="fas fa-flask"></i></div>
+          <div><h6>Pathology & Diagnostics</h6><p>Complete lab services — blood work, biopsies, and advanced diagnostic panels with fast results.</p></div>
+        </div>
+        <div class="service-item">
+          <div class="si-icon"><i class="fas fa-x-ray"></i></div>
+          <div><h6>Advanced Imaging — X-Ray & CT Scan</h6><p>Precision imaging services with rapid reports for accurate clinical decision-making.</p></div>
+        </div>
+        <div class="service-item">
+          <div class="si-icon"><i class="fas fa-tint"></i></div>
+          <div><h6>Dialysis Services</h6><p>State-of-the-art dialysis unit providing scheduled and emergency dialysis for kidney patients.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Facilities Gallery -->
+<section style="background:var(--light); padding:80px 0;">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="section-label" style="justify-content:center;">Our Infrastructure</div>
+      <h2 class="section-title">World-Class <span class="accent">Facilities</span></h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-8 col-lg-8 reveal">
+        <div class="facility-card" style="height:320px;">
+          <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80" alt="ICU" />
+          <div class="facility-overlay"><div><h6>Intensive Care Unit (ICU)</h6><span>24/7 Critical Care</span></div></div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-4 reveal">
+        <div class="facility-card" style="height:320px;">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&q=80" alt="OT" />
+          <div class="facility-overlay"><div><h6>Operation Theatre</h6><span>Fully Modular</span></div></div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-4 reveal">
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80" alt="Lab" />
+          <div class="facility-overlay"><div><h6>Pathology Lab</h6><span>Advanced Diagnostics</span></div></div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-4 reveal">
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80" alt="Pharmacy" />
+          <div class="facility-overlay"><div><h6>24Hr Pharmacy</h6><span>Round-the-Clock</span></div></div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-4 reveal">
+        <div class="facility-card">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=400&q=80" alt="Radiology" />
+          <div class="facility-overlay"><div><h6>Radiology & Imaging</h6><span>CT Scan & X-Ray</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-section">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="text-center mb-5 reveal">
+      <div class="section-label" style="justify-content:center; color:rgba(255,255,255,.6);">
+        <span style="background:rgba(0,180,166,.3); width:24px;height:2px;display:block;border-radius:2px;"></span>
+        Why Ekana
+        <span style="background:rgba(0,180,166,.3); width:24px;height:2px;display:block;border-radius:2px;"></span>
+      </div>
+      <h2 class="section-title" style="color:white;">Why Patients <span style="color:var(--teal);">Choose Us</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-medal"></i></div><h5>Experienced Specialists</h5><p>50+ senior consultants with decades of clinical expertise across all specialties.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-clock"></i></div><h5>24/7 Availability</h5><p>Emergency services, ICU, pharmacy, and ambulance available around the clock.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-rupee-sign"></i></div><h5>Affordable Care</h5><p>Transparent pricing with insurance tie-ups and cashless treatment facilities.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-hands-helping"></i></div><h5>Patient-First Culture</h5><p>Compassionate, patient-centered care with multi-lingual staff support.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-wheelchair"></i></div><h5>Full Accessibility</h5><p>Wheelchair-friendly infrastructure, accessible parking, and inclusive amenities.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-baby-carriage"></i></div><h5>Nursing Room</h5><p>Dedicated nursing and mother care facilities ensuring comfort for new mothers.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-credit-card"></i></div><h5>Cashless Payments</h5><p>Accept all cards, UPI, and NFC mobile payments for a seamless experience.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="why-card"><div class="why-icon"><i class="fas fa-home"></i></div><h5>Home Healthcare</h5><p>Tailored home care services so patients can recover in the comfort of their homes.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="section-label" style="justify-content:center;">Patient Stories</div>
+      <h2 class="section-title">What Our <span class="accent">Patients Say</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="testimonial-card">
+          <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">"Very positive environment with the right treatment approach. Good team of doctors and staff — must visit if you need any health-related issue."</p>
+          <div class="reviewer"><div class="reviewer-avatar">R</div><div><div class="reviewer-name">Rahul Gupta</div><div class="reviewer-info">Patient — Orthopaedics</div></div></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="testimonial-card">
+          <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">"We came all the way from Nepal. The Ekana hospital staff made us feel at home — the doctors are excellent and the entire team was very helpful. Dhanywaad!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">S</div><div><div class="reviewer-name">Suresh Thapa</div><div class="reviewer-info">Patient — Emergency Care</div></div></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="testimonial-card">
+          <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">"I cannot thank the team enough for all their services during my child's accident. You are truly men of honour. Best wishes to the whole Ekana family!"</p>
+          <div class="reviewer"><div class="reviewer-avatar">A</div><div><div class="reviewer-name">Anita Mishra</div><div class="reviewer-info">Patient — Paediatrics</div></div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Rating Summary -->
+    <div class="row mt-5 reveal">
+      <div class="col-md-6 col-lg-4 mx-auto">
+        <div style="background:white;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(10,22,40,.07);text-align:center;">
+          <div style="font-family:'Montserrat',sans-serif;font-size:56px;font-weight:800;color:var(--deep-blue);line-height:1;">4.8</div>
+          <div style="color:var(--gold);font-size:20px;margin:8px 0;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <div style="font-size:13px;color:var(--gray);">Based on 499+ verified patient reviews</div>
+          <div class="mt-3 d-flex justify-content-center gap-4">
+            <div><div style="font-size:13px;color:var(--gray);">Justdial</div><div style="font-size:15px;font-weight:700;color:var(--deep-blue);">4.8 ★</div></div>
+            <div><div style="font-size:13px;color:var(--gray);">Google</div><div style="font-size:15px;font-weight:700;color:var(--deep-blue);">4.6 ★</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Appointment Section -->
+<section class="appointment-section" id="appointment">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="section-label" style="justify-content:center;">Get In Touch</div>
+      <h2 class="section-title">Book An <span class="accent">Appointment</span></h2>
+      <p style="color:var(--gray);max-width:460px;margin:12px auto 0;font-size:15px;">Schedule a consultation with our specialists. We'll confirm your appointment within 2 hours.</p>
+    </div>
+    <div class="appointment-form-card reveal">
+      <div class="row g-0">
+        <div class="col-lg-4">
+          <div class="appt-left h-100">
+            <h3 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:8px;">Contact Us</h3>
+            <p style="color:rgba(255,255,255,.6);font-size:14px;margin-bottom:36px;">Reach us anytime — we're here 24/7 for you.</p>
+            <div class="appt-info">
+              <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div><h6>Address</h6><p>4/1311, Amar Shaheed Path, Sector 4, Gomti Nagar, Lucknow - 226010</p></div>
+            </div>
+            <div class="appt-info">
+              <div class="icon"><i class="fas fa-phone-alt"></i></div>
+              <div><h6>Phone</h6><p>+91 87568 35776<br>+91 84012 80823</p></div>
+            </div>
+            <div class="appt-info">
+              <div class="icon"><i class="fas fa-clock"></i></div>
+              <div><h6>Hours</h6><p>Emergency: Open 24/7<br>OPD: Mon–Sat 9AM–9PM</p></div>
+            </div>
+            <div class="appt-info">
+              <div class="icon"><i class="fas fa-globe"></i></div>
+              <div><h6>Website</h6><p>ekanaHospital.com</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="appt-right">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-custom">Full Name *</label>
+                <input type="text" class="form-control form-control-custom" placeholder="Your full name" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">Phone Number *</label>
+                <input type="tel" class="form-control form-control-custom" placeholder="+91 XXXXX XXXXX" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">Email Address</label>
+                <input type="email" class="form-control form-control-custom" placeholder="your@email.com" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">Department *</label>
+                <select class="form-control form-control-custom">
+                  <option value="">Select Department</option>
+                  <option>Gynaecology & Obstetrics</option>
+                  <option>Orthopaedics</option>
+                  <option>Neurology & Neurosurgery</option>
+                  <option>Paediatrics</option>
+                  <option>Cardiology</option>
+                  <option>Diabetes & Endocrinology</option>
+                  <option>General Surgery</option>
+                  <option>Dermatology</option>
+                  <option>ENT</option>
+                  <option>Dental</option>
+                  <option>Physiotherapy</option>
+                  <option>Emergency / Trauma</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">Preferred Date</label>
+                <input type="date" class="form-control form-control-custom" />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">Preferred Time</label>
+                <select class="form-control form-control-custom">
+                  <option>Morning (9AM – 12PM)</option>
+                  <option>Afternoon (12PM – 3PM)</option>
+                  <option>Evening (5PM – 9PM)</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label-custom">Message / Symptoms</label>
+                <textarea class="form-control form-control-custom" rows="3" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn-submit" onclick="alert('Thank you! Your appointment request has been submitted. We will confirm within 2 hours.')">
+                  <i class="fas fa-calendar-check me-2"></i> Confirm Appointment
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog / Health Tips -->
+<section style="background:white;">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3 reveal">
+      <div>
+        <div class="section-label">Health Library</div>
+        <h2 class="section-title">Health Tips & <span class="accent">News</span></h2>
+      </div>
+      <a href="#" style="color:var(--teal);font-weight:600;font-size:14px;text-decoration:none;">View All Articles <i class="fas fa-arrow-right ms-1"></i></a>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&q=80" alt="Health" class="blog-img" />
+          <div class="blog-body">
+            <span class="blog-tag">Diabetes</span>
+            <div class="blog-title">Managing Type 2 Diabetes: 5 Lifestyle Changes That Make a Real Difference</div>
+            <div class="blog-meta"><span><i class="fas fa-calendar"></i> June 2025</span><span><i class="fas fa-clock"></i> 4 min read</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80" alt="Maternity" class="blog-img" />
+          <div class="blog-body">
+            <span class="blog-tag">Women's Health</span>
+            <div class="blog-title">Pregnancy Nutrition Guide: What Every Expecting Mother Should Know</div>
+            <div class="blog-meta"><span><i class="fas fa-calendar"></i> May 2025</span><span><i class="fas fa-clock"></i> 5 min read</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal">
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Ortho" class="blog-img" />
+          <div class="blog-body">
+            <span class="blog-tag">Orthopaedics</span>
+            <div class="blog-title">Knee Pain Relief: When to See a Doctor and What Treatment Options Exist</div>
+            <div class="blog-meta"><span><i class="fas fa-calendar"></i> April 2025</span><span><i class="fas fa-clock"></i> 3 min read</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section style="padding:0;" id="contact">
+  <div class="container-fluid px-0">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.3647!2d81.0011!3d26.8396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3a7a4b43da7%3A0x6e6e6e6e6e6e6e6e!2sGomti%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+      width="100%" height="400" style="border:0; display:block;" allowfullscreen loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand d-flex align-items-center gap-3 mb-3">
+          <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:white;flex-shrink:0;">
+            <i class="fas fa-hospital-symbol"></i>
+          </div>
+          <div>
+            <div class="name">Ekana Hospital</div>
+            <div class="sub">Multispeciality Hospital & Research Center</div>
+          </div>
+        </div>
+        <p class="footer-desc">Providing comprehensive, compassionate, and cutting-edge medical care to the people of Lucknow and beyond. Your health is our highest priority.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-4">
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#departments"><i class="fas fa-chevron-right"></i> Departments</a></li>
+          <li><a href="#doctors"><i class="fas fa-chevron-right"></i> Our Doctors</a></li>
+          <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+          <li><a href="#appointment"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <div class="footer-heading">Our Specialties</div>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Gynaecology & Obstetrics</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Neurology & Neurosurgery</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Orthopaedics</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Paediatrics</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> ICU & NICU</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Emergency & Trauma</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <div class="footer-heading">Contact Info</div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+          <p><strong>Address</strong><br>4/1311, Amar Shaheed Path, Sector 4, Gomti Nagar, Lucknow, UP – 226010</p>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-phone-alt"></i></div>
+          <p><strong>Phone</strong><br>+91 87568 35776<br>+91 84012 80823</p>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <p><strong>Email</strong><br>info@ekanaHospital.com</p>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon"><i class="fas fa-clock"></i></div>
+          <p><strong>Emergency</strong><br>Open 24 Hours, 7 Days</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <p>© 2025 Ekana Hospital Multispeciality Hospital & Research Center. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a> · <a href="#">Sitemap</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Scroll Progress
+  window.addEventListener('scroll', () => {
+    const el = document.getElementById('scrollProgress');
+    const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    el.style.width = pct + '%';
+    // Navbar
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile Menu Toggle
+  document.getElementById('mobileMenu').addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') document.getElementById('mobileMenu').style.display = 'none';
+  });
+  document.querySelector('button[onclick*="mobileMenu"]').addEventListener('click', function() {
+    const m = document.getElementById('mobileMenu');
+    m.style.display = m.style.display === 'none' || !m.style.display ? 'block' : 'none';
+  });
+
+  // Scroll Reveal
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), 100);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Staggered children
+  document.querySelectorAll('.row').forEach(row => {
+    row.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.08) + 's';
+    });
+  });
+
+  // Counter Animation
+  const counters = document.querySelectorAll('.counter[data-target]');
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target, target = +el.dataset.target;
+        const step = target / 60;
+        let current = 0;
+        const timer = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = target >= 1000 ? (current >= 1000 ? Math.floor(current/1000)+'K' : Math.floor(current)) : Math.floor(current);
+          if (current >= target) clearInterval(timer);
+        }, 25);
+        counterObs.unobserve(el);
+      }
+    });
+  }, { threshold: .5 });
+  counters.forEach(c => counterObs.observe(c));
+
+  // Service item interactivity
+  document.querySelectorAll('.service-item').forEach(item => {
+    item.addEventListener('click', () => {
+      document.querySelectorAll('.service-item').forEach(s => s.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
