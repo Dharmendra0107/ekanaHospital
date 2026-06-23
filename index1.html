@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Ekana Hospital Multispeciality Hospital & Research Center — Lucknow</title>
+<title>Ekana Medicare Multispeciality Hospital & Research Center — Lucknow</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet"/>
@@ -129,6 +129,7 @@ ul,ol{list-style:none;padding:0;margin:0}
   padding:16px 0 20px;
   background:#fff;
 }
+.mobile-drawer.open{display:block}
 .mobile-drawer a{
   display:flex;align-items:center;
   padding:11px 16px;border-radius:11px;
@@ -302,30 +303,171 @@ ul,ol{list-style:none;padding:0;margin:0}
 .mosaic-label h6{color:#fff;font-size:15px;font-weight:700;margin-bottom:3px}
 .mosaic-label span{color:rgba(255,255,255,.65);font-size:12px}
 
-/* ── TESTIMONIALS ── */
-.test-sec{background:var(--navy);position:relative;overflow:hidden}
-.test-sec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 10% 80%,rgba(0,176,155,.1),transparent 40%),radial-gradient(circle at 90% 20%,rgba(19,80,160,.12),transparent 40%)}
-.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:1}
-.test-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:30px;backdrop-filter:blur(10px);transition:all var(--transition)}
-.test-card:hover{background:rgba(255,255,255,.09);border-color:rgba(0,176,155,.4);transform:translateY(-6px)}
-.test-stars{color:#ffd700;font-size:13px;display:flex;gap:3px;margin-bottom:14px}
-.test-text{font-size:14px;color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:20px;font-style:italic}
-.test-reviewer{display:flex;align-items:center;gap:12px}
-.rev-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--teal));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;flex-shrink:0}
-.rev-name{font-size:14px;font-weight:700;color:#fff}
-.rev-info{font-size:12px;color:rgba(255,255,255,.5)}
-.test-highlight{margin-top:56px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-xl);padding:40px;display:flex;align-items:center;gap:60px;flex-wrap:wrap;position:relative;z-index:1}
-.th-big{text-align:center;flex:1;min-width:120px}
-.th-big .num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:#fff;line-height:1}
-.th-big .num span{color:var(--teal2)}
-.th-big .lbl{font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
-.th-div{width:1px;height:80px;background:rgba(255,255,255,.12)}
-.th-platforms{flex:3;display:flex;gap:24px;flex-wrap:wrap}
-.th-plat{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border-radius:14px;padding:14px 18px;flex:1;min-width:140px}
-.th-plat-score{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#fff}
-.th-plat-info .name{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px}
-.th-plat-info .stars{color:#ffd700;font-size:12px}
-.th-plat-info .cnt{font-size:11px;color:rgba(255,255,255,.4)}
+/* ── TESTIMONIALS — Google Review Style Light Mode ── */
+.test-sec{background:#f8fafb;position:relative;overflow:hidden}
+.test-sec::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,#4285f4,#34a853,#fbbc04,#ea4335);
+}
+
+/* Platform header tabs */
+.test-platform-tabs{display:flex;align-items:center;gap:10px;margin-bottom:36px;flex-wrap:wrap}
+.test-tab{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 18px;border-radius:50px;
+  font-size:13px;font-weight:600;cursor:pointer;
+  border:1.5px solid #e2e8f0;background:#fff;
+  color:var(--gray);transition:all .2s;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+}
+.test-tab img,.test-tab i{font-size:15px}
+.test-tab.active-google{
+  border-color:#4285f4;color:#1a73e8;
+  background:#e8f0fe;
+}
+.test-tab.active-justdial{border-color:#ff6b00;color:#e65100;background:#fff3e0}
+
+/* Rating summary row */
+.test-summary{
+  display:flex;align-items:stretch;gap:16px;
+  margin-bottom:40px;flex-wrap:wrap;
+}
+.ts-overall{
+  background:#fff;border:1.5px solid #e2e8f0;
+  border-radius:20px;padding:28px 32px;
+  display:flex;align-items:center;gap:20px;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+  flex:1;min-width:220px;
+}
+.ts-big-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:64px;font-weight:700;color:var(--ink);line-height:1;
+}
+.ts-stars-row{display:flex;gap:3px;margin:6px 0 4px}
+.ts-stars-row i{color:#fbbc04;font-size:18px}
+.ts-count{font-size:12.5px;color:var(--gray)}
+.ts-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray);margin-top:2px}
+
+.ts-platform{
+  background:#fff;border:1.5px solid #e2e8f0;
+  border-radius:20px;padding:22px 26px;
+  display:flex;align-items:center;gap:16px;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+  flex:1;min-width:180px;transition:all .25s;cursor:pointer;
+}
+.ts-platform:hover{border-color:var(--teal);box-shadow:0 6px 24px rgba(0,176,155,.12);transform:translateY(-2px)}
+.ts-plat-logo{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ts-plat-score{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--ink);line-height:1}
+.ts-plat-name{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gray);margin-bottom:3px}
+.ts-plat-stars{display:flex;gap:2px}
+.ts-plat-stars i{color:#fbbc04;font-size:12px}
+.ts-plat-cnt{font-size:11.5px;color:var(--gray);margin-top:3px}
+
+/* Review cards — Google look */
+.test-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:18px;position:relative;z-index:1;
+}
+.test-card{
+  background:#fff;
+  border:1px solid #e8edf2;
+  border-radius:18px;
+  padding:22px 22px 20px;
+  transition:all .28s;
+  cursor:default;
+  box-shadow:0 1px 8px rgba(0,0,0,.06);
+  position:relative;
+}
+.test-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 36px rgba(0,0,0,.1);
+  border-color:#d0dce8;
+}
+
+/* Google "quote" mark top right */
+.test-card::before{
+  content:'"';
+  position:absolute;top:14px;right:20px;
+  font-size:56px;line-height:1;
+  color:#e8f0fe;
+  font-family:Georgia,serif;
+  font-weight:700;
+}
+
+/* Top row: avatar + name + platform */
+.tc-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tc-avatar{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;font-weight:700;color:#fff;
+  flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif;
+}
+.tc-name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.2}
+.tc-meta{font-size:11.5px;color:var(--gray);margin-top:2px}
+.tc-platform-badge{
+  margin-left:auto;flex-shrink:0;
+  width:28px;height:28px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Stars */
+.tc-stars{display:flex;gap:3px;margin-bottom:12px}
+.tc-stars i{color:#fbbc04;font-size:13px}
+
+/* Review text */
+.tc-text{
+  font-size:13.5px;color:#374151;
+  line-height:1.72;
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+/* Date + source row */
+.tc-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:14px;padding-top:12px;
+  border-top:1px solid #f0f4f8;
+}
+.tc-date{font-size:11.5px;color:#9ca3af}
+.tc-source{
+  display:flex;align-items:center;gap:5px;
+  font-size:11.5px;font-weight:600;color:var(--gray);
+}
+.tc-source img{width:14px;height:14px;object-fit:contain}
+
+/* "Helpful" row like Google */
+.tc-helpful{
+  display:flex;align-items:center;gap:6px;
+  margin-top:10px;
+  font-size:12px;color:#9ca3af;
+}
+.tc-helpful button{
+  display:flex;align-items:center;gap:4px;
+  background:none;border:1px solid #e5e7eb;
+  border-radius:50px;padding:4px 12px;
+  font-size:11.5px;color:#6b7280;cursor:pointer;
+  transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif;
+}
+.tc-helpful button:hover{background:#f3f4f6;border-color:#d1d5db;color:var(--ink)}
+
+/* "See all on Google" link */
+.test-see-all{
+  text-align:center;margin-top:36px;
+  display:flex;align-items:center;justify-content:center;gap:24px;
+  flex-wrap:wrap;
+}
+.test-see-link{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 24px;border-radius:50px;
+  font-size:13.5px;font-weight:600;
+  border:1.5px solid;transition:all .25s;
+}
+.test-see-link.google{color:#1a73e8;border-color:#4285f4;background:#fff}
+.test-see-link.google:hover{background:#e8f0fe;color:#1a73e8}
+.test-see-link.jd{color:#e65100;border-color:#ff6b00;background:#fff}
+.test-see-link.jd:hover{background:#fff3e0;color:#e65100}
 
 /* ── WHY CHOOSE ── */
 .why-sec{background:#fff}
@@ -488,20 +630,39 @@ footer{background:var(--navy);padding:0}
 .reveal-r{opacity:0;transform:translateX(36px);transition:opacity .7s ease,transform .7s ease}
 .reveal-r.visible{opacity:1;transform:none}
 
+/* ── MOBILE POLISH ── */
+@media(max-width:640px){
+  .container{padding-left:16px;padding-right:16px}
+  .hero-eyebrow{font-size:11.5px;padding:5px 14px 5px 7px;white-space:normal;text-align:left}
+  .topbar .container{padding-left:14px;padding-right:14px}
+  /* Review cards mobile */
+  .test-card::before{font-size:40px;top:10px;right:14px}
+  .tc-text{-webkit-line-clamp:5}
+  /* Services img on mobile */
+  .service-img-stack{height:auto}
+  .service-img-stack .img-main{height:200px}
+  .service-img-bottom{height:120px}
+  /* Stats */
+  .stat-item:nth-child(even){border-right:none}
+  /* Dept cards */
+  .dept-card:hover{transform:none}
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1280px){
-  .nav-pills-wrap a{padding:8px 14px;font-size:12.5px}
+  .nav-pills-wrap a{padding:8px 13px;font-size:12.5px}
+  .footer-grid{grid-template-columns:1.6fr 1fr 1fr;gap:36px}
+  .footer-grid>div:last-child{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 }
 @media(max-width:1100px){
   .depts-grid{grid-template-columns:repeat(3,1fr)}
   .doc-grid{grid-template-columns:repeat(2,1fr)}
-  .footer-grid{grid-template-columns:1.4fr 1fr 1fr}
-  .footer-grid>div:last-child{grid-column:1/-1}
-  .foot-contact-row{display:inline-flex;margin-right:24px;margin-bottom:12px}
-  .footer-grid>div:last-child .foot-contact-row{display:flex;margin-right:0}
   .stat-grid{grid-template-columns:repeat(2,1fr)}
-  .stat-item{border-bottom:1px solid rgba(255,255,255,.06)}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
   .why-grid{grid-template-columns:repeat(2,1fr)}
+  .ratings-grid{grid-template-columns:repeat(3,1fr)}
+  .test-grid{grid-template-columns:repeat(2,1fr)}
+  .blog-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:1024px){
   .nav-right{display:none !important}
@@ -509,38 +670,111 @@ footer{background:var(--navy);padding:0}
   .ham{display:flex !important}
 }
 @media(max-width:900px){
-  .about-grid,.services-layout,.appt-grid{grid-template-columns:1fr}
-  .ratings-grid,.test-grid,.blog-grid{grid-template-columns:1fr 1fr}
-  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .mosaic-item.big{grid-row:span 1}
-  .hero-pills .pill:last-child{display:none}
-  .google-card{bottom:auto;top:24px;right:20px;min-width:auto}
-  .about-img-inset{right:0;bottom:-16px;width:150px;height:120px}
-  .about-floater{left:0}
-  .appt-left{padding:36px 28px}
-  .appt-right{padding:36px 28px}
+  .about-grid{grid-template-columns:1fr}
+  .about-img-wrap{order:0}
+  .about-main-img{height:340px}
+  .about-img-inset{width:140px;height:110px;right:0;bottom:-14px}
+  .about-floater{left:0;top:20px}
+  .services-layout{grid-template-columns:1fr}
+  .appt-grid{grid-template-columns:1fr}
+  .appt-left{padding:32px 28px}
+  .appt-right{padding:32px 28px}
   .form-row{grid-template-columns:1fr}
-  .th-platforms{flex-direction:column}
+  .ratings-grid{grid-template-columns:1fr 1fr}
+  .test-grid{grid-template-columns:1fr 1fr}
+  .test-summary{flex-direction:row;flex-wrap:wrap}
+  .ts-overall{flex:100%}
+  .ts-platform{flex:1;min-width:140px}
+  .mosaic{grid-template-columns:1fr 1fr}
+  .mosaic-item.big{grid-row:span 1}
+  .google-card{top:20px;right:16px;bottom:auto;min-width:auto;padding:12px 16px}
+  .gc-score{font-size:26px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .footer-grid>div:last-child{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   .footer-top-inner{flex-direction:column;align-items:flex-start;gap:16px}
+  .hero-pills .pill:nth-child(4){display:none}
 }
 @media(max-width:640px){
-  .depts-grid,.ratings-grid,.test-grid,.blog-grid,.why-grid{grid-template-columns:1fr 1fr}
-  .doc-grid{grid-template-columns:1fr 1fr}
-  .stat-grid{grid-template-columns:1fr 1fr}
-  .mosaic{grid-template-columns:1fr}
-  .hero h1{font-size:2.4rem}
-  .hero-content{padding:90px 0 60px}
+  /* Hero */
+  .hero{min-height:100svh}
+  .hero-content{padding:80px 0 56px}
+  .hero h1{font-size:2.2rem;line-height:1.1}
+  .hero p{font-size:14.5px}
+  .hero-actions{flex-direction:column;gap:10px}
+  .hero-actions a{width:100%;justify-content:center;text-align:center}
+  .hero-pills{gap:8px}
+  .hero-pills .pill{padding:8px 14px}
+  .pill .pnum{font-size:18px}
   .google-card{display:none}
-  .footer-grid{grid-template-columns:1fr}
-  .trust-items{justify-content:flex-start}
+  /* Trust strip */
+  .trust-items{flex-direction:column;gap:10px;align-items:flex-start}
   .trust-div{display:none}
-  .hero-actions{flex-direction:column}
-  .test-highlight{flex-direction:column;gap:24px}
-  .th-div{display:none}
-  .th-platforms{flex-direction:column}
-  .sec{padding:60px 0}
-  .footer-top-right{flex-direction:column;width:100%}
-  .footer-cta-phone,.footer-cta-appt{justify-content:center}
+  /* Sections */
+  .sec{padding:52px 0}
+  .sec-sm{padding:44px 0}
+  .sec-h{font-size:1.85rem}
+  /* About */
+  .about-main-img{height:260px}
+  .about-img-inset{display:none}
+  .about-floater{position:static;margin-bottom:16px;display:inline-flex}
+  .about-checks{grid-template-columns:1fr}
+  /* Depts */
+  .depts-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .dept-card{padding:20px 14px}
+  .di-wrap{width:52px;height:52px}
+  .di{font-size:22px}
+  .dn{font-size:13px}
+  .ds{font-size:11.5px}
+  /* Stats */
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-num{font-size:38px}
+  .stat-item{padding:36px 16px}
+  /* Doctors */
+  .doc-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .doc-img,.doc-img-placeholder{height:180px}
+  .doc-img-placeholder i{font-size:40px}
+  .doc-body{padding:14px 14px 16px}
+  .doc-name{font-size:16px}
+  /* Ratings */
+  .ratings-grid{grid-template-columns:1fr;gap:14px}
+  /* Reviews */
+  .test-grid{grid-template-columns:1fr;gap:14px}
+  .test-summary{flex-direction:column;gap:10px}
+  .ts-overall{flex-direction:column;text-align:center;padding:20px}
+  .ts-big-num{font-size:52px}
+  .test-platform-tabs{gap:8px}
+  .test-tab{font-size:12px;padding:7px 14px}
+  /* Why */
+  .why-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .why-card{padding:20px 16px}
+  .wc-icon{width:48px;height:48px;font-size:20px;margin-bottom:12px}
+  /* Appt */
+  .appt-left{padding:28px 20px}
+  .appt-right{padding:28px 20px}
+  .al-img{height:160px;margin-bottom:20px}
+  .al-h{font-size:22px}
+  /* Mosaic */
+  .mosaic{grid-template-columns:1fr}
+  /* Blog */
+  .blog-grid{grid-template-columns:1fr;gap:14px}
+  /* Footer */
+  .footer-grid{grid-template-columns:1fr;gap:36px}
+  .footer-grid>div:last-child{grid-column:auto;display:block}
+  .footer-top-right{flex-direction:column;width:100%;gap:10px}
+  .footer-cta-phone,.footer-cta-appt{justify-content:center;width:100%;text-align:center}
+  .foot-bottom{flex-direction:column;text-align:center;gap:8px}
+  .foot-bottom-links{justify-content:center}
+  .foot-badges{gap:6px}
+  /* Floaters */
+  .floaters{bottom:16px;right:14px}
+  .fl-btn{width:46px;height:46px;font-size:18px}
+}
+@media(max-width:400px){
+  .depts-grid{grid-template-columns:repeat(2,1fr)}
+  .doc-grid{grid-template-columns:1fr}
+  .doc-img,.doc-img-placeholder{height:200px}
+  .hero h1{font-size:1.95rem}
+  .why-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -561,7 +795,7 @@ footer{background:var(--navy);padding:0}
       <div class="d-flex align-items-center flex-wrap gap-0">
         <a href="#"><i class="fas fa-map-marker-alt me-1" style="color:var(--teal)"></i>4/1311, Amar Shaheed Path, Sector 4, Gomti Nagar, Lucknow 226010</a>
         <span class="tb-sep d-none d-md-inline">|</span>
-        <a href="mailto:info@ekanaHospital.com" class="d-none d-md-inline"><i class="fas fa-envelope me-1" style="color:var(--teal)"></i>info@ekanaHospital.com</a>
+        <a href="mailto:info@ekanamedicare.com" class="d-none d-md-inline"><i class="fas fa-envelope me-1" style="color:var(--teal)"></i>info@ekanamedicare.com</a>
       </div>
       <div class="d-flex align-items-center gap-3">
         <span class="emergency"><i class="fas fa-ambulance me-1"></i>Emergency 24/7: 087568 35776</span>
@@ -579,7 +813,7 @@ footer{background:var(--navy);padding:0}
       <a href="#" class="nav-logo">
         <div class="logo-mark"><i class="fas fa-hospital-symbol"></i></div>
         <div class="logo-text">
-          <div class="n1">Ekana Hospital</div>
+          <div class="n1">Ekana Medicare</div>
           <div class="n2">Multispeciality Hospital & Research Center</div>
         </div>
       </a>
@@ -623,7 +857,7 @@ footer{background:var(--navy);padding:0}
 <!-- ============================== HERO ============================== -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1600&q=85&auto=format" alt="Ekana Hospital Hospital" loading="eager"/>
+    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1600&q=85&auto=format" alt="Ekana Medicare Hospital" loading="eager"/>
   </div>
   <div class="container" style="width:100%">
     <div class="hero-content">
@@ -632,7 +866,7 @@ footer{background:var(--navy);padding:0}
         <span>Gomti Nagar, Lucknow's Trusted Multispeciality Hospital</span>
       </div>
       <h1>Advanced Care,<br><em>Compassionate</em><br>Healing.</h1>
-      <p>Ekana Hospital Multispeciality Hospital & Research Center — 15+ specialties, 100 beds, fully equipped ICU & NICU, modular OT, and 24/7 emergency services. Your health is our highest calling.</p>
+      <p>Ekana Medicare Multispeciality Hospital & Research Center — 15+ specialties, 100 beds, fully equipped ICU & NICU, modular OT, and 24/7 emergency services. Your health is our highest calling.</p>
       <div class="hero-actions">
         <a href="#appt" class="btn-primary"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
         <a href="#departments" class="btn-ghost"><i class="fas fa-stethoscope"></i> Explore Departments</a>
@@ -648,7 +882,7 @@ footer{background:var(--navy);padding:0}
   <!-- Google Rating Card -->
   <div class="google-card">
     <div class="gc-logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png" alt="Google"/>
+      <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" alt="Google"/>
     </div>
     <div>
       <div class="gc-score">4.6</div>
@@ -675,7 +909,7 @@ footer{background:var(--navy);padding:0}
       <div class="trust-div"></div>
       <div class="trust-item"><i class="fas fa-credit-card"></i><span>Cashless Treatment</span></div>
       <div class="trust-div"></div>
-      <div class="trust-item"><i class="fas fa-globe"></i><span>ekanaHospital.com</span></div>
+      <div class="trust-item"><i class="fas fa-globe"></i><span>ekanamedicare.com</span></div>
     </div>
   </div>
 </div>
@@ -693,7 +927,7 @@ footer{background:var(--navy);padding:0}
       <div class="rating-card featured reveal">
         <div class="rc-logo">
           <div class="rc-logo-icon" style="background:#e8f0fe">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png" style="width:22px;height:22px;object-fit:contain"/>
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:22px;height:22px;object-fit:contain"/>
           </div>
           <span class="rc-logo-name">Google Maps</span>
         </div>
@@ -764,7 +998,7 @@ footer{background:var(--navy);padding:0}
       <div class="reveal-r">
         <div class="sec-label">Who We Are</div>
         <h2 class="sec-h mb-4">Lucknow's Premier<br><em>Multispeciality Hospital</em></h2>
-        <p class="sec-sub mb-4">Ekana Hospital Multispeciality Hospital & Research Center is an integrated, synergistic medical facility in the heart of Gomti Nagar, Lucknow. With 100 beds, 15+ specialties, and a team of senior consultants, we deliver world-class care with a compassionate touch — serving patients from Uttar Pradesh and beyond.</p>
+        <p class="sec-sub mb-4">Ekana Medicare Multispeciality Hospital & Research Center is an integrated, synergistic medical facility in the heart of Gomti Nagar, Lucknow. With 100 beds, 15+ specialties, and a team of senior consultants, we deliver world-class care with a compassionate touch — serving patients from Uttar Pradesh and beyond.</p>
         <div class="about-checks">
           <div class="check-item"><i class="fas fa-check-circle"></i>100-Bed Capacity</div>
           <div class="check-item"><i class="fas fa-check-circle"></i>24/7 ICU & NICU</div>
@@ -963,61 +1197,275 @@ footer{background:var(--navy);padding:0}
 <!-- ============================== TESTIMONIALS ============================== -->
 <section class="test-sec sec">
   <div class="container">
-    <div class="text-center mb-5 reveal">
-      <div class="sec-label" style="justify-content:center;color:rgba(255,255,255,.5)">
-        <span style="background:rgba(0,176,155,.4);width:20px;height:2px;display:block;border-radius:2px"></span>Patient Stories<span style="background:rgba(0,176,155,.4);width:20px;height:2px;display:block;border-radius:2px"></span>
+
+    <!-- Section Header -->
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4 reveal">
+      <div>
+        <div class="sec-label">Patient Stories</div>
+        <h2 class="sec-h">What Our <em>Patients Say</em></h2>
       </div>
-      <h2 class="sec-h" style="color:#fff">What Our <em>Patients Say</em></h2>
+      <div class="test-platform-tabs">
+        <div class="test-tab active-google">
+          <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:16px;height:16px;object-fit:contain"/>
+          Google Reviews
+        </div>
+        <div class="test-tab active-justdial">
+          <i class="fas fa-search" style="color:#ff6b00"></i>
+          Justdial
+        </div>
+      </div>
     </div>
+
+    <!-- Rating Summary Row -->
+    <div class="test-summary reveal">
+      <!-- Overall -->
+      <div class="ts-overall">
+        <div class="ts-big-num">4.8</div>
+        <div>
+          <div class="ts-stars-row">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="ts-count">600+ combined reviews</div>
+          <div class="ts-lbl">Overall Rating</div>
+        </div>
+      </div>
+      <!-- Google -->
+      <div class="ts-platform">
+        <div class="ts-plat-logo" style="background:#e8f0fe">
+          <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:26px;height:26px;object-fit:contain"/>
+        </div>
+        <div>
+          <div class="ts-plat-name">Google Maps</div>
+          <div class="ts-plat-score">4.6</div>
+          <div class="ts-plat-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="ts-plat-cnt">130 reviews</div>
+        </div>
+      </div>
+      <!-- Justdial -->
+      <div class="ts-platform">
+        <div class="ts-plat-logo" style="background:#fff3e0">
+          <i class="fas fa-search" style="color:#ff6b00;font-size:20px"></i>
+        </div>
+        <div>
+          <div class="ts-plat-name">Justdial</div>
+          <div class="ts-plat-score">4.8</div>
+          <div class="ts-plat-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <div class="ts-plat-cnt">499+ reviews</div>
+        </div>
+      </div>
+      <!-- NABH -->
+      <div class="ts-platform">
+        <div class="ts-plat-logo" style="background:#e6f9f6">
+          <i class="fas fa-shield-alt" style="color:var(--teal);font-size:20px"></i>
+        </div>
+        <div>
+          <div class="ts-plat-name">NABH Certified</div>
+          <div class="ts-plat-score">5yr</div>
+          <div class="ts-plat-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <div class="ts-plat-cnt">In Healthcare</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Cards — Google style -->
     <div class="test-grid">
+
+      <!-- Review 1 -->
       <div class="test-card reveal">
-        <div class="test-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="test-text">"Very positive environment with the right treatment approach. The doctors and staff are truly exceptional — must visit for any health-related issue. Highly recommend!"</p>
-        <div class="test-reviewer"><div class="rev-avatar">R</div><div><div class="rev-name">Rahul Gupta</div><div class="rev-info">Orthopaedics Patient · Google Review</div></div></div>
-      </div>
-      <div class="test-card reveal">
-        <div class="test-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="test-text">"Hum log Nepal se aaye the, par Ekana hospital ki service ne hame bilkul ghar jaisa feel karaya. Doctors aur staff sab bahut acche hain. Dhanywaad Ekana team!"</p>
-        <div class="test-reviewer"><div class="rev-avatar">S</div><div><div class="rev-name">Suresh Thapa</div><div class="rev-info">Emergency Patient · Nepal · Google Review</div></div></div>
-      </div>
-      <div class="test-card reveal">
-        <div class="test-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="test-text">"I can never thank the team enough for the care during my child's accident. You are truly men of honour and your dedication to healing is unmatched. Best wishes always!"</p>
-        <div class="test-reviewer"><div class="rev-avatar">A</div><div><div class="rev-name">Anita Mishra</div><div class="rev-info">Paediatrics Patient · Justdial Review</div></div></div>
-      </div>
-    </div>
-    <!-- Combined Rating Highlight -->
-    <div class="test-highlight reveal">
-      <div class="th-big">
-        <div class="num">4.8<span>★</span></div>
-        <div class="lbl">Overall Rating</div>
-      </div>
-      <div class="th-div"></div>
-      <div class="th-platforms">
-        <div class="th-plat">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/480px-Google_%22G%22_logo.svg.png" style="width:28px;height:28px;object-fit:contain;flex-shrink:0"/>
+        <div class="tc-header">
+          <div class="tc-avatar" style="background:linear-gradient(135deg,#4285f4,#34a853)">R</div>
           <div>
-            <div class="th-plat-score">4.6</div>
-            <div class="th-plat-info">
-              <div class="name">Google Maps</div>
-              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-              <div class="cnt">130 reviews</div>
-            </div>
+            <div class="tc-name">Rahul Gupta</div>
+            <div class="tc-meta">Local Guide · 8 reviews</div>
+          </div>
+          <div class="tc-platform-badge" style="background:#e8f0fe;margin-left:auto">
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:16px;height:16px;object-fit:contain"/>
           </div>
         </div>
-        <div class="th-plat">
-          <div style="width:28px;height:28px;background:rgba(255,107,0,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-search" style="color:#ff6b00;font-size:13px"></i></div>
-          <div>
-            <div class="th-plat-score">4.8</div>
-            <div class="th-plat-info">
-              <div class="name">Justdial</div>
-              <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-              <div class="cnt">499+ reviews</div>
-            </div>
-          </div>
+        <div class="tc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="tc-text">Very positive environment with the right treatment approach. The doctors and staff are truly exceptional — must visit for any health-related issue. Highly recommend to everyone!</p>
+        <div class="tc-footer">
+          <span class="tc-date">2 months ago</span>
+          <span class="tc-source">
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:13px;height:13px;object-fit:contain"/>
+            Google
+          </span>
+        </div>
+        <div class="tc-helpful">
+          <span>Helpful?</span>
+          <button><i class="fas fa-thumbs-up"></i> Yes</button>
         </div>
       </div>
+
+      <!-- Review 2 -->
+      <div class="test-card reveal">
+        <div class="tc-header">
+          <div class="tc-avatar" style="background:linear-gradient(135deg,#ea4335,#fbbc04)">S</div>
+          <div>
+            <div class="tc-name">Suresh Thapa</div>
+            <div class="tc-meta">Visitor from Nepal</div>
+          </div>
+          <div class="tc-platform-badge" style="background:#e8f0fe;margin-left:auto">
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:16px;height:16px;object-fit:contain"/>
+          </div>
+        </div>
+        <div class="tc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="tc-text">Hum log Nepal se aaye the, par Ekana hospital ki service ne hame bilkul ghar jaisa feel karaya. Doctors aur staff sab bahut acche hain. Dhanywaad Ekana team!</p>
+        <div class="tc-footer">
+          <span class="tc-date">4 months ago</span>
+          <span class="tc-source">
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:13px;height:13px;object-fit:contain"/>
+            Google
+          </span>
+        </div>
+        <div class="tc-helpful">
+          <span>Helpful?</span>
+          <button><i class="fas fa-thumbs-up"></i> Yes</button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="test-card reveal">
+        <div class="tc-header">
+          <div class="tc-avatar" style="background:linear-gradient(135deg,#00b09b,#1350a0)">A</div>
+          <div>
+            <div class="tc-name">Anita Mishra</div>
+            <div class="tc-meta">Lucknow · 3 reviews</div>
+          </div>
+          <div class="tc-platform-badge" style="background:#fff3e0;margin-left:auto">
+            <i class="fas fa-search" style="color:#ff6b00;font-size:14px"></i>
+          </div>
+        </div>
+        <div class="tc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="tc-text">I can never thank the team enough for the care during my child's accident. You are truly men of honour and your dedication to healing is absolutely unmatched. Best wishes always!</p>
+        <div class="tc-footer">
+          <span class="tc-date">6 months ago</span>
+          <span class="tc-source">
+            <i class="fas fa-search" style="color:#ff6b00;font-size:11px"></i>
+            Justdial
+          </span>
+        </div>
+        <div class="tc-helpful">
+          <span>Helpful?</span>
+          <button><i class="fas fa-thumbs-up"></i> Yes</button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="test-card reveal">
+        <div class="tc-header">
+          <div class="tc-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">P</div>
+          <div>
+            <div class="tc-name">Priya Srivastava</div>
+            <div class="tc-meta">Local Guide · 14 reviews</div>
+          </div>
+          <div class="tc-platform-badge" style="background:#e8f0fe;margin-left:auto">
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:16px;height:16px;object-fit:contain"/>
+          </div>
+        </div>
+        <div class="tc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="tc-text">Excellent maternity care. Dr. Priya Sharma was absolutely wonderful throughout my delivery. The nursing staff and NICU team were incredibly attentive. Highly recommend for expecting mothers!</p>
+        <div class="tc-footer">
+          <span class="tc-date">1 month ago</span>
+          <span class="tc-source">
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:13px;height:13px;object-fit:contain"/>
+            Google
+          </span>
+        </div>
+        <div class="tc-helpful">
+          <span>Helpful?</span>
+          <button><i class="fas fa-thumbs-up"></i> Yes</button>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="test-card reveal">
+        <div class="tc-header">
+          <div class="tc-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">M</div>
+          <div>
+            <div class="tc-name">Mohit Agarwal</div>
+            <div class="tc-meta">Lucknow · 6 reviews</div>
+          </div>
+          <div class="tc-platform-badge" style="background:#e8f0fe;margin-left:auto">
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:16px;height:16px;object-fit:contain"/>
+          </div>
+        </div>
+        <div class="tc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="tc-text">Father had a knee replacement here. The orthopaedic team was professional and thorough. Operation went smoothly and physiotherapy post-surgery was excellent. Full recovery within 3 months!</p>
+        <div class="tc-footer">
+          <span class="tc-date">3 months ago</span>
+          <span class="tc-source">
+            <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:13px;height:13px;object-fit:contain"/>
+            Google
+          </span>
+        </div>
+        <div class="tc-helpful">
+          <span>Helpful?</span>
+          <button><i class="fas fa-thumbs-up"></i> Yes</button>
+        </div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="test-card reveal">
+        <div class="tc-header">
+          <div class="tc-avatar" style="background:linear-gradient(135deg,#f7971e,#ffd200)">N</div>
+          <div>
+            <div class="tc-name">Neha Pandey</div>
+            <div class="tc-meta">Gomti Nagar · 5 reviews</div>
+          </div>
+          <div class="tc-platform-badge" style="background:#fff3e0;margin-left:auto">
+            <i class="fas fa-search" style="color:#ff6b00;font-size:14px"></i>
+          </div>
+        </div>
+        <div class="tc-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p class="tc-text">The emergency team here is brilliant. My husband was admitted at 2am and the doctors were alert, responsive, and incredibly calm. World-class ICU facilities and transparent communication throughout.</p>
+        <div class="tc-footer">
+          <span class="tc-date">5 months ago</span>
+          <span class="tc-source">
+            <i class="fas fa-search" style="color:#ff6b00;font-size:11px"></i>
+            Justdial
+          </span>
+        </div>
+        <div class="tc-helpful">
+          <span>Helpful?</span>
+          <button><i class="fas fa-thumbs-up"></i> Yes</button>
+        </div>
+      </div>
+
     </div>
+
+    <!-- See all buttons -->
+    <div class="test-see-all reveal">
+      <a href="https://www.google.com/maps" target="_blank" class="test-see-link google">
+        <img src="data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 48 48%22%3E%3Cpath fill%3D%22%23EA4335%22 d%3D%22M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z%22%2F%3E%3Cpath fill%3D%22%234285F4%22 d%3D%22M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z%22%2F%3E%3Cpath fill%3D%22%2334A853%22 d%3D%22M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z%22%2F%3E%3Cpath fill%3D%22%23FBBC05%22 d%3D%22M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z%22%2F%3E%3C%2Fsvg%3E" style="width:16px;height:16px;object-fit:contain"/>
+        See all 130 Google Reviews
+        <i class="fas fa-arrow-right" style="font-size:11px"></i>
+      </a>
+      <a href="https://www.justdial.com" target="_blank" class="test-see-link jd">
+        <i class="fas fa-search" style="font-size:13px"></i>
+        See all 499+ Justdial Reviews
+        <i class="fas fa-arrow-right" style="font-size:11px"></i>
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -1063,15 +1511,15 @@ footer{background:var(--navy);padding:0}
         <div class="sec-label" style="margin-bottom:8px">Appointment</div>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--ink);margin-bottom:28px">Fill Your Details</h3>
         <div class="form-row">
-          <div class="f-group"><label class="f-label">Full Name *</label><input type="text" class="f-input" placeholder="Your full name"/></div>
-          <div class="f-group"><label class="f-label">Phone Number *</label><input type="tel" class="f-input" placeholder="+91 XXXXX XXXXX"/></div>
+          <div class="f-group"><label class="f-label" for="f-name">Full Name *</label><input id="f-name" name="full_name" type="text" class="f-input" placeholder="Your full name" autocomplete="name"/></div>
+          <div class="f-group"><label class="f-label" for="f-phone">Phone Number *</label><input id="f-phone" name="phone" type="tel" class="f-input" placeholder="+91 XXXXX XXXXX" autocomplete="tel"/></div>
         </div>
         <div class="form-row">
-          <div class="f-group"><label class="f-label">Email</label><input type="email" class="f-input" placeholder="your@email.com"/></div>
-          <div class="f-group"><label class="f-label">Age</label><input type="number" class="f-input" placeholder="Patient age"/></div>
+          <div class="f-group"><label class="f-label" for="f-email">Email</label><input id="f-email" name="email" type="email" class="f-input" placeholder="your@email.com" autocomplete="email"/></div>
+          <div class="f-group"><label class="f-label" for="f-age">Age</label><input id="f-age" name="age" type="number" class="f-input" placeholder="Patient age" min="0" max="120"/></div>
         </div>
-        <div class="f-group"><label class="f-label">Department *</label>
-          <select class="f-input">
+        <div class="f-group"><label class="f-label" for="f-dept">Department *</label>
+          <select id="f-dept" name="department" class="f-input">
             <option value="">Select Department</option>
             <option>Gynaecology & Obstetrics</option><option>Orthopaedics</option>
             <option>Neurology & Neurosurgery</option><option>Paediatrics</option>
@@ -1082,12 +1530,12 @@ footer{background:var(--navy);padding:0}
           </select>
         </div>
         <div class="form-row">
-          <div class="f-group"><label class="f-label">Preferred Date</label><input type="date" class="f-input"/></div>
-          <div class="f-group"><label class="f-label">Preferred Time</label>
-            <select class="f-input"><option>Morning (9AM–12PM)</option><option>Afternoon (12–3PM)</option><option>Evening (5–9PM)</option></select>
+          <div class="f-group"><label class="f-label" for="f-date">Preferred Date</label><input id="f-date" name="preferred_date" type="date" class="f-input"/></div>
+          <div class="f-group"><label class="f-label" for="f-time">Preferred Time</label>
+            <select id="f-time" name="preferred_time" class="f-input"><option value="morning">Morning (9AM–12PM)</option><option value="afternoon">Afternoon (12–3PM)</option><option value="evening">Evening (5–9PM)</option></select>
           </div>
         </div>
-        <div class="f-group"><label class="f-label">Symptoms / Notes</label><textarea class="f-input" rows="3" style="resize:none" placeholder="Briefly describe your symptoms or reason for visit..."></textarea></div>
+        <div class="f-group"><label class="f-label" for="f-notes">Symptoms / Notes</label><textarea id="f-notes" name="notes" class="f-input" rows="3" style="resize:none" placeholder="Briefly describe your symptoms or reason for visit..."></textarea></div>
         <button class="btn-submit" onclick="alert('Thank you! Your appointment request has been submitted. Our team will call you within 2 hours to confirm.')">
           <i class="fas fa-calendar-check me-2"></i> Confirm Appointment
         </button>
@@ -1162,7 +1610,7 @@ footer{background:var(--navy);padding:0}
           <div class="footer-brand-logo">
             <div class="foot-logo-mark"><i class="fas fa-hospital-symbol"></i></div>
             <div>
-              <div class="foot-brand-name">Ekana Hospital</div>
+              <div class="foot-brand-name">Ekana Medicare</div>
               <div class="foot-brand-sub">Multispeciality Hospital & Research Center</div>
             </div>
           </div>
@@ -1228,14 +1676,14 @@ footer{background:var(--navy);padding:0}
             <div class="fc-icon"><i class="fas fa-envelope"></i></div>
             <div class="fc-text">
               <strong>Email</strong>
-              <span>info@ekanaHospital.com</span>
+              <span>info@ekanamedicare.com</span>
             </div>
           </div>
           <div class="foot-contact-row">
             <div class="fc-icon"><i class="fas fa-globe"></i></div>
             <div class="fc-text">
               <strong>Website</strong>
-              <span>ekanaHospital.com</span>
+              <span>ekanamedicare.com</span>
             </div>
           </div>
         </div>
@@ -1247,7 +1695,7 @@ footer{background:var(--navy);padding:0}
   <hr class="foot-divider" style="margin-top:52px">
   <div class="container">
     <div class="foot-bottom">
-      <p>© 2025 Ekana Hospital Multispeciality Hospital & Research Center. All rights reserved. Made with <i class="fas fa-heart heart"></i> in Lucknow.</p>
+      <p>© 2025 Ekana Medicare Multispeciality Hospital & Research Center. All rights reserved. Made with <i class="fas fa-heart heart"></i> in Lucknow.</p>
       <div class="foot-bottom-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -1272,9 +1720,8 @@ window.addEventListener('scroll', () => {
 function toggleMenu() {
   const m = document.getElementById('mobileNav');
   const icon = document.getElementById('hamIcon');
-  const open = m.style.display === 'block';
-  m.style.display = open ? 'none' : 'block';
-  icon.className = open ? 'fas fa-bars' : 'fas fa-times';
+  const open = m.classList.toggle('open');
+  icon.className = open ? 'fas fa-times' : 'fas fa-bars';
 }
 
 // Scroll Reveal
