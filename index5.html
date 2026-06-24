@@ -3,1952 +3,1889 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ekana Medicare Multispeciality Hospital & Research Center, Lucknow</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Ekana Medicare Multispeciality Hospital &amp; Research Center | Lucknow</title>
+<meta name="description" content="Ekana Medicare Multispeciality Hospital &amp; Research Center, Lucknow — advanced healthcare for every generation. 15+ departments, 25+ specialists, 24/7 emergency care.">
+
+<!-- Preconnects -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.css">
+
+<!-- Bootstrap (grid / accordion / offcanvas behaviour only — visual styling is custom) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230F4C81'/%3E%3Cpath d='M20 52h14l7-18 11 32 8-20 6 6h14' stroke='%2314B8A6' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
 <style>
-:root {
-  --blue-dark: #0F4C81;
-  --blue-sky: #3DA9FC;
-  --teal: #14B8A6;
-  --white: #FFFFFF;
-  --gray-soft: #F8FAFC;
-  --gray-mid: #E2EAF4;
-  --text-dark: #0D1B2A;
-  --text-mid: #3A5060;
-  --text-light: #6B8898;
-  --shadow-soft: 0 8px 32px rgba(15,76,129,0.10);
-  --shadow-card: 0 16px 48px rgba(15,76,129,0.13);
-  --radius: 18px;
-  --radius-sm: 10px;
-  --gradient-primary: linear-gradient(135deg, #0F4C81 0%, #3DA9FC 100%);
-  --gradient-teal: linear-gradient(135deg, #14B8A6 0%, #3DA9FC 100%);
+/* =========================================================
+   EKANA MEDICARE — DESIGN SYSTEM
+   ========================================================= */
+:root{
+  --c-primary:#0F4C81;
+  --c-primary-dim:#0B3A63;
+  --c-sky:#3DA9FC;
+  --c-teal:#14B8A6;
+  --c-teal-dim:#0D9488;
+  --c-white:#FFFFFF;
+  --c-soft:#F8FAFC;
+  --c-paper:#FCFDFE;
+  --c-ink:#0B2540;
+  --c-muted:#5C7488;
+  --c-line:#E3EAF1;
+  --c-rose:#FF6B6B;
+
+  --grad-primary:linear-gradient(135deg,#0F4C81 0%,#1568A8 45%,#3DA9FC 100%);
+  --grad-teal:linear-gradient(135deg,#14B8A6 0%,#3DA9FC 100%);
+  --grad-mesh:radial-gradient(circle at 15% 20%, rgba(61,169,252,.18), transparent 45%),
+              radial-gradient(circle at 85% 0%, rgba(20,184,166,.14), transparent 40%),
+              radial-gradient(circle at 50% 100%, rgba(15,76,129,.10), transparent 45%);
+
+  --font-display:'Fraunces',serif;
+  --font-body:'Work Sans',sans-serif;
+  --font-mono:'Space Mono',monospace;
+
+  --radius-xl:32px;
+  --radius-lg:24px;
+  --radius-md:16px;
+  --radius-sm:10px;
+
+  --shadow-soft:0 25px 60px -25px rgba(11,37,64,.25);
+  --shadow-card:0 12px 32px -16px rgba(11,37,64,.16);
+  --shadow-pop:0 8px 20px -8px rgba(11,37,64,.22);
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --container:1240px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--c-ink);
+  background:var(--c-paper);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{margin:0;padding:0;}
+button{font-family:inherit;}
+.container-xl{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+}
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  color:var(--c-ink);
+  line-height:1.12;
+  margin:0;
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+p{margin:0;color:var(--c-muted);line-height:1.75;}
 
-html { scroll-behavior: smooth; }
+::selection{background:var(--c-teal);color:#fff;}
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--white);
-  color: var(--text-dark);
-  overflow-x: hidden;
-}
+/* Scrollbar */
+::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar-track{background:var(--c-soft);}
+::-webkit-scrollbar-thumb{background:var(--c-sky);border-radius:10px;}
 
-h1,h2,h3,.display-font { font-family: 'Playfair Display', serif; }
-
-/* ===== NAVBAR ===== */
-.navbar {
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 2px 24px rgba(15,76,129,0.07);
-  padding: 0.6rem 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-.navbar.scrolled {
-  padding: 0.4rem 0;
-  box-shadow: 0 4px 32px rgba(15,76,129,0.13);
-}
-.navbar-brand img { height: 44px; }
-.navbar-brand .brand-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--blue-dark);
-  line-height: 1.2;
-}
-.navbar-brand .brand-sub {
-  font-size: 0.65rem;
-  color: var(--blue-sky);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-.nav-link {
-  color: var(--text-mid) !important;
-  font-weight: 500;
-  font-size: 0.88rem;
-  padding: 0.5rem 0.85rem !important;
-  border-radius: 8px;
-  transition: all 0.2s;
-  position: relative;
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-  transform: translateX(-50%);
-  transition: width 0.3s;
-}
-.nav-link:hover::after, .nav-link.active::after { width: 60%; }
-.nav-link:hover { color: var(--blue-dark) !important; background: rgba(61,169,252,0.07); }
-.navbar-top-bar {
-  background: var(--blue-dark);
-  padding: 0.35rem 0;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.9);
-}
-.navbar-top-bar a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
-.navbar-top-bar a:hover { color: var(--blue-sky); }
-.btn-appointment-nav {
-  background: var(--gradient-primary);
-  color: #fff !important;
-  border-radius: 25px;
-  padding: 0.5rem 1.3rem !important;
-  font-weight: 600;
-  font-size: 0.85rem;
-  box-shadow: 0 4px 16px rgba(61,169,252,0.3);
-  transition: all 0.3s;
-}
-.btn-appointment-nav:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(61,169,252,0.45);
-  color: #fff !important;
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
 }
 
-/* ===== HERO ===== */
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #EEF6FF 0%, #F8FAFC 60%, #E8F8F7 100%);
-  padding: 130px 0 80px;
-  position: relative;
-  overflow: hidden;
+/* ---------- Typography helpers ---------- */
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--c-teal-dim);
+  font-weight:700;
+  margin-bottom:18px;
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(61,169,252,0.12) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+.eyebrow::before{
+  content:'';
+  width:9px;height:9px;border-radius:50%;
+  background:var(--c-teal);
+  box-shadow:0 0 0 0 rgba(20,184,166,.6);
+  animation:pulseDot 2.2s infinite;
 }
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -100px;
-  left: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(20,184,166,0.09) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+@keyframes pulseDot{
+  0%{box-shadow:0 0 0 0 rgba(20,184,166,.55);}
+  70%{box-shadow:0 0 0 8px rgba(20,184,166,0);}
+  100%{box-shadow:0 0 0 0 rgba(20,184,166,0);}
 }
-.trust-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(20,184,166,0.1);
-  border: 1px solid rgba(20,184,166,0.25);
-  color: #0d9488;
-  border-radius: 50px;
-  padding: 0.4rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  margin-bottom: 1.4rem;
+.sec-title{
+  font-size:clamp(28px,4vw,44px);
+  max-width:680px;
 }
-.trust-badge .dot {
-  width: 8px; height: 8px;
-  background: var(--teal);
-  border-radius: 50%;
-  animation: pulse-dot 1.5s infinite;
+.sec-title em{
+  font-style:italic;
+  font-weight:500;
+  background:var(--grad-primary);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-@keyframes pulse-dot {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.5; transform:scale(0.7); }
+.sec-head{
+  margin-bottom:56px;
 }
-.hero-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-  font-weight: 900;
-  line-height: 1.12;
-  color: var(--text-dark);
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.02em;
+.sec-head.center{text-align:center;margin-left:auto;margin-right:auto;}
+.sec-head.center .sec-title{margin:0 auto;}
+.sec-sub{
+  max-width:560px;
+  font-size:16.5px;
+  margin-top:16px;
 }
-.hero-title span { color: var(--blue-dark); position: relative; }
-.hero-title span::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--gradient-teal);
-  border-radius: 4px;
-  opacity: 0.5;
-}
-.hero-sub {
-  font-size: 1.05rem;
-  color: var(--text-mid);
-  line-height: 1.7;
-  max-width: 520px;
-  margin-bottom: 2rem;
-}
-.btn-primary-hero {
-  background: var(--gradient-primary);
-  color: #fff;
-  border: none;
-  padding: 0.85rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 8px 28px rgba(15,76,129,0.25);
-  transition: all 0.3s;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.btn-primary-hero:hover { color: #fff; transform: translateY(-3px); box-shadow: 0 14px 36px rgba(15,76,129,0.35); }
-.btn-outline-hero {
-  border: 2px solid var(--blue-dark);
-  color: var(--blue-dark);
-  background: transparent;
-  padding: 0.82rem 1.8rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.btn-outline-hero:hover { background: var(--blue-dark); color: #fff; transform: translateY(-3px); }
-.hero-stats {
-  display: flex;
-  gap: 2.5rem;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
-}
-.stat-item { text-align: left; }
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
-  font-weight: 900;
-  color: var(--blue-dark);
-  line-height: 1;
-}
-.stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 2px; font-weight: 500; }
-.stat-divider { width: 1px; background: var(--gray-mid); align-self: stretch; margin: 4px 0; }
+.sec-head.center .sec-sub{margin-left:auto;margin-right:auto;}
+section{position:relative;}
+.section-pad{padding:110px 0;}
+@media (max-width:768px){.section-pad{padding:76px 0;}}
 
-/* Hero image area */
-.hero-image-wrap {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 540px;
-}
-.hero-img-main {
-  width: 380px;
-  height: 480px;
-  object-fit: cover;
-  border-radius: 40px 40px 120px 40px;
-  box-shadow: 0 32px 80px rgba(15,76,129,0.2);
-  position: relative;
-  z-index: 2;
-}
-.hero-blob {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  background: linear-gradient(135deg, rgba(61,169,252,0.18) 0%, rgba(20,184,166,0.12) 100%);
-  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  animation: morph-blob 8s ease-in-out infinite;
-}
-@keyframes morph-blob {
-  0%,100% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
-  33% { border-radius: 30% 70% 40% 60% / 60% 40% 70% 30%; }
-  66% { border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%; }
-}
-.hero-float-card {
-  position: absolute;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(16px);
-  border-radius: 16px;
-  padding: 0.9rem 1.2rem;
-  box-shadow: 0 12px 40px rgba(15,76,129,0.14);
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  animation: float-updown 3s ease-in-out infinite;
-}
-.hero-float-card:nth-child(3) { top: 10%; right: 0; animation-delay: 0s; }
-.hero-float-card:nth-child(4) { bottom: 15%; left: 0; animation-delay: 1s; }
-.hero-float-card:nth-child(5) { top: 55%; right: -10px; animation-delay: 1.8s; font-size:0.85rem; }
-@keyframes float-updown {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.float-icon {
-  width: 40px; height: 40px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-.float-icon.blue { background: rgba(61,169,252,0.15); color: var(--blue-sky); }
-.float-icon.teal { background: rgba(20,184,166,0.15); color: var(--teal); }
-.float-icon.orange { background: rgba(249,115,22,0.12); color: #f97316; }
-.float-label { font-size: 0.72rem; color: var(--text-light); font-weight: 500; }
-.float-val { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); }
+.bg-soft{background:var(--c-soft);}
+.bg-mesh{background-image:var(--grad-mesh);}
 
-/* ===== QUICK ACTIONS ===== */
-.quick-actions {
-  background: #fff;
-  padding: 0;
-  position: relative;
-  z-index: 10;
-  margin-top: -40px;
+/* ---------- Buttons ---------- */
+.btn-ek{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:16px 30px;
+  border-radius:100px;
+  font-weight:600;
+  font-size:15px;
+  border:none;
+  cursor:pointer;
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+  white-space:nowrap;
 }
-.quick-actions-inner {
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  padding: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1rem;
+.btn-primary-ek{
+  background:var(--grad-primary);
+  color:#fff;
+  box-shadow:0 14px 30px -10px rgba(15,76,129,.55);
 }
-.qa-card {
-  text-align: center;
-  padding: 1.4rem 0.8rem;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: all 0.3s;
-  border: 1.5px solid transparent;
-  position: relative;
-  overflow: hidden;
+.btn-primary-ek:hover{transform:translateY(-3px);box-shadow:0 20px 36px -10px rgba(15,76,129,.6);}
+.btn-outline-ek{
+  background:transparent;
+  color:var(--c-primary);
+  border:1.5px solid var(--c-line);
 }
-.qa-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-primary);
-  opacity: 0;
-  transition: opacity 0.3s;
-  border-radius: inherit;
+.btn-outline-ek:hover{border-color:var(--c-primary);background:rgba(15,76,129,.05);transform:translateY(-3px);}
+.btn-light-ek{
+  background:#fff;
+  color:var(--c-primary);
+  box-shadow:var(--shadow-pop);
 }
-.qa-card:hover { transform: translateY(-6px); border-color: rgba(61,169,252,0.3); box-shadow: 0 12px 32px rgba(15,76,129,0.12); }
-.qa-card:hover::before { opacity: 0.05; }
-.qa-card .qa-icon {
-  width: 52px; height: 52px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(15,76,129,0.08) 0%, rgba(61,169,252,0.12) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.8rem;
-  font-size: 1.3rem;
-  color: var(--blue-dark);
-  transition: all 0.3s;
+.btn-light-ek:hover{transform:translateY(-3px);}
+.btn-emergency-ek{
+  background:var(--c-rose);
+  color:#fff;
+  box-shadow:0 14px 30px -10px rgba(255,107,107,.6);
 }
-.qa-card:hover .qa-icon { background: var(--gradient-primary); color: #fff; transform: scale(1.1); }
-.qa-card h6 { font-size: 0.82rem; font-weight: 700; color: var(--text-dark); margin: 0; }
-.qa-card p { font-size: 0.72rem; color: var(--text-light); margin: 3px 0 0; }
+.btn-sm-ek{padding:11px 20px;font-size:13.5px;}
+.btn-ek i{font-size:.95em;}
 
-/* ===== SECTIONS COMMON ===== */
-section { padding: 90px 0; }
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--blue-sky);
-  margin-bottom: 0.8rem;
-}
-.section-label::before {
-  content: '';
-  width: 24px; height: 2px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-}
-.section-title {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 900;
-  color: var(--text-dark);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-.section-sub { font-size: 1rem; color: var(--text-mid); max-width: 560px; line-height: 1.7; }
+/* magnetic wrapper used by JS */
+.magnetic{will-change:transform;}
 
-/* ===== ABOUT ===== */
-.about-section { background: var(--gray-soft); overflow: hidden; }
-.about-img-stack { position: relative; height: 500px; }
-.about-img-main {
-  width: 340px; height: 420px;
-  object-fit: cover;
-  border-radius: 30px 30px 100px 30px;
-  box-shadow: 0 24px 64px rgba(15,76,129,0.18);
-  position: absolute;
-  top: 0; left: 0;
+/* ---------- Preloader ---------- */
+#preloader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--c-primary);
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .6s var(--ease), visibility .6s var(--ease);
 }
-.about-img-secondary {
-  width: 220px; height: 260px;
-  object-fit: cover;
-  border-radius: 30px;
-  box-shadow: 0 16px 48px rgba(15,76,129,0.14);
-  position: absolute;
-  bottom: 0; right: 0;
-  border: 4px solid #fff;
+#preloader.loaded{opacity:0;visibility:hidden;}
+.preload-mark{
+  font-family:var(--font-display);
+  color:#fff;font-size:30px;letter-spacing:.02em;
+  display:flex;flex-direction:column;align-items:center;gap:14px;
 }
-.about-exp-badge {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) translateX(60px);
-  background: var(--gradient-primary);
-  color: #fff;
-  border-radius: 20px;
-  padding: 1.2rem 1.5rem;
-  text-align: center;
-  box-shadow: 0 12px 32px rgba(15,76,129,0.3);
-  z-index: 3;
+.preload-pulse{width:64px;height:30px;}
+.preload-pulse path{
+  stroke:var(--c-teal);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:140;stroke-dashoffset:140;
+  animation:drawPulse 1.4s ease-in-out infinite;
 }
-.about-exp-badge .num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; line-height: 1; }
-.about-exp-badge .lbl { font-size: 0.72rem; font-weight: 600; opacity: 0.9; }
-.about-feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--gray-mid);
-}
-.about-feature:last-child { border-bottom: none; }
-.about-feature-icon {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(15,76,129,0.08) 0%, rgba(61,169,252,0.1) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--blue-dark);
-  font-size: 1rem;
-  flex-shrink: 0;
-}
-.about-feature h6 { font-size: 0.9rem; font-weight: 700; color: var(--text-dark); margin-bottom: 2px; }
-.about-feature p { font-size: 0.82rem; color: var(--text-mid); margin: 0; }
-
-/* ===== SPECIALITIES ===== */
-.spec-card {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  background: #fff;
-  cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1.5px solid transparent;
-  height: 100%;
-}
-.spec-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-card); border-color: rgba(61,169,252,0.25); }
-.spec-card-img {
-  width: 100%; height: 160px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.spec-card:hover .spec-card-img { transform: scale(1.06); }
-.spec-card-body { padding: 1.2rem; }
-.spec-icon {
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(15,76,129,0.08), rgba(61,169,252,0.12));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--blue-dark);
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-  transition: all 0.3s;
-}
-.spec-card:hover .spec-icon { background: var(--gradient-primary); color: #fff; transform: rotate(10deg) scale(1.1); }
-.spec-card h5 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem; }
-.spec-card p { font-size: 0.8rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 1rem; }
-.spec-link { font-size: 0.8rem; font-weight: 600; color: var(--blue-sky); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.2s; }
-.spec-link:hover { gap: 10px; color: var(--blue-dark); }
-
-/* ===== DOCTORS ===== */
-.doctors-section { background: var(--gray-soft); }
-.doctor-card {
-  background: #fff;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.35s;
-  position: relative;
-  height: 100%;
-}
-.doctor-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card); }
-.doctor-img-wrap { position: relative; overflow: hidden; height: 260px; }
-.doctor-img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s; }
-.doctor-card:hover .doctor-img { transform: scale(1.05); }
-.doctor-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(15,76,129,0.85) 0%, transparent 50%);
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.doctor-card:hover .doctor-overlay { opacity: 1; }
-.doctor-social a {
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  margin-right: 6px;
-  transition: background 0.2s;
-  text-decoration: none;
-}
-.doctor-social a:hover { background: var(--blue-sky); }
-.doctor-body { padding: 1.2rem; }
-.doctor-body h5 { font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
-.doctor-spec { font-size: 0.8rem; color: var(--blue-sky); font-weight: 600; margin-bottom: 4px; }
-.doctor-qual { font-size: 0.78rem; color: var(--text-light); margin-bottom: 10px; }
-.doctor-exp {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(20,184,166,0.1);
-  color: #0d9488;
-  border-radius: 20px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-.btn-appt-sm {
-  background: var(--gradient-primary);
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 0.45rem 1.1rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  transition: all 0.3s;
-  cursor: pointer;
-  margin-top: 10px;
-  display: block;
-  text-align: center;
-}
-.btn-appt-sm:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(15,76,129,0.25); }
-
-/* ===== WHY CHOOSE US ===== */
-.why-card {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 2rem 1.5rem;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.35s;
-  border: 1.5px solid transparent;
-  height: 100%;
-  text-align: center;
-}
-.why-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card); border-color: rgba(61,169,252,0.2); }
-.why-icon {
-  width: 64px; height: 64px;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin: 0 auto 1.2rem;
-  background: linear-gradient(135deg, rgba(15,76,129,0.07) 0%, rgba(61,169,252,0.1) 100%);
-  color: var(--blue-dark);
-  transition: all 0.3s;
-}
-.why-card:hover .why-icon { background: var(--gradient-primary); color: #fff; transform: scale(1.1) rotate(-5deg); }
-.why-card h5 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.6rem; }
-.why-card p { font-size: 0.83rem; color: var(--text-mid); line-height: 1.65; margin: 0; }
-
-/* ===== JOURNEY SECTION ===== */
-.journey-section { background: var(--gray-soft); }
-.journey-timeline {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.journey-timeline::before {
-  content: '';
-  position: absolute;
-  top: 36px;
-  left: 5%;
-  width: 90%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--blue-dark), var(--blue-sky), var(--teal));
-  border-radius: 2px;
-  z-index: 0;
-}
-.journey-step {
-  flex: 1;
-  min-width: 120px;
-  max-width: 16%;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.journey-num {
-  width: 72px; height: 72px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 3px solid var(--blue-sky);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  font-weight: 900;
-  color: var(--blue-dark);
-  margin: 0 auto 1rem;
-  box-shadow: 0 8px 24px rgba(61,169,252,0.2);
-  transition: all 0.3s;
-}
-.journey-step:hover .journey-num { background: var(--gradient-primary); color: #fff; border-color: transparent; transform: scale(1.1); }
-.journey-step h6 { font-size: 0.85rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
-.journey-step p { font-size: 0.75rem; color: var(--text-light); }
-.journey-icon-sm {
-  width: 30px; height: 30px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 0.4rem;
-  color: #fff;
-  font-size: 0.75rem;
+@keyframes drawPulse{
+  0%{stroke-dashoffset:140;}
+  60%{stroke-dashoffset:0;}
+  100%{stroke-dashoffset:-140;}
 }
 
-/* ===== TESTIMONIALS ===== */
-.testimonials-section { background: linear-gradient(135deg, #0F4C81 0%, #1a6db0 100%); color: #fff; }
-.testimonials-section .section-title { color: #fff; }
-.testimonials-section .section-label { color: rgba(255,255,255,0.7); }
-.testimonials-section .section-label::before { background: rgba(255,255,255,0.4); }
-.testimonial-card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: var(--radius);
-  padding: 2rem;
-  height: 100%;
+/* ---------- Topbar ---------- */
+.topbar{
+  background:var(--c-primary-dim);
+  color:#cfe3f7;
+  font-size:13px;
+  padding:9px 0;
 }
-.testi-stars { color: #f59e0b; font-size: 0.85rem; margin-bottom: 1rem; }
-.testi-text { font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; font-style: italic; }
-.testi-author { display: flex; align-items: center; gap: 12px; }
-.testi-img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.3); }
-.testi-name { font-weight: 700; font-size: 0.9rem; color: #fff; }
-.testi-dept { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+.topbar .container-xl{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
+.topbar a{color:#fff;}
+.topbar-left{display:flex;gap:26px;flex-wrap:wrap;}
+.topbar-left span{display:inline-flex;align-items:center;gap:8px;}
+.topbar-left i{color:var(--c-teal);}
+.topbar-social a{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+  margin-left:6px;font-size:12px;
+  transition:background .3s;
+}
+.topbar-social a:hover{background:var(--c-teal);}
 
-/* ===== EMERGENCY ===== */
-.emergency-section {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  padding: 50px 0;
+/* ---------- Navbar ---------- */
+.ek-nav{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(15,76,129,.08);
+  transition:padding .35s var(--ease), box-shadow .35s var(--ease);
 }
-.emergency-section h2 { font-size: 2.2rem; font-weight: 900; color: #fff; }
-.emergency-section p { color: rgba(255,255,255,0.85); font-size: 1rem; }
-.emergency-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.ek-nav .container-xl{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px;transition:padding .35s var(--ease);}
+.ek-nav.scrolled{box-shadow:0 10px 30px -18px rgba(11,37,64,.25);}
+.ek-nav.scrolled .container-xl{padding-top:11px;padding-bottom:11px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{
+  width:46px;height:46px;border-radius:14px;
+  background:var(--grad-primary);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:19px;flex-shrink:0;
+  box-shadow:0 8px 18px -6px rgba(15,76,129,.55);
 }
-.pulse-ring {
-  width: 60px; height: 60px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-shrink: 0;
+.brand-text{display:flex;flex-direction:column;line-height:1.1;}
+.brand-text .name{font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--c-ink);}
+.brand-text .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;color:var(--c-muted);text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:34px;}
+.nav-links a{
+  font-size:14.5px;font-weight:500;color:var(--c-ink);
+  position:relative;padding:4px 0;
 }
-.pulse-ring::before, .pulse-ring::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.4);
-  animation: pulse-expand 2s ease-out infinite;
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;
+  background:var(--c-teal);transition:width .35s var(--ease);
 }
-.pulse-ring::after { animation-delay: 1s; }
-@keyframes pulse-expand {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(2); opacity: 0; }
+.nav-links a:hover::after{width:100%;}
+.nav-cta{display:flex;align-items:center;gap:14px;}
+.nav-emg{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:13px;color:var(--c-primary);font-weight:700;}
+.nav-emg i{color:var(--c-rose);}
+.nav-toggle{
+  display:none;width:46px;height:46px;border-radius:12px;border:1px solid var(--c-line);
+  background:#fff;align-items:center;justify-content:center;font-size:18px;color:var(--c-primary);cursor:pointer;
 }
-.btn-call-emergency {
-  background: #fff;
-  color: #dc2626;
-  border: none;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
-  transition: all 0.3s;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+@media (max-width:991px){
+  .nav-links{display:none;}
+  .nav-emg{display:none;}
+  .nav-toggle{display:flex;}
 }
-.btn-call-emergency:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
-
-/* ===== HEALTH PACKAGES ===== */
-.package-card {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 2rem;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.35s;
-  border: 2px solid transparent;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.package-card.featured { border-color: var(--blue-sky); }
-.package-card.featured::before {
-  content: 'POPULAR';
-  position: absolute;
-  top: 16px; right: -24px;
-  background: var(--gradient-primary);
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 0.3rem 2rem;
-  transform: rotate(45deg);
-}
-.package-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card); }
-.package-price { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--blue-dark); }
-.package-price span { font-size: 1rem; font-weight: 400; color: var(--text-light); font-family: 'DM Sans', sans-serif; }
-.package-item { display: flex; align-items: center; gap: 8px; font-size: 0.83rem; color: var(--text-mid); margin-bottom: 0.5rem; }
-.package-item i { color: var(--teal); font-size: 0.75rem; }
-
-/* ===== BLOG ===== */
-.blog-section { background: var(--gray-soft); }
-.blog-card {
-  background: #fff;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.35s;
-  height: 100%;
-}
-.blog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card); }
-.blog-img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.5s; overflow: hidden; }
-.blog-card:hover .blog-img { transform: scale(1.06); }
-.blog-body { padding: 1.4rem; }
-.blog-tag {
-  display: inline-block;
-  background: rgba(61,169,252,0.1);
-  color: var(--blue-sky);
-  border-radius: 20px;
-  padding: 0.2rem 0.8rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-}
-.blog-card h5 { font-size: 0.98rem; font-weight: 700; color: var(--text-dark); line-height: 1.4; margin-bottom: 0.6rem; }
-.blog-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 1rem; }
-.blog-meta { font-size: 0.75rem; color: var(--text-light); display: flex; align-items: center; gap: 12px; }
-
-/* ===== FAQ ===== */
-.faq-item {
-  border-radius: var(--radius-sm);
-  background: #fff;
-  margin-bottom: 0.8rem;
-  box-shadow: var(--shadow-soft);
-  overflow: hidden;
-}
-.faq-q {
-  padding: 1.1rem 1.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.92rem;
-  color: var(--text-dark);
-  transition: color 0.2s;
-}
-.faq-q:hover { color: var(--blue-dark); }
-.faq-q .icon {
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: var(--gray-soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  color: var(--blue-dark);
-  transition: all 0.3s;
-  flex-shrink: 0;
-}
-.faq-item.open .faq-q .icon { background: var(--gradient-primary); color: #fff; transform: rotate(45deg); }
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s;
-  font-size: 0.87rem;
-  color: var(--text-mid);
-  line-height: 1.7;
-  padding: 0 1.4rem;
-}
-.faq-item.open .faq-a { max-height: 200px; padding-bottom: 1.2rem; }
-
-/* ===== APPOINTMENT ===== */
-.appointment-section { background: linear-gradient(135deg, #EEF6FF 0%, #F0FDF9 100%); }
-.appt-form-wrap {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 3rem;
-  box-shadow: var(--shadow-card);
-}
-.form-group { margin-bottom: 1.2rem; }
-.form-label { font-size: 0.82rem; font-weight: 600; color: var(--text-mid); margin-bottom: 0.4rem; }
-.form-control, .form-select {
-  border: 1.5px solid var(--gray-mid);
-  border-radius: var(--radius-sm);
-  padding: 0.7rem 1rem;
-  font-size: 0.9rem;
-  color: var(--text-dark);
-  transition: all 0.2s;
-  background: var(--gray-soft);
-}
-.form-control:focus, .form-select:focus {
-  border-color: var(--blue-sky);
-  box-shadow: 0 0 0 3px rgba(61,169,252,0.12);
-  background: #fff;
-}
-.btn-submit {
-  background: var(--gradient-primary);
-  color: #fff;
-  border: none;
-  padding: 0.9rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  width: 100%;
-  box-shadow: 0 8px 24px rgba(15,76,129,0.2);
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.btn-submit:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(15,76,129,0.3); }
-
-/* ===== CONTACT ===== */
-.contact-card {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 2rem;
-  box-shadow: var(--shadow-soft);
-  height: 100%;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  transition: all 0.3s;
-}
-.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
-.contact-card-icon {
-  width: 52px; height: 52px;
-  border-radius: 14px;
-  background: var(--gradient-primary);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-.contact-card h6 { font-size: 0.85rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
-.contact-card p, .contact-card a { font-size: 0.85rem; color: var(--text-mid); margin: 0; text-decoration: none; display: block; line-height: 1.6; }
-.contact-card a:hover { color: var(--blue-sky); }
-.map-wrap { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-card); height: 340px; }
-.map-wrap iframe { width: 100%; height: 100%; border: none; }
-
-/* ===== FOOTER ===== */
-footer {
-  background: #0A1929;
-  color: rgba(255,255,255,0.75);
-  padding: 70px 0 0;
-}
-footer .logo-area h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: #fff; }
-footer .logo-area p { font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.7; }
-footer h5 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 1.2rem; }
-footer ul { list-style: none; padding: 0; margin: 0; }
-footer ul li { margin-bottom: 0.55rem; }
-footer ul li a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
-footer ul li a::before { content: '→'; font-size: 0.7rem; color: var(--blue-sky); }
-footer ul li a:hover { color: var(--blue-sky); }
-.footer-social a {
-  width: 38px; height: 38px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.07);
-  color: rgba(255,255,255,0.7);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
-  margin-right: 8px;
-  transition: all 0.2s;
-  text-decoration: none;
-}
-.footer-social a:hover { background: var(--gradient-primary); color: #fff; transform: translateY(-3px); }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-top: 50px;
-  padding: 20px 0;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
-}
-.newsletter-input-wrap { display: flex; gap: 8px; margin-top: 1rem; }
-.newsletter-input-wrap input {
-  flex: 1;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 10px;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  font-size: 0.85rem;
-  outline: none;
-}
-.newsletter-input-wrap input::placeholder { color: rgba(255,255,255,0.35); }
-.newsletter-input-wrap button {
-  background: var(--gradient-primary);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-/* RESPONSIVE */
-@media (max-width: 991px) {
-  .quick-actions-inner { grid-template-columns: repeat(3, 1fr); }
-  .journey-timeline::before { display: none; }
-  .hero-image-wrap { height: 400px; }
-  .hero-img-main { width: 280px; height: 360px; }
-  .about-img-stack { height: 360px; }
-  .about-img-main { width: 260px; height: 320px; }
-  .about-img-secondary { width: 170px; height: 200px; }
-}
-@media (max-width: 767px) {
-  .quick-actions-inner { grid-template-columns: repeat(3, 1fr); }
-  .hero-stats { gap: 1.5rem; }
-  .stat-divider { display: none; }
-  .hero-float-card { display: none; }
-  .appt-form-wrap { padding: 1.5rem; }
-  .journey-step { max-width: 45%; }
-}
-@media (max-width: 575px) {
-  .quick-actions-inner { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* AOS overrides */
-[data-aos] { pointer-events: none; }
-[data-aos].aos-animate { pointer-events: all; }
-
-/* Swiper */
-.swiper-pagination-bullet { background: rgba(255,255,255,0.4); }
-.swiper-pagination-bullet-active { background: #fff; }
-.swiper-button-next, .swiper-button-prev { color: var(--blue-dark) !important; }
+/* offcanvas custom look */
+.offcanvas-ek{background:#fff;width:300px;}
+.offcanvas-ek .nav-links{display:flex;flex-direction:column;align-items:flex-start;gap:6px;}
+.offcanvas-ek .nav-links a{padding:13px 4px;width:100%;font-size:16px;border-bottom:1px solid var(--c-line);}
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="navbar-top-bar">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="d-flex gap-4">
-      <span><i class="fas fa-phone-alt me-1"></i><a href="tel:+919876543210">+91 98765 43210</a></span>
-      <span class="d-none d-md-block"><i class="fas fa-envelope me-1"></i><a href="mailto:info@ekanamedicare.com">info@ekanamedicare.com</a></span>
+<div id="preloader">
+  <div class="preload-mark">
+    <svg class="preload-pulse" viewBox="0 0 120 50"><path d="M2 25h22l9-20 14 40 11-28 8 8h54"/></svg>
+    EKANA MEDICARE
+  </div>
+</div>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="container-xl">
+    <div class="topbar-left">
+      <span><i class="fa-solid fa-location-dot"></i> Ekana, Gomti Nagar Extension, Lucknow</span>
+      <span><i class="fa-solid fa-clock"></i> OPD: Mon–Sat, 9:00 AM – 8:00 PM</span>
+      <span><i class="fa-solid fa-envelope"></i> care@ekanamedicare.in</span>
     </div>
-    <div class="d-flex gap-3">
-      <span><i class="fas fa-clock me-1"></i>24/7 Emergency</span>
-      <span class="d-none d-md-block"><i class="fas fa-map-marker-alt me-1"></i>Lucknow, UP</span>
+    <div class="d-flex align-items-center gap-3">
+      <span><i class="fa-solid fa-phone"></i> <a href="tel:+915224567890">+91 522 456 7890</a></span>
+      <div class="topbar-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-      <div style="width:44px;height:44px;background:var(--gradient-primary);border-radius:12px;display:flex;align-items:center;justify-content:center;">
-        <i class="fas fa-heartbeat text-white" style="font-size:1.2rem;"></i>
-      </div>
-      <div>
-        <div class="brand-name">Ekana Medicare</div>
-        <div class="brand-sub">Multispeciality Hospital & Research Center</div>
-      </div>
+<!-- ============ NAVBAR ============ -->
+<header class="ek-nav" id="ekNav">
+  <div class="container-xl">
+    <a href="#home" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-staff-snake"></i></span>
+      <span class="brand-text">
+        <span class="name">Ekana Medicare</span>
+        <span class="tag">Multispeciality &amp; Research Center</span>
+      </span>
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#specialities">Specialities</a></li>
-        <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item ms-2">
-          <a href="#appointment" class="nav-link btn-appointment-nav">Book Appointment</a>
-        </li>
+
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#specialities">Specialities</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#blog">Health Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <span class="nav-emg"><i class="fa-solid fa-phone-volume"></i> Emergency: +91 98765 43210</span>
+      <a href="#appointment" class="btn-ek btn-primary-ek magnetic d-none d-sm-inline-flex">
+        <i class="fa-solid fa-calendar-check"></i> Book Appointment
+      </a>
+      <button class="nav-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#ekOffcanvas" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile offcanvas -->
+<div class="offcanvas offcanvas-end offcanvas-ek" tabindex="-1" id="ekOffcanvas">
+  <div class="offcanvas-header">
+    <span class="brand"><span class="brand-mark"><i class="fa-solid fa-staff-snake"></i></span>
+      <span class="brand-text"><span class="name">Ekana Medicare</span><span class="tag">Multispeciality</span></span>
+    </span>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="nav-links">
+      <a href="#about" data-bs-dismiss="offcanvas">About</a>
+      <a href="#specialities" data-bs-dismiss="offcanvas">Specialities</a>
+      <a href="#doctors" data-bs-dismiss="offcanvas">Doctors</a>
+      <a href="#facilities" data-bs-dismiss="offcanvas">Facilities</a>
+      <a href="#blog" data-bs-dismiss="offcanvas">Health Blog</a>
+      <a href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+    </nav>
+    <a href="#appointment" data-bs-dismiss="offcanvas" class="btn-ek btn-primary-ek w-100 justify-content-center mt-4">
+      <i class="fa-solid fa-calendar-check"></i> Book Appointment
+    </a>
+    <p class="mt-4 mb-0" style="color:var(--c-primary);font-weight:700;font-family:var(--font-mono);font-size:14px;">
+      <i class="fa-solid fa-phone-volume" style="color:var(--c-rose);"></i> Emergency: +91 98765 43210
+    </p>
+  </div>
+</div>
+
+<style>
+/* ============ HERO ============ */
+.hero{
+  position:relative;
+  padding:64px 0 0;
+  overflow:hidden;
+  background:var(--c-paper);
+}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-bg .blob{
+  position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;
+  animation:floatBlob 12s ease-in-out infinite;
+}
+.blob-1{width:420px;height:420px;background:radial-gradient(circle,var(--c-sky),transparent 70%);top:-140px;right:-80px;}
+.blob-2{width:340px;height:340px;background:radial-gradient(circle,var(--c-teal),transparent 70%);bottom:-120px;left:-100px;animation-delay:-4s;}
+@keyframes floatBlob{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(30px,-24px) scale(1.08);}}
+.hero-ecg{position:absolute;left:0;bottom:120px;width:100%;height:90px;opacity:.18;z-index:0;}
+.hero-ecg path{stroke:var(--c-primary);stroke-width:2;fill:none;}
+
+.hero-grid{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:50px;align-items:center;
+  padding-bottom:60px;
+}
+.trust-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#fff;border:1px solid var(--c-line);
+  padding:8px 18px 8px 8px;border-radius:100px;
+  box-shadow:var(--shadow-card);
+  font-size:13.5px;font-weight:600;color:var(--c-primary);
+  margin-bottom:26px;
+}
+.trust-badge .tb-icon{
+  width:26px;height:26px;border-radius:50%;background:var(--grad-teal);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;
+}
+.hero-title{font-size:clamp(36px,5.2vw,58px);max-width:580px;}
+.hero-title em{font-style:italic;font-weight:500;color:var(--c-primary);position:relative;}
+.hero-sub{max-width:480px;margin-top:22px;font-size:17px;}
+.hero-cta{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+
+.hero-stats{
+  display:flex;gap:0;margin-top:54px;padding-top:30px;
+  border-top:1px solid var(--c-line);max-width:560px;flex-wrap:wrap;
+}
+.stat-item{flex:1;min-width:120px;padding-right:18px;}
+.stat-num{
+  font-family:var(--font-mono);font-weight:700;font-size:clamp(24px,3vw,32px);
+  color:var(--c-primary);display:flex;align-items:baseline;gap:2px;
+}
+.stat-num .plus{color:var(--c-teal);}
+.stat-label{font-size:13px;color:var(--c-muted);margin-top:4px;}
+
+.hero-right{position:relative;}
+.hero-img-wrap{
+  position:relative;border-radius:var(--radius-xl);overflow:hidden;
+  box-shadow:var(--shadow-soft);
+  aspect-ratio:4/4.6;
+}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;}
+.hero-img-wrap::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(11,37,64,.55) 100%);
+}
+.experience-badge{
+  position:absolute;top:24px;right:24px;z-index:3;
+  background:#fff;border-radius:50%;width:104px;height:104px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-pop);text-align:center;
+}
+.experience-badge .num{font-family:var(--font-display);font-weight:700;color:var(--c-primary);font-size:22px;line-height:1;}
+.experience-badge .lbl{font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--c-muted);margin-top:4px;line-height:1.2;}
+
+.vitals-card{
+  position:absolute;left:-30px;bottom:30px;z-index:3;width:250px;
+  background:rgba(255,255,255,.7);
+  border:1px solid rgba(255,255,255,.5);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-radius:var(--radius-md);
+  padding:18px 20px;box-shadow:var(--shadow-soft);
+}
+.vitals-head{display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--c-primary);font-weight:700;margin-bottom:10px;}
+.vitals-head .live-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulseDot 1.8s infinite;}
+.vital-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-top:1px dashed var(--c-line);}
+.vital-row:first-of-type{border-top:none;}
+.vital-row .vl{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--c-ink);font-weight:600;}
+.vital-row .vl i{color:var(--c-teal);width:14px;text-align:center;}
+.vital-row .vv{font-family:var(--font-mono);font-weight:700;font-size:13px;color:var(--c-primary);}
+.mini-ecg{width:100%;height:26px;margin-top:8px;}
+.mini-ecg path{stroke:var(--c-rose);stroke-width:1.6;fill:none;stroke-dasharray:300;stroke-dashoffset:300;animation:ecgRun 2.4s linear infinite;}
+@keyframes ecgRun{to{stroke-dashoffset:-300;}}
+
+.float-icon{
+  position:absolute;width:54px;height:54px;border-radius:16px;
+  background:#fff;box-shadow:var(--shadow-pop);
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  animation:floatY 5s ease-in-out infinite;z-index:3;
+}
+.fi-1{top:6%;left:-8%;color:var(--c-rose);animation-delay:0s;}
+.fi-2{bottom:14%;right:-6%;color:var(--c-teal);animation-delay:-1.6s;}
+.fi-3{top:44%;right:-10%;color:var(--c-sky);animation-delay:-3.2s;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+
+@media (max-width:991px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-right{order:-1;max-width:420px;margin:0 auto 20px;}
+  .hero-title,.hero-sub,.hero-cta,.hero-stats{margin-left:auto;margin-right:auto;}
+  .vitals-card{left:50%;transform:translateX(-50%);bottom:-30px;}
+  .hero-stats{justify-content:space-between;}
+}
+@media (max-width:575px){
+  .float-icon{display:none;}
+  .experience-badge{width:84px;height:84px;}
+}
+</style>
+
+<!-- ============ HERO SECTION ============ -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <svg class="hero-ecg" viewBox="0 0 1200 90" preserveAspectRatio="none"><path d="M0 45h150l25-35 35 70 30-55 20 20h120l25-35 35 70 30-55 20 20h150l25-35 35 70 30-55 20 20h150l25-35 35 70 30-55 20 20h180"/></svg>
+  </div>
+
+  <div class="container-xl hero-grid">
+    <div class="hero-left" data-aos="fade-up" data-aos-duration="800">
+      <span class="trust-badge"><span class="tb-icon"><i class="fa-solid fa-shield-heart"></i></span> NABH-track Multispeciality Care · Lucknow</span>
+      <h1 class="hero-title">Advanced Healthcare <em>For Every Generation</em></h1>
+      <p class="hero-sub">Providing comprehensive multispeciality healthcare with experienced doctors, advanced technology, and compassionate care — right here in Gomti Nagar Extension.</p>
+
+      <div class="hero-cta">
+        <a href="#appointment" class="btn-ek btn-primary-ek magnetic"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a>
+        <a href="tel:+919876543210" class="btn-ek btn-emergency-ek magnetic"><i class="fa-solid fa-phone-volume"></i> Emergency Contact</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num" data-count="5000">0<span class="plus">+</span></div><div class="stat-label">Patients Treated</div></div>
+        <div class="stat-item"><div class="stat-num" data-count="25">0<span class="plus">+</span></div><div class="stat-label">Specialists</div></div>
+        <div class="stat-item"><div class="stat-num" data-count="15">0<span class="plus">+</span></div><div class="stat-label">Departments</div></div>
+        <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">Emergency Care</div></div>
+      </div>
+    </div>
+
+    <div class="hero-right" data-aos="fade-left" data-aos-duration="900">
+      <div class="hero-img-wrap">
+        <img class="ph-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=80" alt="Senior doctor at Ekana Medicare Hospital">
+      </div>
+      <div class="experience-badge"><span class="num">18+</span><span class="lbl">Years of<br>Trusted Care</span></div>
+      <div class="vitals-card">
+        <div class="vitals-head"><span><i class="fa-solid fa-wave-square"></i> Live Vitals</span><span class="live-dot"></span></div>
+        <div class="vital-row"><span class="vl"><i class="fa-solid fa-heart-pulse"></i> Heart Rate</span><span class="vv" id="vitalHr">72 bpm</span></div>
+        <div class="vital-row"><span class="vl"><i class="fa-solid fa-lungs"></i> SpO2</span><span class="vv" id="vitalSpo2">98%</span></div>
+        <div class="vital-row"><span class="vl"><i class="fa-solid fa-gauge-high"></i> BP</span><span class="vv">118/76</span></div>
+        <svg class="mini-ecg" viewBox="0 0 300 30" preserveAspectRatio="none"><path d="M0 15h30l8-10 10 20 8-16 6 6h40l8-10 10 20 8-16 6 6h40l8-10 10 20 8-16 6 6h40l8-10 10 20 8-16 6 6h40"/></svg>
+      </div>
+      <div class="float-icon fi-1"><i class="fa-solid fa-heart-pulse"></i></div>
+      <div class="float-icon fi-2"><i class="fa-solid fa-capsules"></i></div>
+      <div class="float-icon fi-3"><i class="fa-solid fa-user-doctor"></i></div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============ QUICK ACTION BAR ============ */
+.quick-actions{position:relative;z-index:2;margin-top:-46px;}
+.qa-panel{
+  background:#fff;border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-soft);
+  display:grid;grid-template-columns:repeat(6,1fr);
+  border:1px solid var(--c-line);
+  overflow:hidden;
+}
+.qa-item{
+  padding:26px 18px;text-align:center;
+  border-right:1px solid var(--c-line);
+  position:relative;cursor:pointer;
+  transition:transform .35s var(--ease), background .35s var(--ease);
+}
+.qa-item:last-child{border-right:none;}
+.qa-item::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  border:1.5px solid transparent;transition:border-color .35s;
+}
+.qa-item:hover{transform:translateY(-6px);background:linear-gradient(180deg,#fff,var(--c-soft));}
+.qa-item:hover::before{border-color:var(--c-teal);border-radius:var(--radius-lg);}
+.qa-icon{
+  width:52px;height:52px;border-radius:14px;margin:0 auto 14px;
+  background:var(--grad-primary);color:#fff;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .35s var(--ease);
+}
+.qa-item:nth-child(2) .qa-icon{background:var(--grad-teal);}
+.qa-item:nth-child(4) .qa-icon{background:linear-gradient(135deg,#3DA9FC,#0F4C81);}
+.qa-item:nth-child(6) .qa-icon{background:linear-gradient(135deg,#FF6B6B,#0F4C81);}
+.qa-item:hover .qa-icon{transform:translateY(-4px) rotate(-6deg);}
+.qa-item .qa-label{font-weight:600;font-size:13.5px;color:var(--c-ink);}
+.qa-item .qa-sub{font-size:11.5px;color:var(--c-muted);margin-top:3px;}
+
+@media (max-width:900px){.qa-panel{grid-template-columns:repeat(3,1fr);}.qa-item:nth-child(3n){border-right:none;}.qa-item:nth-child(-n+3){border-bottom:1px solid var(--c-line);}}
+@media (max-width:560px){.qa-panel{grid-template-columns:repeat(2,1fr);}.qa-item:nth-child(even){border-right:none;}.qa-item:nth-child(-n+4){border-bottom:1px solid var(--c-line);}}
+</style>
+
+<div class="container-xl quick-actions" data-aos="fade-up" data-aos-delay="100">
+  <div class="qa-panel">
+    <a href="#appointment" class="qa-item tilt"><span class="qa-icon"><i class="fa-solid fa-calendar-check"></i></span><div class="qa-label">Book Appointment</div><div class="qa-sub">Online &amp; walk-in</div></a>
+    <a href="#doctors" class="qa-item tilt"><span class="qa-icon"><i class="fa-solid fa-user-doctor"></i></span><div class="qa-label">Find a Doctor</div><div class="qa-sub">15+ departments</div></a>
+    <a href="tel:+919876543210" class="qa-item tilt"><span class="qa-icon"><i class="fa-solid fa-truck-medical"></i></span><div class="qa-label">Emergency Care</div><div class="qa-sub">24/7 response</div></a>
+    <a href="#testimonials" class="qa-item tilt"><span class="qa-icon"><i class="fa-solid fa-heart-circle-check"></i></span><div class="qa-label">Health Packages</div><div class="qa-sub">Full-body checkups</div></a>
+    <a href="#facilities" class="qa-item tilt"><span class="qa-icon"><i class="fa-solid fa-flask-vial"></i></span><div class="qa-label">Laboratory</div><div class="qa-sub">Reports in 24 hrs</div></a>
+    <a href="tel:+919876543210" class="qa-item tilt"><span class="qa-icon"><i class="fa-solid fa-ambulance"></i></span><div class="qa-label">Ambulance</div><div class="qa-sub">GPS-tracked fleet</div></a>
+  </div>
+</div>
+
+<style>
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:70px;align-items:center;}
+.about-media{position:relative;padding:0 24px 40px 0;}
+.about-img-main{
+  border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-soft);
+  aspect-ratio:5/5.6;
+}
+.about-img-main img{width:100%;height:100%;object-fit:cover;}
+.about-img-float{
+  position:absolute;width:46%;bottom:0;right:0;
+  border-radius:var(--radius-lg);overflow:hidden;border:6px solid #fff;
+  box-shadow:var(--shadow-pop);aspect-ratio:1/1;
+}
+.about-img-float img{width:100%;height:100%;object-fit:cover;}
+.about-stat-float{
+  position:absolute;top:18px;left:-16px;z-index:2;
+  background:rgba(255,255,255,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:var(--radius-md);padding:18px 22px;box-shadow:var(--shadow-soft);
+  display:flex;align-items:center;gap:14px;
+}
+.about-stat-float .asf-icon{width:46px;height:46px;border-radius:12px;background:var(--grad-teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.about-stat-float .asf-num{font-family:var(--font-mono);font-weight:700;color:var(--c-primary);font-size:20px;}
+.about-stat-float .asf-lbl{font-size:11.5px;color:var(--c-muted);}
+
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 32px;}
+.mv-card{background:var(--c-soft);border-radius:var(--radius-md);padding:24px;border:1px solid var(--c-line);}
+.mv-card i{font-size:22px;color:var(--c-teal);margin-bottom:12px;display:block;}
+.mv-card h4{font-size:17px;margin-bottom:8px;}
+.mv-card p{font-size:13.5px;}
+
+.why-list{display:grid;gap:13px;margin-bottom:36px;}
+.why-list li{display:flex;align-items:flex-start;gap:12px;list-style:none;font-size:14.5px;color:var(--c-ink);font-weight:500;}
+.why-list .wl-check{
+  width:22px;height:22px;border-radius:50%;background:var(--grad-primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;margin-top:1px;
+}
+.about-counters{display:flex;gap:0;border-top:1px solid var(--c-line);padding-top:28px;}
+.about-counters .stat-item{border-right:1px solid var(--c-line);}
+.about-counters .stat-item:last-child{border-right:none;}
+
+@media (max-width:991px){
+  .about-grid{grid-template-columns:1fr;gap:80px;}
+  .about-media{max-width:440px;margin:0 auto;padding:0 0 60px 0;}
+}
+@media (max-width:560px){
+  .mv-grid{grid-template-columns:1fr;}
+  .about-counters{flex-wrap:wrap;}
+  .about-counters .stat-item{min-width:45%;border-right:none;margin-bottom:14px;}
+}
+</style>
+
+<!-- ============ ABOUT SECTION ============ -->
+<section id="about" class="section-pad">
+  <div class="container-xl about-grid">
+    <div class="about-media" data-aos="fade-right">
+      <div class="about-img-main">
+        <img class="ph-img" src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80" alt="Ekana Medicare Hospital building">
+      </div>
+      <div class="about-img-float">
+        <img class="ph-img" src="https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=500&q=80" alt="Laboratory technician at Ekana Medicare">
+      </div>
+      <div class="about-stat-float">
+        <span class="asf-icon"><i class="fa-solid fa-face-smile"></i></span>
+        <div><div class="asf-num">97%</div><div class="asf-lbl">Patient Satisfaction</div></div>
+      </div>
+    </div>
+
+    <div class="about-content" data-aos="fade-left">
+      <span class="eyebrow">About Ekana Medicare</span>
+      <h2 class="sec-title">Care that combines <em>clinical depth</em> with genuine warmth</h2>
+      <p class="sec-sub" style="margin-bottom:30px;">Since opening our doors in Gomti Nagar Extension, Ekana Medicare Multispeciality Hospital &amp; Research Center has grown into one of Lucknow's most trusted healthcare destinations — built on three principles: experienced specialists, modern infrastructure, and a patient comes first philosophy.</p>
+
+      <div class="mv-grid">
+        <div class="mv-card"><i class="fa-solid fa-bullseye"></i><h4>Our Mission</h4><p>To deliver accessible, evidence-based multispeciality care with compassion, transparency, and respect for every patient who walks through our doors.</p></div>
+        <div class="mv-card"><i class="fa-solid fa-eye"></i><h4>Our Vision</h4><p>To be Uttar Pradesh's most trusted research-driven hospital, setting the benchmark for clinical excellence and patient experience.</p></div>
+      </div>
+
+      <ul class="why-list">
+        <li><span class="wl-check"><i class="fa-solid fa-check"></i></span> Board-certified specialists across 15+ departments</li>
+        <li><span class="wl-check"><i class="fa-solid fa-check"></i></span> Round-the-clock emergency &amp; critical care unit</li>
+        <li><span class="wl-check"><i class="fa-solid fa-check"></i></span> Modern diagnostics with digital, paperless reporting</li>
       </ul>
+
+      <div class="about-counters">
+        <div class="stat-item"><div class="stat-num" data-count="18">0<span class="plus">+</span></div><div class="stat-label">Years of Service</div></div>
+        <div class="stat-item"><div class="stat-num" data-count="200">0<span class="plus">+</span></div><div class="stat-label">Hospital Beds</div></div>
+        <div class="stat-item"><div class="stat-num" data-count="10000">0<span class="plus">+</span></div><div class="stat-label">Surgeries Done</div></div>
+      </div>
     </div>
   </div>
-</nav>
+</section>
 
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
-        <div class="trust-badge">
-          <span class="dot"></span>
-          NABH Accredited Hospital · Est. 2010
-        </div>
-        <h1 class="hero-title">
-          Advanced Healthcare<br>For <span>Every Generation</span>
-        </h1>
-        <p class="hero-sub">Providing comprehensive multispeciality healthcare with experienced doctors, advanced technology, and compassionate care at the heart of Lucknow.</p>
-        <div class="d-flex flex-wrap gap-3 mb-4">
-          <a href="#appointment" class="btn-primary-hero"><i class="fas fa-calendar-check"></i> Book Appointment</a>
-          <a href="tel:+919876543210" class="btn-outline-hero"><i class="fas fa-phone-alt"></i> Emergency: 98765 43210</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-num" data-count="5000">0</div>
-            <div class="stat-label">Patients Treated</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <div class="stat-num" data-count="25">0</div>
-            <div class="stat-label">Specialists</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <div class="stat-num" data-count="15">0</div>
-            <div class="stat-label">Departments</div>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <div class="stat-num">24/7</div>
-            <div class="stat-label">Emergency</div>
-          </div>
-        </div>
+<style>
+/* ============ SPECIALITIES ============ */
+.spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+.spec-card{
+  background:#fff;border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--c-line);box-shadow:var(--shadow-card);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.spec-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-soft);}
+.spec-media{position:relative;aspect-ratio:4/3;overflow:hidden;}
+.spec-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.spec-card:hover .spec-media img{transform:scale(1.1);}
+.spec-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(11,37,64,.5));}
+.spec-icon{
+  position:absolute;left:18px;bottom:-22px;z-index:2;
+  width:52px;height:52px;border-radius:14px;background:var(--grad-primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  box-shadow:0 10px 20px -8px rgba(15,76,129,.5);
+  transition:transform .45s var(--ease);
+}
+.spec-card:hover .spec-icon{transform:rotate(-8deg) scale(1.08);}
+.spec-body{padding:34px 22px 24px;}
+.spec-body h4{font-size:18px;margin-bottom:10px;}
+.spec-body p{font-size:13.5px;margin-bottom:16px;min-height:62px;}
+.spec-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--c-primary);}
+.spec-link i{transition:transform .35s var(--ease);font-size:11px;}
+.spec-card:hover .spec-link i{transform:translateX(5px);}
+
+@media (max-width:1100px){.spec-grid{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:768px){.spec-grid{grid-template-columns:repeat(2,1fr);gap:18px;}}
+@media (max-width:480px){.spec-grid{grid-template-columns:1fr;}}
+</style>
+
+<!-- ============ SPECIALITIES SECTION ============ -->
+<section id="specialities" class="section-pad bg-soft bg-mesh">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">What We Treat</span>
+      <h2 class="sec-title">15+ Specialities, <em>one</em> trusted address</h2>
+      <p class="sec-sub">From everyday illness to complex critical care — our departments work together under one roof, backed by experienced specialists and modern diagnostics.</p>
+    </div>
+
+    <div class="spec-grid">
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="0">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=500&q=80" alt="General Medicine"><span class="spec-icon"><i class="fa-solid fa-stethoscope"></i></span></div>
+        <div class="spec-body"><h4>General Medicine</h4><p>Comprehensive diagnosis and treatment for everyday illness, chronic conditions, and preventive health management.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-duration="900">
-        <div class="hero-image-wrap">
-          <div class="hero-blob"></div>
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=80" alt="Doctor" class="hero-img-main" loading="lazy">
-          <div class="hero-float-card">
-            <div class="float-icon blue"><i class="fas fa-user-md"></i></div>
-            <div>
-              <div class="float-label">Specialists Available</div>
-              <div class="float-val">25+ Doctors</div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="60">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=80" alt="Gynecology"><span class="spec-icon"><i class="fa-solid fa-venus"></i></span></div>
+        <div class="spec-body"><h4>Gynecology</h4><p>Compassionate women's health care covering routine screening, fertility concerns, and minimally invasive surgery.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="120">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=500&q=80" alt="Obstetrics"><span class="spec-icon"><i class="fa-solid fa-person-pregnant"></i></span></div>
+        <div class="spec-body"><h4>Obstetrics</h4><p>Personalised prenatal, delivery, and postnatal care from a dedicated maternity team, day or night.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="180">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=500&q=80" alt="Pediatrics"><span class="spec-icon"><i class="fa-solid fa-child-reaching"></i></span></div>
+        <div class="spec-body"><h4>Pediatrics</h4><p>Gentle, growth-focused care for infants, children, and adolescents — from vaccinations to specialist referrals.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="0">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80" alt="Orthopedics"><span class="spec-icon"><i class="fa-solid fa-bone"></i></span></div>
+        <div class="spec-body"><h4>Orthopedics</h4><p>Joint, spine, and sports-injury care including replacement surgery and structured physiotherapy programmes.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="60">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=500&q=80" alt="Cardiology"><span class="spec-icon"><i class="fa-solid fa-heart-pulse"></i></span></div>
+        <div class="spec-body"><h4>Cardiology</h4><p>Advanced cardiac diagnostics, interventional cardiology, and long-term heart-health monitoring under one team.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="120">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=500&q=80" alt="Neurology"><span class="spec-icon"><i class="fa-solid fa-brain"></i></span></div>
+        <div class="spec-body"><h4>Neurology</h4><p>Expert management of stroke, epilepsy, migraine, and neuro-degenerative disorders backed by digital imaging.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="180">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=80" alt="Dermatology"><span class="spec-icon"><i class="fa-solid fa-allergies"></i></span></div>
+        <div class="spec-body"><h4>Dermatology</h4><p>Medical and cosmetic skin care, from acne and allergies to advanced laser and aesthetic procedures.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="0">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=500&q=80" alt="ENT"><span class="spec-icon"><i class="fa-solid fa-ear-listen"></i></span></div>
+        <div class="spec-body"><h4>ENT</h4><p>Complete ear, nose, and throat care — hearing assessments, sinus treatment, and microsurgical procedures.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="60">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=500&q=80" alt="Emergency Medicine"><span class="spec-icon"><i class="fa-solid fa-truck-medical"></i></span></div>
+        <div class="spec-body"><h4>Emergency Medicine</h4><p>A round-the-clock trauma and critical-care unit staffed by emergency specialists and a GPS-tracked ambulance fleet.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="120">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=500&q=80" alt="Radiology"><span class="spec-icon"><i class="fa-solid fa-x-ray"></i></span></div>
+        <div class="spec-body"><h4>Radiology</h4><p>Digital X-ray, CT, MRI, and ultrasound imaging with fast, accurate reporting from senior radiologists.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+      <div class="spec-card tilt" data-aos="fade-up" data-aos-delay="180">
+        <div class="spec-media"><img class="ph-img" src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=500&q=80" alt="Physiotherapy"><span class="spec-icon"><i class="fa-solid fa-dumbbell"></i></span></div>
+        <div class="spec-body"><h4>Physiotherapy</h4><p>Customised rehabilitation programmes for post-surgical recovery, sports injuries, and chronic pain relief.</p><a href="#appointment" class="spec-link">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============ DOCTORS ============ */
+.sec-head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap;}
+.swiper-nav-ek{display:flex;gap:10px;}
+.swiper-nav-ek button{
+  width:46px;height:46px;border-radius:50%;border:1px solid var(--c-line);background:#fff;
+  color:var(--c-primary);font-size:15px;cursor:pointer;transition:.35s var(--ease);
+}
+.swiper-nav-ek button:hover{background:var(--c-primary);color:#fff;border-color:var(--c-primary);}
+
+.doc-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--c-line);box-shadow:var(--shadow-card);transition:transform .4s var(--ease),box-shadow .4s var(--ease);height:100%;}
+.doc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-soft);}
+.doc-media{position:relative;aspect-ratio:3/3.3;overflow:hidden;}
+.doc-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.doc-card:hover .doc-media img{transform:scale(1.07);}
+.doc-social{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateX(14px);transition:.4s var(--ease);}
+.doc-card:hover .doc-social{opacity:1;transform:translateX(0);}
+.doc-social a{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:var(--c-primary);font-size:12px;}
+.doc-tag{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);padding:5px 12px;border-radius:100px;font-size:11px;font-weight:700;color:var(--c-teal-dim);}
+.doc-body{padding:22px 22px 24px;}
+.doc-body h4{font-size:16.5px;}
+.doc-spec{color:var(--c-primary);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em;margin:5px 0 12px;}
+.doc-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--c-muted);border-top:1px dashed var(--c-line);padding-top:12px;}
+.doc-book{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;width:100%;padding:11px 0;border-radius:100px;border:1.5px solid var(--c-line);font-size:13px;font-weight:600;color:var(--c-primary);transition:.35s var(--ease);}
+.doc-card:hover .doc-book{background:var(--grad-primary);color:#fff;border-color:transparent;}
+.doctors-swiper{padding-bottom:8px;}
+.doctors-swiper .swiper-slide{height:auto;}
+</style>
+
+<!-- ============ DOCTORS SECTION ============ -->
+<section id="doctors" class="section-pad">
+  <div class="container-xl">
+    <div class="sec-head-row" data-aos="fade-up">
+      <div>
+        <span class="eyebrow">Meet Our Team</span>
+        <h2 class="sec-title">Specialists who <em>listen</em> first, treat second</h2>
+      </div>
+      <div class="swiper-nav-ek">
+        <button class="doc-prev" aria-label="Previous doctor"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="doc-next" aria-label="Next doctor"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <div class="swiper doctors-swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="doc-card">
+            <div class="doc-media">
+              <img class="ph-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=500&q=80" alt="Dr. Arvind Mehrotra">
+              <span class="doc-tag">Cardiology</span>
+              <div class="doc-social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-solid fa-envelope"></i></a></div>
+            </div>
+            <div class="doc-body">
+              <h4>Dr. Arvind Mehrotra</h4>
+              <div class="doc-spec">Senior Cardiologist</div>
+              <div class="doc-meta"><span>MD, DM Cardiology</span><span>22 yrs exp.</span></div>
+              <a href="#appointment" class="doc-book">Book Appointment</a>
             </div>
           </div>
-          <div class="hero-float-card">
-            <div class="float-icon teal"><i class="fas fa-star"></i></div>
-            <div>
-              <div class="float-label">Patient Satisfaction</div>
-              <div class="float-val">4.9 / 5 Rating</div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="doc-card">
+            <div class="doc-media">
+              <img class="ph-img" src="https://images.unsplash.com/photo-1587351021355-a479a299d2f9?auto=format&fit=crop&w=500&q=80" alt="Dr. Shalini Kapoor">
+              <span class="doc-tag">Gynecology</span>
+              <div class="doc-social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-solid fa-envelope"></i></a></div>
+            </div>
+            <div class="doc-body">
+              <h4>Dr. Shalini Kapoor</h4>
+              <div class="doc-spec">Gynecologist &amp; Obstetrician</div>
+              <div class="doc-meta"><span>MS, DGO</span><span>18 yrs exp.</span></div>
+              <a href="#appointment" class="doc-book">Book Appointment</a>
             </div>
           </div>
-          <div class="hero-float-card">
-            <div class="float-icon orange"><i class="fas fa-ambulance"></i></div>
-            <div>
-              <div class="float-label">Response Time</div>
-              <div class="float-val">&lt; 8 Minutes</div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="doc-card">
+            <div class="doc-media">
+              <img class="ph-img" src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=500&q=80" alt="Dr. Rajeev Saxena">
+              <span class="doc-tag">Orthopedics</span>
+              <div class="doc-social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-solid fa-envelope"></i></a></div>
+            </div>
+            <div class="doc-body">
+              <h4>Dr. Rajeev Saxena</h4>
+              <div class="doc-spec">Senior Orthopedic Surgeon</div>
+              <div class="doc-meta"><span>MS Ortho</span><span>20 yrs exp.</span></div>
+              <a href="#appointment" class="doc-book">Book Appointment</a>
             </div>
           </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="doc-card">
+            <div class="doc-media">
+              <img class="ph-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80" alt="Dr. Suresh Nair">
+              <span class="doc-tag">ENT</span>
+              <div class="doc-social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-solid fa-envelope"></i></a></div>
+            </div>
+            <div class="doc-body">
+              <h4>Dr. Suresh Nair</h4>
+              <div class="doc-spec">Senior ENT Surgeon</div>
+              <div class="doc-meta"><span>MS ENT</span><span>19 yrs exp.</span></div>
+              <a href="#appointment" class="doc-book">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="doc-card">
+            <div class="doc-media">
+              <img class="ph-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=80" alt="Dr. Neha Tandon">
+              <span class="doc-tag">Pediatrics</span>
+              <div class="doc-social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-solid fa-envelope"></i></a></div>
+            </div>
+            <div class="doc-body">
+              <h4>Dr. Neha Tandon</h4>
+              <div class="doc-spec">Senior Pediatrician</div>
+              <div class="doc-meta"><span>MD Pediatrics</span><span>15 yrs exp.</span></div>
+              <a href="#appointment" class="doc-book">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="doc-card">
+            <div class="doc-media">
+              <img class="ph-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=500&q=80" alt="Dr. Imran Siddiqui">
+              <span class="doc-tag">Neurology</span>
+              <div class="doc-social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-solid fa-envelope"></i></a></div>
+            </div>
+            <div class="doc-body">
+              <h4>Dr. Imran Siddiqui</h4>
+              <div class="doc-spec">Senior Neurologist</div>
+              <div class="doc-meta"><span>DM Neurology</span><span>17 yrs exp.</span></div>
+              <a href="#appointment" class="doc-book">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="doc-card">
+            <div class="doc-media">
+              <img class="ph-img" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=80" alt="Dr. Pooja Bhatnagar">
+              <span class="doc-tag">Dermatology</span>
+              <div class="doc-social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-solid fa-envelope"></i></a></div>
+            </div>
+            <div class="doc-body">
+              <h4>Dr. Pooja Bhatnagar</h4>
+              <div class="doc-spec">Consultant Dermatologist</div>
+              <div class="doc-meta"><span>MD Dermatology</span><span>12 yrs exp.</span></div>
+              <a href="#appointment" class="doc-book">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="doc-card">
+            <div class="doc-media">
+              <img class="ph-img" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=500&q=80" alt="Dr. Ananya Verma">
+              <span class="doc-tag">General Medicine</span>
+              <div class="doc-social"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-solid fa-envelope"></i></a></div>
+            </div>
+            <div class="doc-body">
+              <h4>Dr. Ananya Verma</h4>
+              <div class="doc-spec">Consultant Physician</div>
+              <div class="doc-meta"><span>MD Medicine</span><span>14 yrs exp.</span></div>
+              <a href="#appointment" class="doc-book">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============ WHY CHOOSE US ============ */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:50px 0;position:relative;}
+.why-card{position:relative;text-align:center;padding:8px 14px 0;}
+.why-card:not(:nth-child(4n+1))::before{
+  content:'';position:absolute;left:-50%;width:100%;top:40px;
+  border-top:2px dashed var(--c-line);z-index:0;
+}
+.why-icon-wrap{
+  position:relative;z-index:2;width:64px;height:64px;border-radius:50%;
+  background:#fff;border:2px solid var(--c-line);
+  display:flex;align-items:center;justify-content:center;font-size:23px;color:var(--c-primary);
+  margin:0 auto 18px;transition:.4s var(--ease);
+}
+.why-card:hover .why-icon-wrap{background:var(--grad-primary);color:#fff;border-color:transparent;transform:translateY(-5px) scale(1.05);}
+.why-title{font-weight:700;font-size:14.5px;margin-bottom:7px;color:var(--c-ink);}
+.why-text{font-size:12.5px;line-height:1.6;}
+
+@media (max-width:991px){
+  .why-grid{grid-template-columns:repeat(2,1fr);gap:44px 0;}
+  .why-card:not(:nth-child(4n+1))::before{content:none;}
+}
+@media (max-width:560px){.why-grid{grid-template-columns:1fr;}}
+
+/* ============ PATIENT JOURNEY ============ */
+.journey-track{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:20px;}
+.journey-line{position:absolute;top:34px;left:5%;right:5%;height:3px;background:var(--grad-primary);border-radius:3px;z-index:0;opacity:.35;}
+.journey-step{position:relative;z-index:1;text-align:center;padding:0 10px;}
+.journey-num{
+  width:68px;height:68px;border-radius:50%;background:#fff;border:3px solid var(--c-soft);
+  box-shadow:var(--shadow-card);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+  font-family:var(--font-mono);font-weight:700;font-size:20px;color:var(--c-primary);position:relative;
+  transition:.4s var(--ease);
+}
+.journey-step:hover .journey-num{background:var(--grad-primary);color:#fff;transform:translateY(-6px);}
+.journey-num i{position:absolute;bottom:-8px;right:-8px;width:28px;height:28px;border-radius:50%;background:var(--c-teal);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;border:3px solid #fff;}
+.journey-step h4{font-size:14.5px;margin-bottom:6px;}
+.journey-step p{font-size:12px;}
+
+@media (max-width:900px){
+  .journey-track{grid-template-columns:1fr;gap:34px;text-align:left;}
+  .journey-line{display:none;}
+  .journey-step{display:flex;align-items:flex-start;gap:18px;text-align:left;padding:0;}
+  .journey-num{margin:0;flex-shrink:0;}
+}
+</style>
+
+<!-- ============ WHY CHOOSE US SECTION ============ -->
+<section class="section-pad bg-soft">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">The Ekana Difference</span>
+      <h2 class="sec-title">Eight reasons families <em>choose</em> us, and stay</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0"><span class="why-icon-wrap"><i class="fa-solid fa-user-doctor"></i></span><div class="why-title">Experienced Specialists</div><p class="why-text">Senior consultants averaging over 15 years of practice.</p></div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="60"><span class="why-icon-wrap"><i class="fa-solid fa-building-shield"></i></span><div class="why-title">Modern Infrastructure</div><p class="why-text">200+ beds across spacious, sanitised patient floors.</p></div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="120"><span class="why-icon-wrap"><i class="fa-solid fa-microscope"></i></span><div class="why-title">Advanced Diagnostics</div><p class="why-text">In-house lab and imaging with 24-hour report turnaround.</p></div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="180"><span class="why-icon-wrap"><i class="fa-solid fa-truck-medical"></i></span><div class="why-title">Emergency Services</div><p class="why-text">24/7 trauma response with GPS-tracked ambulances.</p></div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0"><span class="why-icon-wrap"><i class="fa-solid fa-hand-holding-heart"></i></span><div class="why-title">Patient-Centric Care</div><p class="why-text">Treatment plans built around you, not a checklist.</p></div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="60"><span class="why-icon-wrap"><i class="fa-solid fa-indian-rupee-sign"></i></span><div class="why-title">Affordable Treatment</div><p class="why-text">Transparent billing with packages for every budget.</p></div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="120"><span class="why-icon-wrap"><i class="fa-solid fa-credit-card"></i></span><div class="why-title">Cashless Facilities</div><p class="why-text">Direct cashless settlement with major insurers and TPAs.</p></div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="180"><span class="why-icon-wrap"><i class="fa-solid fa-headset"></i></span><div class="why-title">24/7 Support</div><p class="why-text">A patient-care helpline that's always picking up.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATIENT JOURNEY SECTION ============ -->
+<section class="section-pad">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">Patient Journey</span>
+      <h2 class="sec-title">From first call to <em>full recovery</em></h2>
+      <p class="sec-sub">A clear, guided path — our care coordinators stay with you at every step.</p>
+    </div>
+
+    <div class="journey-track">
+      <div class="journey-line"></div>
+      <div class="journey-step" data-aos="fade-up" data-aos-delay="0"><div class="journey-num">01<i class="fa-solid fa-calendar-check"></i></div><h4>Book Appointment</h4><p>Online, app, or a single phone call.</p></div>
+      <div class="journey-step" data-aos="fade-up" data-aos-delay="60"><div class="journey-num">02<i class="fa-solid fa-comment-medical"></i></div><h4>Consultation</h4><p>One-on-one time with the right specialist.</p></div>
+      <div class="journey-step" data-aos="fade-up" data-aos-delay="120"><div class="journey-num">03<i class="fa-solid fa-magnifying-glass-chart"></i></div><h4>Diagnosis</h4><p>Fast, accurate testing and imaging on-site.</p></div>
+      <div class="journey-step" data-aos="fade-up" data-aos-delay="180"><div class="journey-num">04<i class="fa-solid fa-prescription-bottle-medical"></i></div><h4>Treatment</h4><p>A plan tailored to your condition and comfort.</p></div>
+      <div class="journey-step" data-aos="fade-up" data-aos-delay="240"><div class="journey-num">05<i class="fa-solid fa-bed-pulse"></i></div><h4>Recovery</h4><p>Attentive in-patient or day-care monitoring.</p></div>
+      <div class="journey-step" data-aos="fade-up" data-aos-delay="300"><div class="journey-num">06<i class="fa-solid fa-calendar-days"></i></div><h4>Follow-up Care</h4><p>Scheduled reviews to track long-term progress.</p></div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============ FACILITIES (masonry) ============ */
+.facility-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:160px;grid-auto-flow:dense;gap:18px;}
+.facility-item{position:relative;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card);}
+.facility-item.tall{grid-row:span 2;}
+.facility-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.facility-item:hover img{transform:scale(1.09);}
+.facility-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(11,37,64,.8));transition:.4s;}
+.facility-item:hover::after{background:linear-gradient(180deg,rgba(15,76,129,.25) 0%,rgba(11,37,64,.85) 100%);}
+.facility-label{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;}
+.facility-label .fl-icon{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;margin-bottom:8px;font-size:14px;}
+.facility-label h5{font-size:14.5px;font-weight:700;margin:0;}
+@media (max-width:900px){.facility-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:480px){.facility-grid{grid-template-columns:1fr;}.facility-item.tall{grid-row:span 1;}}
+
+/* ============ HEALTHCARE TECHNOLOGY (dark) ============ */
+.tech-section{background:linear-gradient(160deg,#0B2540 0%,#0F4C81 100%);color:#cfe3f7;overflow:hidden;position:relative;}
+.tech-section::before{content:'';position:absolute;top:-120px;right:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.28),transparent 70%);filter:blur(10px);}
+.tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
+.tech-section .eyebrow{color:#5EEAD4;}
+.tech-section .sec-title{color:#fff;}
+.tech-section .sec-title em{background:linear-gradient(135deg,#5EEAD4,#7DD3FC);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.tech-list{display:grid;gap:18px;margin-top:30px;}
+.tech-item{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:var(--radius-md);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:.35s;}
+.tech-item:hover{background:rgba(255,255,255,.09);transform:translateX(4px);}
+.tech-item .ti-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#14B8A6,#3DA9FC);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0;}
+.tech-item h4{color:#fff;font-size:15.5px;margin-bottom:4px;font-family:var(--font-body);font-weight:700;}
+.tech-item p{color:#9FBBD6;font-size:13px;}
+
+/* dashboard mockup */
+.dash-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:26px;backdrop-filter:blur(10px);box-shadow:0 30px 70px -30px rgba(0,0,0,.5);}
+.dash-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+.dash-head .dh-title{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#fff;font-weight:700;}
+.dash-head .dh-live{display:flex;align-items:center;gap:6px;font-size:11px;color:#5EEAD4;}
+.dash-head .dh-live span{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulseDot 1.8s infinite;}
+.dash-chart{width:100%;height:120px;margin-bottom:18px;}
+.dash-chart path.area{fill:url(#dashGrad);stroke:none;}
+.dash-chart path.line{fill:none;stroke:#5EEAD4;stroke-width:2.4;stroke-dasharray:600;stroke-dashoffset:600;animation:drawLine 2.6s var(--ease) forwards;}
+@keyframes drawLine{to{stroke-dashoffset:0;}}
+.dash-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;}
+.dash-tile{background:rgba(255,255,255,.06);border-radius:12px;padding:13px;text-align:center;}
+.dash-tile .dt-num{font-family:var(--font-mono);font-weight:700;color:#fff;font-size:18px;}
+.dash-tile .dt-lbl{font-size:10px;color:#9FBBD6;margin-top:4px;text-transform:uppercase;letter-spacing:.03em;}
+.dash-bar-row{margin-bottom:10px;}
+.dash-bar-row .dbr-top{display:flex;justify-content:space-between;font-size:12px;color:#cfe3f7;margin-bottom:6px;}
+.dash-bar-track{height:6px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden;}
+.dash-bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#14B8A6,#3DA9FC);width:0;transition:width 1.6s var(--ease);}
+
+@media (max-width:991px){.tech-grid{grid-template-columns:1fr;}}
+</style>
+
+<!-- ============ FACILITIES SECTION ============ -->
+<section id="facilities" class="section-pad bg-soft">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">Inside Ekana Medicare</span>
+      <h2 class="sec-title">Facilities built for <em>precision</em> and comfort</h2>
+    </div>
+
+    <div class="facility-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="facility-item tall"><img class="ph-img" src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=600&q=80" alt="ICU"><div class="facility-label"><span class="fl-icon"><i class="fa-solid fa-bed-pulse"></i></span><h5>ICU</h5></div></div>
+      <div class="facility-item"><img class="ph-img" src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=600&q=80" alt="Operation Theatre"><div class="facility-label"><span class="fl-icon"><i class="fa-solid fa-syringe"></i></span><h5>Operation Theatre</h5></div></div>
+      <div class="facility-item"><img class="ph-img" src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=600&q=80" alt="Pharmacy"><div class="facility-label"><span class="fl-icon"><i class="fa-solid fa-pills"></i></span><h5>Pharmacy</h5></div></div>
+      <div class="facility-item tall"><img class="ph-img" src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=600&q=80" alt="Laboratory"><div class="facility-label"><span class="fl-icon"><i class="fa-solid fa-flask-vial"></i></span><h5>Laboratory</h5></div></div>
+      <div class="facility-item"><img class="ph-img" src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=600&q=80" alt="Digital Diagnostics"><div class="facility-label"><span class="fl-icon"><i class="fa-solid fa-x-ray"></i></span><h5>Digital Diagnostics</h5></div></div>
+      <div class="facility-item"><img class="ph-img" src="https://images.unsplash.com/photo-1587745090718-1759588b2cb6?auto=format&fit=crop&w=600&q=80" alt="Ambulance"><div class="facility-label"><span class="fl-icon"><i class="fa-solid fa-ambulance"></i></span><h5>Ambulance</h5></div></div>
+      <div class="facility-item"><img class="ph-img" src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80" alt="Patient Rooms"><div class="facility-label"><span class="fl-icon"><i class="fa-solid fa-bed"></i></span><h5>Patient Rooms</h5></div></div>
+      <div class="facility-item tall"><img class="ph-img" src="https://images.unsplash.com/photo-1576091358884-1b4c5cbd0c5a?auto=format&fit=crop&w=600&q=80" alt="Waiting Lounge"><div class="facility-label"><span class="fl-icon"><i class="fa-solid fa-couch"></i></span><h5>Waiting Lounge</h5></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HEALTHCARE TECHNOLOGY SECTION ============ -->
+<section class="section-pad tech-section">
+  <div class="container-xl tech-grid">
+    <div data-aos="fade-right">
+      <span class="eyebrow">Healthcare Technology</span>
+      <h2 class="sec-title">Medicine, <em>monitored</em> in real time</h2>
+      <p class="sec-sub" style="color:#9FBBD6;">Every department runs on the same digital backbone — so your records, results, and care team are always in sync.</p>
+
+      <div class="tech-list">
+        <div class="tech-item"><span class="ti-icon"><i class="fa-solid fa-microchip"></i></span><div><h4>Advanced Medical Equipment</h4><p>Latest-generation imaging and surgical systems, serviced and calibrated routinely.</p></div></div>
+        <div class="tech-item"><span class="ti-icon"><i class="fa-solid fa-folder-open"></i></span><div><h4>Digital Patient Records</h4><p>Secure, paperless records accessible to your care team the moment you need them.</p></div></div>
+        <div class="tech-item"><span class="ti-icon"><i class="fa-solid fa-chart-line"></i></span><div><h4>Modern Diagnostics</h4><p>AI-assisted reporting that helps specialists catch what matters, faster.</p></div></div>
+        <div class="tech-item"><span class="ti-icon"><i class="fa-solid fa-video"></i></span><div><h4>Telemedicine Services</h4><p>Video consultations with our specialists for review visits and second opinions.</p></div></div>
+      </div>
+    </div>
+
+    <div data-aos="fade-left">
+      <div class="dash-card">
+        <div class="dash-head">
+          <span class="dh-title"><i class="fa-solid fa-heart-pulse"></i>&nbsp; Patient Monitor — Bed 14</span>
+          <span class="dh-live"><span></span> Live</span>
+        </div>
+        <svg class="dash-chart" viewBox="0 0 400 120" preserveAspectRatio="none">
+          <defs><linearGradient id="dashGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#14B8A6" stop-opacity=".35"/><stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/></linearGradient></defs>
+          <path class="area" d="M0 90 L30 70 L55 95 L80 50 L110 85 L140 40 L170 78 L200 60 L230 90 L260 45 L290 80 L320 55 L350 88 L400 65 L400 120 L0 120 Z"/>
+          <path class="line" d="M0 90 L30 70 L55 95 L80 50 L110 85 L140 40 L170 78 L200 60 L230 90 L260 45 L290 80 L320 55 L350 88 L400 65"/>
+        </svg>
+        <div class="dash-tiles">
+          <div class="dash-tile"><div class="dt-num">78</div><div class="dt-lbl">BPM</div></div>
+          <div class="dash-tile"><div class="dt-num">98%</div><div class="dt-lbl">SpO2</div></div>
+          <div class="dash-tile"><div class="dt-num">98.4°</div><div class="dt-lbl">Temp</div></div>
+        </div>
+        <div class="dash-bar-row"><div class="dbr-top"><span>Bed Occupancy</span><span>82%</span></div><div class="dash-bar-track"><div class="dash-bar-fill" data-fill="82"></div></div></div>
+        <div class="dash-bar-row"><div class="dbr-top"><span>Lab Reports Synced</span><span>94%</span></div><div class="dash-bar-track"><div class="dash-bar-fill" data-fill="94"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============ TESTIMONIALS ============ */
+.testi-swiper{padding:10px 4px 50px;}
+.test-card{
+  position:relative;background:rgba(255,255,255,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.6);border-radius:var(--radius-lg);padding:32px 28px;
+  box-shadow:var(--shadow-card);height:100%;
+}
+.test-card .tq{position:absolute;top:18px;right:24px;font-size:34px;color:var(--c-line);}
+.test-stars{color:#F5A524;font-size:13px;margin-bottom:16px;letter-spacing:2px;}
+.test-quote{font-size:14.5px;color:var(--c-ink);font-style:italic;margin-bottom:22px;min-height:90px;}
+.test-person{display:flex;align-items:center;gap:13px;border-top:1px solid var(--c-line);padding-top:16px;}
+.test-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #fff;box-shadow:var(--shadow-pop);}
+.test-person .tp-name{font-weight:700;font-size:13.5px;color:var(--c-ink);}
+.test-person .tp-loc{font-size:11.5px;color:var(--c-muted);}
+.testi-swiper .swiper-pagination-bullet{background:var(--c-primary);opacity:.3;}
+.testi-swiper .swiper-pagination-bullet-active{opacity:1;background:var(--c-teal);}
+
+/* ============ EMERGENCY BANNER ============ */
+.emergency-band{
+  background:linear-gradient(120deg,#C0392B 0%,#E74C3C 55%,#FF6B6B 100%);
+  padding:56px 0;position:relative;overflow:hidden;
+}
+.emergency-band::before{content:'';position:absolute;inset:0;background:var(--grad-mesh);opacity:.4;}
+.emg-flex{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+.emg-left{display:flex;align-items:center;gap:22px;color:#fff;}
+.emg-ring{position:relative;width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;}
+.emg-ring::before,.emg-ring::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.5);animation:ringPulse 2.4s infinite;}
+.emg-ring::after{animation-delay:1.2s;}
+@keyframes ringPulse{0%{transform:scale(1);opacity:.8;}100%{transform:scale(1.7);opacity:0;}}
+.emg-left h3{color:#fff;font-size:clamp(20px,2.6vw,28px);margin-bottom:6px;}
+.emg-left p{color:rgba(255,255,255,.85);font-size:14px;}
+.emg-number{font-family:var(--font-mono);font-weight:700;}
+.emg-right{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-white-ek{background:#fff;color:#E74C3C;}
+.btn-white-ek:hover{transform:translateY(-3px);}
+.btn-ghost-ek{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.5);}
+.btn-ghost-ek:hover{background:rgba(255,255,255,.22);transform:translateY(-3px);}
+</style>
+
+<!-- ============ TESTIMONIALS SECTION ============ -->
+<section id="testimonials" class="section-pad bg-mesh">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">Patient Stories</span>
+      <h2 class="sec-title">Real recoveries, in <em>their</em> own words</h2>
+    </div>
+
+    <div class="swiper testi-swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="test-card">
+            <i class="fa-solid fa-quote-left tq"></i>
+            <div class="test-stars">★★★★★</div>
+            <p class="test-quote">The cardiology team explained every step of my father's angioplasty. The follow-up calls afterwards meant a lot to our family.</p>
+            <div class="test-person"><img class="ph-img" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="Patient" class="test-avatar"><div><div class="tp-name">Rohit Awasthi</div><div class="tp-loc">Gomti Nagar, Lucknow</div></div></div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="test-card">
+            <i class="fa-solid fa-quote-left tq"></i>
+            <div class="test-stars">★★★★★</div>
+            <p class="test-quote">Delivered both my children at Ekana Medicare. The maternity ward staff were calm, attentive, and genuinely warm at 3 AM.</p>
+            <div class="test-person"><img class="ph-img" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=120&q=80" alt="Patient" class="test-avatar"><div><div class="tp-name">Priya Srivastava</div><div class="tp-loc">Indira Nagar, Lucknow</div></div></div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="test-card">
+            <i class="fa-solid fa-quote-left tq"></i>
+            <div class="test-stars">★★★★★</div>
+            <p class="test-quote">My knee replacement and physiotherapy plan were handled by the same team start to finish. I'm walking pain-free after 22 years.</p>
+            <div class="test-person"><img class="ph-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Patient" class="test-avatar"><div><div class="tp-name">Vikram Khanna</div><div class="tp-loc">Hazratganj, Lucknow</div></div></div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="test-card">
+            <i class="fa-solid fa-quote-left tq"></i>
+            <div class="test-stars">★★★★★</div>
+            <p class="test-quote">The emergency team stabilised my mother within minutes of arrival. Quick, organised, and reassuring throughout.</p>
+            <div class="test-person"><img class="ph-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Patient" class="test-avatar"><div><div class="tp-name">Anjali Tiwari</div><div class="tp-loc">Aliganj, Lucknow</div></div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMERGENCY BANNER ============ -->
+<section class="emergency-band" id="emergency">
+  <div class="container-xl emg-flex">
+    <div class="emg-left">
+      <span class="emg-ring"><i class="fa-solid fa-truck-medical"></i></span>
+      <div>
+        <h3>Medical Emergency? We're here, 24&times;7.</h3>
+        <p>Call now — <span class="emg-number">+91 98765 43210</span> · GPS-tracked ambulances across Lucknow</p>
+      </div>
+    </div>
+    <div class="emg-right">
+      <a href="tel:+919876543210" class="btn-ek btn-white-ek magnetic"><i class="fa-solid fa-phone"></i> Call Now</a>
+      <a href="#contact" class="btn-ek btn-ghost-ek magnetic"><i class="fa-solid fa-ambulance"></i> Request Ambulance</a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============ HEALTH BLOG ============ */
+.blog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+.blog-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--c-line);box-shadow:var(--shadow-card);transition:transform .4s var(--ease),box-shadow .4s var(--ease);}
+.blog-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-soft);}
+.blog-media{position:relative;aspect-ratio:4/3;overflow:hidden;}
+.blog-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.blog-card:hover .blog-media img{transform:scale(1.1);}
+.blog-tag{position:absolute;left:14px;top:14px;background:#fff;padding:5px 13px;border-radius:100px;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--c-teal-dim);z-index:2;}
+.blog-body{padding:22px;}
+.blog-meta{display:flex;gap:14px;font-size:11.5px;color:var(--c-muted);margin-bottom:10px;}
+.blog-meta span{display:flex;align-items:center;gap:5px;}
+.blog-body h4{font-size:16px;line-height:1.4;margin-bottom:10px;}
+.blog-body p{font-size:13px;margin-bottom:16px;}
+.blog-read{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--c-primary);}
+.blog-read i{font-size:10px;transition:transform .35s var(--ease);}
+.blog-card:hover .blog-read i{transform:translateX(5px);}
+@media (max-width:1100px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.blog-grid{grid-template-columns:1fr;}}
+
+/* ============ FAQ ============ */
+.faq-wrap{max-width:760px;margin:0 auto;}
+.accordion-ek .accordion-item{border:1px solid var(--c-line);border-radius:var(--radius-md)!important;margin-bottom:14px;overflow:hidden;background:#fff;}
+.accordion-ek .accordion-button{
+  font-family:var(--font-body);font-weight:600;font-size:15.5px;color:var(--c-ink);
+  padding:20px 24px;box-shadow:none!important;background:#fff;
+}
+.accordion-ek .accordion-button:not(.collapsed){color:var(--c-primary);background:var(--c-soft);}
+.accordion-ek .accordion-button::after{
+  background-image:none;content:'\f067';font-family:'Font Awesome 6 Free';font-weight:900;font-size:13px;
+  color:var(--c-primary);transition:transform .35s var(--ease);width:auto;height:auto;
+}
+.accordion-ek .accordion-button:not(.collapsed)::after{content:'\f068';transform:rotate(180deg);}
+.accordion-ek .accordion-body{padding:0 24px 22px;font-size:14px;color:var(--c-muted);line-height:1.75;}
+.accordion-ek .accordion-button:focus{box-shadow:none;}
+</style>
+
+<!-- ============ HEALTH BLOG SECTION ============ -->
+<section id="blog" class="section-pad bg-soft">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">Health Blog</span>
+      <h2 class="sec-title">Tips worth <em>reading</em>, from our own doctors</h2>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="blog-media"><span class="blog-tag">Heart Health</span><img class="ph-img" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=500&q=80" alt="Heart-healthy habits"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> 12 Jun 2026</span><span><i class="fa-regular fa-user"></i> Dr. Mehrotra</span></div>
+          <h4>5 Heart-Healthy Habits for a Stronger Tomorrow</h4>
+          <p>Small, consistent changes that meaningfully lower long-term cardiac risk.</p>
+          <a href="#" class="blog-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="blog-media"><span class="blog-tag">Child Care</span><img class="ph-img" src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=500&q=80" alt="Childhood vaccination"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> 03 Jun 2026</span><span><i class="fa-regular fa-user"></i> Dr. Tandon</span></div>
+          <h4>Understanding Childhood Vaccination Schedules</h4>
+          <p>A simple, age-wise guide every new parent should keep handy.</p>
+          <a href="#" class="blog-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="blog-media"><span class="blog-tag">Lifestyle</span><img class="ph-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=500&q=80" alt="Diabetes management"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> 27 May 2026</span><span><i class="fa-regular fa-user"></i> Dr. Verma</span></div>
+          <h4>Managing Diabetes During Festive Season</h4>
+          <p>Enjoy celebrations without losing control of your blood sugar.</p>
+          <a href="#" class="blog-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="180">
+        <div class="blog-media"><span class="blog-tag">Orthopedics</span><img class="ph-img" src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=500&q=80" alt="Orthopedic specialist visit"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> 19 May 2026</span><span><i class="fa-regular fa-user"></i> Dr. Saxena</span></div>
+          <h4>When Should You See an Orthopedic Specialist?</h4>
+          <p>Warning signs that joint or back pain needs more than rest.</p>
+          <a href="#" class="blog-read">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ SECTION ============ -->
+<section id="faq" class="section-pad">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">Good to Know</span>
+      <h2 class="sec-title">Frequently asked <em>questions</em></h2>
+    </div>
+
+    <div class="faq-wrap" data-aos="fade-up" data-aos-delay="100">
+      <div class="accordion accordion-ek" id="faqAccordion">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How do I book an appointment at Ekana Medicare?</button></h2>
+          <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">You can book through the appointment form on this page, call our helpline at +91 522 456 7890, or simply walk in to our reception during OPD hours. We'll confirm your slot with the specialist of your choice over SMS.</div></div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Do you offer cashless treatment with insurance?</button></h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. We have direct cashless tie-ups with most major insurers and TPAs in India. Our insurance desk will verify your policy and handle pre-authorisation on your behalf before admission.</div></div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">How fast is your emergency response?</button></h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Our emergency department is staffed 24/7 with a trauma-trained team. GPS-tracked ambulances are dispatched within minutes of your call, and patients are triaged the moment they arrive.</div></div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What's included in your health checkup packages?</button></h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Packages range from basic screenings to comprehensive full-body checkups covering blood work, imaging, ECG, and a physician consultation. Our front desk can recommend one based on your age and history.</div></div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">What are your visiting hours for in-patients?</button></h2>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">General visiting hours are 11:00 AM–1:00 PM and 5:00 PM–7:00 PM daily. ICU visiting is restricted to immediate family for short windows, coordinated with the duty nurse.</div></div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Can I consult a doctor online?</button></h2>
+          <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes, select specialists offer video consultations for follow-ups and second opinions. Mention "telemedicine" when booking and our team will share a secure video link before your slot.</div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ============ APPOINTMENT ============ */
+.appoint-card{display:grid;grid-template-columns:1.15fr .85fr;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-soft);}
+.appoint-form-pane{background:#fff;padding:56px 50px;}
+.appoint-form-pane .eyebrow{margin-bottom:10px;}
+.appoint-form-pane h3{font-size:clamp(24px,3vw,30px);margin-bottom:8px;}
+.appoint-form-pane > p{font-size:14.5px;margin-bottom:32px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.form-grid .full{grid-column:1/-1;}
+.fg{margin-bottom:20px;}
+.fg label{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--c-muted);font-weight:700;margin-bottom:8px;}
+.fg .form-control,.fg .form-select{
+  border:1.5px solid var(--c-line);border-radius:var(--radius-sm);padding:13px 16px;font-size:14.5px;
+  font-family:var(--font-body);color:var(--c-ink);box-shadow:none;
+}
+.fg .form-control:focus,.fg .form-select:focus{border-color:var(--c-teal);box-shadow:0 0 0 4px rgba(20,184,166,.12);}
+.fg textarea.form-control{min-height:96px;resize:vertical;}
+.was-validated .form-control:invalid,.was-validated .form-select:invalid{border-color:var(--c-rose);}
+.was-validated .form-control:valid,.was-validated .form-select:valid{border-color:#22c55e;}
+#appointSuccess{display:none;text-align:center;padding:30px 0;}
+#appointSuccess .as-icon{width:70px;height:70px;border-radius:50%;background:rgba(34,197,94,.12);color:#22c55e;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+
+.appoint-info-pane{background:var(--grad-primary);color:#fff;padding:56px 42px;position:relative;overflow:hidden;}
+.appoint-info-pane::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08);}
+.appoint-info-pane::after{content:'';position:absolute;bottom:-100px;left:-60px;width:220px;height:220px;border-radius:50%;background:rgba(20,184,166,.18);}
+.appoint-info-pane h4{color:#fff;font-size:21px;margin-bottom:14px;position:relative;z-index:1;}
+.appoint-info-pane > p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:30px;position:relative;z-index:1;}
+.info-line{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;position:relative;z-index:1;}
+.info-line .il-icon{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;}
+.info-line .il-t{font-weight:700;font-size:14px;margin-bottom:3px;}
+.info-line .il-d{font-size:12.5px;color:rgba(255,255,255,.75);}
+.hours-card{position:relative;z-index:1;background:rgba(255,255,255,.1);border-radius:var(--radius-md);padding:18px 20px;margin-top:30px;}
+.hours-card .hr-row{display:flex;justify-content:space-between;font-size:12.5px;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.2);}
+.hours-card .hr-row:last-child{border-bottom:none;}
+.hours-card .hr-row span:first-child{color:rgba(255,255,255,.75);}
+.hours-card .hr-row span:last-child{font-weight:700;}
+
+@media (max-width:900px){.appoint-card{grid-template-columns:1fr;}.appoint-form-pane,.appoint-info-pane{padding:40px 28px;}}
+@media (max-width:560px){.form-grid{grid-template-columns:1fr;}}
+
+/* ============ CONTACT ============ */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:stretch;}
+.contact-cards{display:grid;gap:18px;}
+.c-card{background:#fff;border:1px solid var(--c-line);border-radius:var(--radius-md);padding:22px;display:flex;gap:16px;align-items:flex-start;box-shadow:var(--shadow-card);transition:.35s var(--ease);}
+.c-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft);}
+.c-card .cc-icon{width:48px;height:48px;border-radius:13px;background:var(--grad-teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.c-card h5{font-size:15px;margin-bottom:5px;}
+.c-card p{font-size:13.5px;margin:0;}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--c-line);min-height:380px;}
+.map-wrap iframe{width:100%;height:100%;min-height:380px;border:0;display:block;}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+</style>
+
+<!-- ============ APPOINTMENT SECTION ============ -->
+<section id="appointment" class="section-pad bg-soft bg-mesh">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">Book a Visit</span>
+      <h2 class="sec-title">Let's get you the <em>right</em> specialist</h2>
+    </div>
+
+    <div class="appoint-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="appoint-form-pane">
+
+        <div id="appointFormWrap">
+          <span class="eyebrow">Appointment Form</span>
+          <h3>Schedule your consultation</h3>
+          <p>Fill in your details and our care coordinator will confirm your slot by phone within 30 minutes during OPD hours.</p>
+
+          <form id="appointForm" class="needs-validation" novalidate>
+            <div class="form-grid">
+              <div class="fg"><label for="apName">Full Name</label><input type="text" id="apName" class="form-control" required></div>
+              <div class="fg"><label for="apMobile">Mobile Number</label><input type="tel" id="apMobile" class="form-control" pattern="[0-9]{10}" placeholder="10-digit number" required></div>
+              <div class="fg"><label for="apDept">Department</label>
+                <select id="apDept" class="form-select" required>
+                  <option value="" selected disabled>Choose department</option>
+                  <option>General Medicine</option><option>Gynecology</option><option>Obstetrics</option><option>Pediatrics</option>
+                  <option>Orthopedics</option><option>Cardiology</option><option>Neurology</option><option>Dermatology</option>
+                  <option>ENT</option><option>Emergency Medicine</option><option>Radiology</option><option>Physiotherapy</option>
+                </select>
+              </div>
+              <div class="fg"><label for="apDoctor">Preferred Doctor (optional)</label>
+                <select id="apDoctor" class="form-select">
+                  <option value="" selected>Any available specialist</option>
+                  <option>Dr. Arvind Mehrotra</option><option>Dr. Shalini Kapoor</option><option>Dr. Rajeev Saxena</option>
+                  <option>Dr. Neha Tandon</option><option>Dr. Imran Siddiqui</option><option>Dr. Pooja Bhatnagar</option>
+                  <option>Dr. Suresh Nair</option><option>Dr. Ananya Verma</option>
+                </select>
+              </div>
+              <div class="fg"><label for="apDate">Preferred Date</label><input type="date" id="apDate" class="form-control" required></div>
+              <div class="fg"><label for="apTime">Preferred Time</label><input type="time" id="apTime" class="form-control" required></div>
+              <div class="fg full"><label for="apMsg">Message (optional)</label><textarea id="apMsg" class="form-control" placeholder="Briefly describe your symptoms or concern"></textarea></div>
+            </div>
+            <button type="submit" class="btn-ek btn-primary-ek w-100 justify-content-center magnetic"><i class="fa-solid fa-calendar-check"></i> Confirm Appointment</button>
+          </form>
+        </div>
+
+        <div id="appointSuccess">
+          <div class="as-icon"><i class="fa-solid fa-check"></i></div>
+          <h3>Request received!</h3>
+          <p>Thank you — our care coordinator will call you shortly to confirm your appointment.</p>
+        </div>
+
+      </div>
+
+      <div class="appoint-info-pane">
+        <span class="eyebrow" style="color:#5EEAD4;">Need Help Booking?</span>
+        <h4>Talk to our care coordinators</h4>
+        <p>Prefer a human touch? Call, WhatsApp, or walk in — our front desk is happy to guide you to the right department.</p>
+
+        <div class="info-line"><span class="il-icon"><i class="fa-solid fa-phone"></i></span><div><div class="il-t">Call Reception</div><div class="il-d">+91 522 456 7890</div></div></div>
+        <div class="info-line"><span class="il-icon"><i class="fa-brands fa-whatsapp"></i></span><div><div class="il-t">WhatsApp Us</div><div class="il-d">+91 98765 43210</div></div></div>
+        <div class="info-line"><span class="il-icon"><i class="fa-solid fa-truck-medical"></i></span><div><div class="il-t">Emergency Line</div><div class="il-d">Available 24/7</div></div></div>
+
+        <div class="hours-card">
+          <div class="hr-row"><span>Mon – Sat</span><span>9:00 AM – 8:00 PM</span></div>
+          <div class="hr-row"><span>Sunday</span><span>10:00 AM – 2:00 PM</span></div>
+          <div class="hr-row"><span>Emergency</span><span>24 / 7</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUICK ACTIONS -->
-<div class="quick-actions">
-  <div class="container">
-    <div class="quick-actions-inner">
-      <div class="qa-card" onclick="document.querySelector('#appointment').scrollIntoView({behavior:'smooth'})">
-        <div class="qa-icon"><i class="fas fa-calendar-check"></i></div>
-        <h6>Book Appointment</h6>
-        <p>Quick scheduling</p>
+<!-- ============ CONTACT SECTION ============ -->
+<section id="contact" class="section-pad">
+  <div class="container-xl">
+    <div class="sec-head center" data-aos="fade-up">
+      <span class="eyebrow">Find Us</span>
+      <h2 class="sec-title">Visit Ekana Medicare, <em>Lucknow</em></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-cards" data-aos="fade-right">
+        <div class="c-card"><span class="cc-icon"><i class="fa-solid fa-location-dot"></i></span><div><h5>Address</h5><p>Ekana Medicare Multispeciality Hospital &amp; Research Center, Near Ekana International Cricket Stadium, Gomti Nagar Extension, Lucknow, Uttar Pradesh – 226010</p></div></div>
+        <div class="c-card"><span class="cc-icon"><i class="fa-solid fa-phone"></i></span><div><h5>Phone</h5><p>Reception: +91 522 456 7890<br>Emergency: +91 98765 43210</p></div></div>
+        <div class="c-card"><span class="cc-icon"><i class="fa-solid fa-envelope"></i></span><div><h5>Email</h5><p>care@ekanamedicare.in<br>appointments@ekanamedicare.in</p></div></div>
+        <div class="c-card"><span class="cc-icon"><i class="fa-solid fa-clock"></i></span><div><h5>Working Hours</h5><p>OPD: Mon–Sat, 9 AM–8 PM<br>Emergency: Open 24 × 7</p></div></div>
       </div>
-      <div class="qa-card">
-        <div class="qa-icon"><i class="fas fa-user-md"></i></div>
-        <h6>Find Doctor</h6>
-        <p>25+ specialists</p>
-      </div>
-      <div class="qa-card">
-        <div class="qa-icon" style="background: linear-gradient(135deg, rgba(220,38,38,0.1), rgba(239,68,68,0.15)); color:#dc2626;"><i class="fas fa-ambulance"></i></div>
-        <h6>Emergency Care</h6>
-        <p>24/7 available</p>
-      </div>
-      <div class="qa-card">
-        <div class="qa-icon"><i class="fas fa-box"></i></div>
-        <h6>Health Packages</h6>
-        <p>Complete checkups</p>
-      </div>
-      <div class="qa-card">
-        <div class="qa-icon"><i class="fas fa-flask"></i></div>
-        <h6>Laboratory</h6>
-        <p>Advanced testing</p>
-      </div>
-      <div class="qa-card">
-        <div class="qa-icon"><i class="fas fa-truck-medical"></i></div>
-        <h6>Ambulance</h6>
-        <p>Swift response</p>
+
+      <div class="map-wrap" data-aos="fade-left">
+        <iframe src="https://www.google.com/maps?q=Ekana+International+Cricket+Stadium,+Lucknow&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ekana Medicare location map"></iframe>
       </div>
     </div>
   </div>
+</section>
+
+<style>
+section[id]{scroll-margin-top:84px;}
+
+/* ============ FLOATING ACTION BUTTONS ============ */
+.float-actions{position:fixed;right:22px;bottom:22px;z-index:950;display:flex;flex-direction:column;gap:14px;align-items:center;}
+.fab-btn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px;color:#fff;box-shadow:var(--shadow-pop);transition:transform .35s var(--ease);position:relative;}
+.fab-btn:hover{transform:scale(1.1);}
+.fab-btn.whatsapp{background:#25D366;}
+.fab-btn.call{background:var(--c-rose);}
+.fab-btn.call::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,107,107,.6);animation:ringPulse 2.2s infinite;}
+#backToTop{
+  width:44px;height:44px;border-radius:50%;background:#fff;color:var(--c-primary);border:1px solid var(--c-line);
+  display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:.35s var(--ease);box-shadow:var(--shadow-card);
+}
+#backToTop.show{opacity:1;visibility:visible;transform:translateY(0);}
+
+/* ============ FOOTER ============ */
+.site-footer{background:linear-gradient(180deg,#0B2540 0%,#06182C 100%);color:#9FBBD6;padding-top:90px;position:relative;overflow:hidden;}
+.footer-ecg{position:absolute;top:0;left:0;width:100%;height:46px;opacity:.5;}
+.footer-ecg path{stroke:var(--c-teal);stroke-width:2;fill:none;}
+.footer-grid{display:grid;grid-template-columns:1.3fr .85fr .85fr 1.1fr;gap:50px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.08);position:relative;z-index:1;}
+.footer-brand .brand-text .name{color:#fff;}
+.footer-brand .brand-text .tag{color:#7C9AB8;}
+.footer-about{font-size:13.5px;margin:18px 0 22px;color:#9FBBD6;max-width:280px;}
+.footer-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;justify-content:center;margin-right:8px;color:#fff;transition:.3s;font-size:14px;}
+.footer-social a:hover{background:var(--c-teal);}
+.footer-col h5{color:#fff;font-size:14.5px;margin-bottom:22px;font-family:var(--font-body);font-weight:700;letter-spacing:.02em;}
+.footer-links li{margin-bottom:12px;list-style:none;}
+.footer-links a{font-size:13.5px;color:#9FBBD6;transition:.3s;display:inline-block;}
+.footer-links a:hover{color:#5EEAD4;transform:translateX(3px);}
+.footer-contact li{display:flex;gap:10px;margin-bottom:15px;font-size:13px;list-style:none;align-items:flex-start;color:#9FBBD6;}
+.footer-contact i{color:var(--c-teal);margin-top:3px;width:14px;}
+.newsletter-form{display:flex;margin-top:8px;border-radius:100px;background:rgba(255,255,255,.08);padding:5px 5px 5px 18px;border:1px solid rgba(255,255,255,.1);}
+.newsletter-form input{flex:1;background:transparent;border:none;color:#fff;font-size:13px;outline:none;}
+.newsletter-form input::placeholder{color:#7C9AB8;}
+.newsletter-form button{width:38px;height:38px;border-radius:50%;background:var(--grad-teal);color:#fff;border:none;flex-shrink:0;cursor:pointer;font-size:13px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-size:12.5px;flex-wrap:wrap;gap:10px;position:relative;z-index:1;color:#7C9AB8;}
+.footer-bottom-links{display:flex;gap:22px;}
+.footer-bottom-links a{color:#7C9AB8;}
+.footer-bottom-links a:hover{color:#5EEAD4;}
+
+@media (max-width:991px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px;}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;text-align:center;}}
+</style>
+
+<!-- ============ FLOATING ACTION BUTTONS ============ -->
+<div class="float-actions">
+  <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <a href="https://wa.me/919876543210" target="_blank" class="fab-btn whatsapp" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="tel:+919876543210" class="fab-btn call" aria-label="Call emergency"><i class="fa-solid fa-phone"></i></a>
 </div>
 
-<!-- ABOUT SECTION -->
-<section class="about-section" id="about">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-5" data-aos="fade-right">
-        <div class="about-img-stack">
-          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80" alt="Hospital" class="about-img-main">
-          <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=400&q=80" alt="Lab" class="about-img-secondary">
-          <div class="about-exp-badge">
-            <div class="num">14+</div>
-            <div class="lbl">Years of<br>Excellence</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-7" data-aos="fade-left">
-        <div class="section-label">About Ekana Medicare</div>
-        <h2 class="section-title">Committed to Your Health &amp; Well-being</h2>
-        <p class="section-sub mb-4">Ekana Medicare Multispeciality Hospital &amp; Research Center is a premier healthcare institution in Lucknow dedicated to providing world-class medical services with compassion and cutting-edge technology.</p>
-        <div class="about-feature" data-aos="fade-up" data-aos-delay="100">
-          <div class="about-feature-icon"><i class="fas fa-eye"></i></div>
-          <div>
-            <h6>Our Vision</h6>
-            <p>To be the most trusted and technologically advanced healthcare provider in Uttar Pradesh, setting new standards in patient care and medical excellence.</p>
-          </div>
-        </div>
-        <div class="about-feature" data-aos="fade-up" data-aos-delay="150">
-          <div class="about-feature-icon"><i class="fas fa-bullseye"></i></div>
-          <div>
-            <h6>Our Mission</h6>
-            <p>Delivering accessible, affordable, and high-quality multispeciality healthcare through expert physicians, modern infrastructure, and patient-centered approach.</p>
-          </div>
-        </div>
-        <div class="about-feature" data-aos="fade-up" data-aos-delay="200">
-          <div class="about-feature-icon"><i class="fas fa-award"></i></div>
-          <div>
-            <h6>Accreditations &amp; Recognition</h6>
-            <p>NABH Accredited facility with ISO 9001:2015 certification, recognized for excellence in healthcare delivery across Lucknow and surrounding regions.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <svg class="footer-ecg" viewBox="0 0 1200 46" preserveAspectRatio="none"><path d="M0 23h150l20-18 30 36 24-28 16 16h140l20-18 30 36 24-28 16 16h140l20-18 30 36 24-28 16 16h140l20-18 30 36 24-28 16 16h140"/></svg>
 
-<!-- SPECIALITIES -->
-<section id="specialities" style="background:#fff;">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <div class="section-label" style="justify-content:center;">Our Specialities</div>
-      <h2 class="section-title">Comprehensive Medical <span style="color:var(--blue-sky);">Departments</span></h2>
-      <p class="section-sub mx-auto">World-class care across 15+ medical specialities by experienced and compassionate specialists.</p>
-    </div>
-    <div class="row g-4">
-      <!-- Spec Cards -->
-      <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="0">
-        <div class="spec-card">
-          <div class="overflow-hidden"><img class="spec-card-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=70" alt="Cardiology" loading="lazy"></div>
-          <div class="spec-card-body">
-            <div class="spec-icon"><i class="fas fa-heart-pulse"></i></div>
-            <h5>Cardiology</h5>
-            <p>Advanced cardiac care with state-of-the-art diagnostics and intervention.</p>
-            <a class="spec-link" href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
+  <div class="container-xl">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="brand footer-brand">
+          <span class="brand-mark"><i class="fa-solid fa-staff-snake"></i></span>
+          <span class="brand-text"><span class="name">Ekana Medicare</span><span class="tag">Multispeciality &amp; Research Center</span></span>
+        </a>
+        <p class="footer-about">Advanced, compassionate multispeciality care in Gomti Nagar Extension, Lucknow — trusted by families for over 18 years.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
-      <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="60">
-        <div class="spec-card">
-          <div class="overflow-hidden"><img class="spec-card-img" src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400&q=70" alt="Gynecology" loading="lazy"></div>
-          <div class="spec-card-body">
-            <div class="spec-icon"><i class="fas fa-venus"></i></div>
-            <h5>Gynecology &amp; Obstetrics</h5>
-            <p>Comprehensive women's health, maternity, and reproductive care services.</p>
-            <a class="spec-link" href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="120">
-        <div class="spec-card">
-          <div class="overflow-hidden"><img class="spec-card-img" src="https://images.unsplash.com/photo-1544991875-5dc1b05f607d?w=400&q=70" alt="Pediatrics" loading="lazy"></div>
-          <div class="spec-card-body">
-            <div class="spec-icon"><i class="fas fa-baby"></i></div>
-            <h5>Pediatrics</h5>
-            <p>Dedicated child healthcare from newborns to adolescents with gentle expertise.</p>
-            <a class="spec-link" href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="180">
-        <div class="spec-card">
-          <div class="overflow-hidden"><img class="spec-card-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=70" alt="Orthopedics" loading="lazy"></div>
-          <div class="spec-card-body">
-            <div class="spec-icon"><i class="fas fa-bone"></i></div>
-            <h5>Orthopedics</h5>
-            <p>Expert bone, joint &amp; spine care with advanced surgical and non-surgical options.</p>
-            <a class="spec-link" href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="0">
-        <div class="spec-card">
-          <div class="overflow-hidden"><img class="spec-card-img" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=70" alt="Neurology" loading="lazy"></div>
-          <div class="spec-card-body">
-            <div class="spec-icon"><i class="fas fa-brain"></i></div>
-            <h5>Neurology</h5>
-            <p>Specialized care for neurological disorders including stroke, epilepsy &amp; more.</p>
-            <a class="spec-link" href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="60">
-        <div class="spec-card">
-          <div class="overflow-hidden"><img class="spec-card-img" src="https://images.unsplash.com/photo-1588776814546-ec7e1ad3d8e5?w=400&q=70" alt="Dermatology" loading="lazy"></div>
-          <div class="spec-card-body">
-            <div class="spec-icon"><i class="fas fa-spa"></i></div>
-            <h5>Dermatology</h5>
-            <p>Advanced skin &amp; cosmetic dermatology with modern laser and aesthetic treatments.</p>
-            <a class="spec-link" href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="120">
-        <div class="spec-card">
-          <div class="overflow-hidden"><img class="spec-card-img" src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=400&q=70" alt="General Medicine" loading="lazy"></div>
-          <div class="spec-card-body">
-            <div class="spec-icon"><i class="fas fa-stethoscope"></i></div>
-            <h5>General Medicine</h5>
-            <p>Comprehensive internal medicine for diagnosis and management of complex conditions.</p>
-            <a class="spec-link" href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="180">
-        <div class="spec-card">
-          <div class="overflow-hidden"><img class="spec-card-img" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=400&q=70" alt="Radiology" loading="lazy"></div>
-          <div class="spec-card-body">
-            <div class="spec-icon"><i class="fas fa-x-ray"></i></div>
-            <h5>Radiology</h5>
-            <p>Digital imaging services including MRI, CT Scan, Ultrasound and X-Ray facilities.</p>
-            <a class="spec-link" href="#">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- DOCTORS SECTION -->
-<section class="doctors-section" id="doctors">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <div class="section-label" style="justify-content:center;">Expert Team</div>
-      <h2 class="section-title">Meet Our <span style="color:var(--blue-sky);">Specialists</span></h2>
-      <p class="section-sub mx-auto">Our team of highly experienced and empathetic doctors are committed to your health and recovery.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-        <div class="doctor-card">
-          <div class="doctor-img-wrap">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&q=80" class="doctor-img" alt="Dr. Rajesh Kumar">
-            <div class="doctor-overlay">
-              <div class="doctor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="doctor-body">
-            <h5>Dr. Rajesh Kumar</h5>
-            <div class="doctor-spec">Cardiologist</div>
-            <div class="doctor-qual">MD, DM (Cardiology) · AIIMS Delhi</div>
-            <div class="doctor-exp"><i class="fas fa-star"></i> 18 Years Experience</div>
-            <button class="btn-appt-sm" onclick="document.querySelector('#appointment').scrollIntoView({behavior:'smooth'})">Book Appointment</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="80">
-        <div class="doctor-card">
-          <div class="doctor-img-wrap">
-            <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&q=80" class="doctor-img" alt="Dr. Priya Sharma">
-            <div class="doctor-overlay">
-              <div class="doctor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="doctor-body">
-            <h5>Dr. Priya Sharma</h5>
-            <div class="doctor-spec">Gynecologist</div>
-            <div class="doctor-qual">MS (OBG) · KGMU Lucknow</div>
-            <div class="doctor-exp"><i class="fas fa-star"></i> 14 Years Experience</div>
-            <button class="btn-appt-sm" onclick="document.querySelector('#appointment').scrollIntoView({behavior:'smooth'})">Book Appointment</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="160">
-        <div class="doctor-card">
-          <div class="doctor-img-wrap">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&q=80" class="doctor-img" alt="Dr. Anil Verma">
-            <div class="doctor-overlay">
-              <div class="doctor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="doctor-body">
-            <h5>Dr. Anil Verma</h5>
-            <div class="doctor-spec">Orthopedic Surgeon</div>
-            <div class="doctor-qual">MS (Ortho) · PGI Chandigarh</div>
-            <div class="doctor-exp"><i class="fas fa-star"></i> 20 Years Experience</div>
-            <button class="btn-appt-sm" onclick="document.querySelector('#appointment').scrollIntoView({behavior:'smooth'})">Book Appointment</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240">
-        <div class="doctor-card">
-          <div class="doctor-img-wrap">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" class="doctor-img" alt="Dr. Neha Singh">
-            <div class="doctor-overlay">
-              <div class="doctor-social">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="doctor-body">
-            <h5>Dr. Neha Singh</h5>
-            <div class="doctor-spec">Pediatrician</div>
-            <div class="doctor-qual">MD (Pediatrics) · SGPGI Lucknow</div>
-            <div class="doctor-exp"><i class="fas fa-star"></i> 11 Years Experience</div>
-            <button class="btn-appt-sm" onclick="document.querySelector('#appointment').scrollIntoView({behavior:'smooth'})">Book Appointment</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY CHOOSE US -->
-<section style="background:#fff;">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <div class="section-label" style="justify-content:center;">Why Choose Us</div>
-      <h2 class="section-title">The Ekana Medicare <span style="color:var(--blue-sky);">Difference</span></h2>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0"><div class="why-card"><div class="why-icon"><i class="fas fa-user-md"></i></div><h5>Expert Specialists</h5><p>Board-certified doctors with advanced training from premier medical institutions across India.</p></div></div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="80"><div class="why-card"><div class="why-icon"><i class="fas fa-hospital-alt"></i></div><h5>Modern Infrastructure</h5><p>State-of-the-art facility equipped with the latest medical technology and comfortable patient rooms.</p></div></div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="160"><div class="why-card"><div class="why-icon"><i class="fas fa-microscope"></i></div><h5>Advanced Diagnostics</h5><p>Comprehensive in-house lab and imaging center for accurate, rapid diagnosis and treatment.</p></div></div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240"><div class="why-card"><div class="why-icon" style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(239,68,68,0.1));color:#dc2626;"><i class="fas fa-ambulance"></i></div><h5>24/7 Emergency</h5><p>Round-the-clock emergency services with a dedicated trauma team always ready to respond.</p></div></div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0"><div class="why-card"><div class="why-icon"><i class="fas fa-heart"></i></div><h5>Patient-Centric Care</h5><p>A compassionate approach that places the patient at the center of every decision we make.</p></div></div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="80"><div class="why-card"><div class="why-icon"><i class="fas fa-tag"></i></div><h5>Affordable Treatment</h5><p>High-quality healthcare at transparent, fair pricing with flexible payment options available.</p></div></div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="160"><div class="why-card"><div class="why-icon"><i class="fas fa-id-card"></i></div><h5>Cashless Facility</h5><p>Empanelled with all major insurance companies for hassle-free cashless treatment.</p></div></div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240"><div class="why-card"><div class="why-icon"><i class="fas fa-headset"></i></div><h5>24/7 Support</h5><p>Our care coordinators are available round the clock to assist patients and their families.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PATIENT JOURNEY -->
-<section class="journey-section">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <div class="section-label" style="justify-content:center;">Patient Journey</div>
-      <h2 class="section-title">Your Path to <span style="color:var(--blue-sky);">Recovery</span></h2>
-    </div>
-    <div class="journey-timeline" data-aos="fade-up">
-      <div class="journey-step">
-        <div class="journey-num">
-          <div class="journey-icon-sm"><i class="fas fa-calendar"></i></div>
-        </div>
-        <h6>Book Appointment</h6>
-        <p>Online or phone</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-num">
-          <div class="journey-icon-sm"><i class="fas fa-stethoscope"></i></div>
-        </div>
-        <h6>Consultation</h6>
-        <p>Meet your doctor</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-num">
-          <div class="journey-icon-sm"><i class="fas fa-microscope"></i></div>
-        </div>
-        <h6>Diagnosis</h6>
-        <p>Tests &amp; evaluation</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-num">
-          <div class="journey-icon-sm"><i class="fas fa-pills"></i></div>
-        </div>
-        <h6>Treatment</h6>
-        <p>Expert care plan</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-num">
-          <div class="journey-icon-sm"><i class="fas fa-bed"></i></div>
-        </div>
-        <h6>Recovery</h6>
-        <p>Monitored healing</p>
-      </div>
-      <div class="journey-step">
-        <div class="journey-num">
-          <div class="journey-icon-sm"><i class="fas fa-heart"></i></div>
-        </div>
-        <h6>Follow-up</h6>
-        <p>Continued wellness</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials-section">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <div class="section-label" style="justify-content:center;">Testimonials</div>
-      <h2 class="section-title">What Our <span style="color:var(--blue-sky);">Patients Say</span></h2>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
-        <div class="testimonial-card">
-          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="testi-text">"Ekana Medicare truly exceeded my expectations. The doctors were incredibly thorough and empathetic. My cardiac procedure went smoothly and the post-operative care was exceptional."</p>
-          <div class="testi-author">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" class="testi-img" alt="Ramesh">
-            <div>
-              <div class="testi-name">Ramesh Agarwal</div>
-              <div class="testi-dept">Cardiology Patient</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="testimonial-card">
-          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p class="testi-text">"Dr. Priya Sharma guided me through my entire pregnancy with such patience and expertise. The maternity ward is clean, modern, and the nursing staff are so caring and attentive."</p>
-          <div class="testi-author">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" class="testi-img" alt="Sunita">
-            <div>
-              <div class="testi-name">Sunita Mishra</div>
-              <div class="testi-dept">Maternity Patient</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="testimonial-card">
-          <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-          <p class="testi-text">"After my knee replacement surgery with Dr. Verma, I am walking pain-free. The physiotherapy team was outstanding. Best hospital in Lucknow without any doubt!"</p>
-          <div class="testi-author">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&q=80" class="testi-img" alt="Vijay">
-            <div>
-              <div class="testi-name">Vijay Srivastava</div>
-              <div class="testi-dept">Orthopedic Patient</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EMERGENCY -->
-<div class="emergency-section">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6" data-aos="fade-right">
-        <h2 class="mb-2">Medical Emergency?</h2>
-        <p>Our emergency team is available 24/7. Don't wait — call us immediately.</p>
-        <div class="emergency-num mt-3">
-          <div class="pulse-ring"><i class="fas fa-phone-alt text-white" style="font-size:1.1rem;"></i></div>
-          +91 98765 43210
-        </div>
-        <div class="emergency-num mt-2" style="font-size:1.6rem;">
-          <div class="pulse-ring" style="background:rgba(255,255,255,0.1)"><i class="fas fa-ambulance text-white" style="font-size:1rem;"></i></div>
-          Ambulance: 102
-        </div>
-      </div>
-      <div class="col-lg-6 text-lg-end mt-4 mt-lg-0" data-aos="fade-left">
-        <button class="btn-call-emergency" onclick="window.location.href='tel:+919876543210'"><i class="fas fa-phone-alt"></i> Call Emergency Now</button>
-        <p class="mt-3" style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Average response time under 8 minutes · GPS-tracked ambulances</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- HEALTH PACKAGES -->
-<section style="background:var(--gray-soft);">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <div class="section-label" style="justify-content:center;">Health Packages</div>
-      <h2 class="section-title">Preventive Care <span style="color:var(--blue-sky);">Packages</span></h2>
-      <p class="section-sub mx-auto">Comprehensive health checkup packages designed for complete wellness screening.</p>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-        <div class="package-card">
-          <h5 style="font-weight:700;color:var(--text-dark);">Basic Health Check</h5>
-          <div class="package-price">₹999 <span>/ person</span></div>
-          <hr style="border-color:var(--gray-mid);margin:1.2rem 0;">
-          <div class="package-item"><i class="fas fa-check-circle"></i> Complete Blood Count</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Blood Sugar (Fasting)</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Urine Routine</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> ECG</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Chest X-Ray</div>
-          <button class="btn-appt-sm mt-3">Book Now</button>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="80">
-        <div class="package-card featured">
-          <h5 style="font-weight:700;color:var(--text-dark);">Comprehensive Plus</h5>
-          <div class="package-price">₹2,499 <span>/ person</span></div>
-          <hr style="border-color:var(--gray-mid);margin:1.2rem 0;">
-          <div class="package-item"><i class="fas fa-check-circle"></i> All Basic Tests</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Thyroid Profile</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Lipid Profile</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Liver Function Test</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Kidney Function</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Ultrasound Abdomen</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Doctor Consultation</div>
-          <button class="btn-appt-sm mt-3">Book Now</button>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="160">
-        <div class="package-card">
-          <h5 style="font-weight:700;color:var(--text-dark);">Women's Wellness</h5>
-          <div class="package-price">₹3,299 <span>/ person</span></div>
-          <hr style="border-color:var(--gray-mid);margin:1.2rem 0;">
-          <div class="package-item"><i class="fas fa-check-circle"></i> All Comprehensive Tests</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Pap Smear</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Mammography</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Bone Density</div>
-          <div class="package-item"><i class="fas fa-check-circle"></i> Gynec Consultation</div>
-          <button class="btn-appt-sm mt-3">Book Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG -->
-<section class="blog-section">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <div class="section-label" style="justify-content:center;">Health Blog</div>
-      <h2 class="section-title">Health Tips &amp; <span style="color:var(--blue-sky);">Insights</span></h2>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
-        <div class="blog-card">
-          <div class="overflow-hidden"><img class="blog-img" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500&q=70" alt="Heart Health" loading="lazy"></div>
-          <div class="blog-body">
-            <span class="blog-tag">Cardiology</span>
-            <h5>10 Simple Steps to Keep Your Heart Healthy Every Day</h5>
-            <p>Preventive heart care starts with daily habits. Our cardiologists share evidence-based tips to reduce your risk of heart disease significantly.</p>
-            <div class="blog-meta"><i class="far fa-calendar"></i> June 12, 2026 &nbsp; <i class="far fa-clock"></i> 5 min read</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="blog-card">
-          <div class="overflow-hidden"><img class="blog-img" src="https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?w=500&q=70" alt="Women Health" loading="lazy"></div>
-          <div class="blog-body">
-            <span class="blog-tag">Women's Health</span>
-            <h5>Hormonal Balance: What Every Woman Should Know</h5>
-            <p>Understanding hormonal changes across different life stages helps women take proactive steps for better health and wellness outcomes.</p>
-            <div class="blog-meta"><i class="far fa-calendar"></i> June 5, 2026 &nbsp; <i class="far fa-clock"></i> 7 min read</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="blog-card">
-          <div class="overflow-hidden"><img class="blog-img" src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&q=70" alt="Child Care" loading="lazy"></div>
-          <div class="blog-body">
-            <span class="blog-tag">Child Care</span>
-            <h5>Childhood Vaccinations: The Complete Schedule Guide for Parents</h5>
-            <p>A comprehensive overview of recommended vaccines for children from birth to age 12, ensuring your child stays protected.</p>
-            <div class="blog-meta"><i class="far fa-calendar"></i> May 28, 2026 &nbsp; <i class="far fa-clock"></i> 6 min read</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section style="background:#fff;">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="text-center mb-5" data-aos="fade-up">
-          <div class="section-label" style="justify-content:center;">FAQ</div>
-          <h2 class="section-title">Frequently Asked <span style="color:var(--blue-sky);">Questions</span></h2>
-        </div>
-        <div data-aos="fade-up">
-          <div class="faq-item open">
-            <div class="faq-q" onclick="toggleFaq(this)">How do I book an appointment at Ekana Medicare? <span class="icon"><i class="fas fa-plus"></i></span></div>
-            <div class="faq-a">You can book an appointment by calling our helpline at +91 98765 43210, using the online appointment form on this website, or visiting our reception desk directly. We also offer same-day appointments for urgent cases.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">What insurance companies are you empanelled with? <span class="icon"><i class="fas fa-plus"></i></span></div>
-            <div class="faq-a">We are empanelled with all major insurance providers including Star Health, New India, HDFC ERGO, Bajaj Allianz, ICICI Lombard, and many others. We also accept government schemes like CGHS, ECHS, and Ayushman Bharat.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">What are your visiting hours for admitted patients? <span class="icon"><i class="fas fa-plus"></i></span></div>
-            <div class="faq-a">Visiting hours are from 10:00 AM to 12:00 PM and 4:00 PM to 7:00 PM daily. ICU patients have restricted visits; please contact our nursing station for special arrangements.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">Do you offer telemedicine or online consultation services? <span class="icon"><i class="fas fa-plus"></i></span></div>
-            <div class="faq-a">Yes, we offer teleconsultation services for follow-up appointments and non-emergency consultations. You can book a video consultation through our portal or by calling our helpline. Available Monday–Saturday, 9 AM–6 PM.</div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q" onclick="toggleFaq(this)">Is parking available at the hospital? <span class="icon"><i class="fas fa-plus"></i></span></div>
-            <div class="faq-a">Yes, we have a spacious multi-level parking facility with dedicated spaces for disabled patients and emergency vehicles. Parking is available for both two-wheelers and four-wheelers with reasonable charges.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- APPOINTMENT -->
-<section class="appointment-section" id="appointment">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-5" data-aos="fade-right">
-        <div class="section-label">Online Appointment</div>
-        <h2 class="section-title">Book Your Appointment <span style="color:var(--blue-sky);">Today</span></h2>
-        <p class="section-sub mb-4">Schedule a consultation with our expert specialists. Quick, easy, and hassle-free booking process.</p>
-        <div class="d-flex flex-column gap-3">
-          <div class="d-flex align-items-center gap-3" style="background:#fff;border-radius:14px;padding:1.1rem 1.4rem;box-shadow:var(--shadow-soft);">
-            <div style="width:44px;height:44px;background:var(--gradient-primary);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;"><i class="fas fa-phone-alt"></i></div>
-            <div><div style="font-size:0.78rem;color:var(--text-light);font-weight:500;">Call for Appointment</div><div style="font-weight:700;color:var(--blue-dark);">+91 98765 43210</div></div>
-          </div>
-          <div class="d-flex align-items-center gap-3" style="background:#fff;border-radius:14px;padding:1.1rem 1.4rem;box-shadow:var(--shadow-soft);">
-            <div style="width:44px;height:44px;background:linear-gradient(135deg,#14B8A6,#3DA9FC);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;"><i class="fas fa-clock"></i></div>
-            <div><div style="font-size:0.78rem;color:var(--text-light);font-weight:500;">OPD Hours</div><div style="font-weight:700;color:var(--blue-dark);">Mon–Sat: 9AM–8PM | Sun: 10AM–2PM</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-7" data-aos="fade-left">
-        <div class="appt-form-wrap">
-          <h4 style="font-family:'Playfair Display',serif;font-weight:700;margin-bottom:1.5rem;color:var(--text-dark);">Request an Appointment</h4>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Full Name *</label>
-              <input type="text" class="form-control" placeholder="Your full name">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Mobile Number *</label>
-              <input type="tel" class="form-control" placeholder="+91 00000 00000">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Department *</label>
-              <select class="form-select">
-                <option value="">Select Department</option>
-                <option>Cardiology</option>
-                <option>Gynecology & Obstetrics</option>
-                <option>Pediatrics</option>
-                <option>Orthopedics</option>
-                <option>Neurology</option>
-                <option>Dermatology</option>
-                <option>General Medicine</option>
-                <option>ENT</option>
-                <option>Radiology</option>
-                <option>Emergency Medicine</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Preferred Doctor</label>
-              <select class="form-select">
-                <option value="">Select Doctor</option>
-                <option>Dr. Rajesh Kumar</option>
-                <option>Dr. Priya Sharma</option>
-                <option>Dr. Anil Verma</option>
-                <option>Dr. Neha Singh</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Preferred Date *</label>
-              <input type="date" class="form-control">
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Preferred Time</label>
-              <select class="form-select">
-                <option value="">Select Time</option>
-                <option>9:00 AM – 11:00 AM</option>
-                <option>11:00 AM – 1:00 PM</option>
-                <option>2:00 PM – 4:00 PM</option>
-                <option>4:00 PM – 6:00 PM</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label class="form-label">Message / Symptoms</label>
-              <textarea class="form-control" rows="3" placeholder="Brief description of your health concern..."></textarea>
-            </div>
-            <div class="col-12">
-              <button class="btn-submit" onclick="handleAppointment()"><i class="fas fa-calendar-check me-2"></i>Confirm Appointment Request</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" style="background:var(--gray-soft);">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <div class="section-label" style="justify-content:center;">Contact Us</div>
-      <h2 class="section-title">Get in <span style="color:var(--blue-sky);">Touch</span></h2>
-    </div>
-    <div class="row g-4 mb-5">
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
-        <div class="contact-card">
-          <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div>
-            <h6>Our Address</h6>
-            <p>Sector 9, Viraj Khand, Gomti Nagar<br>Lucknow, Uttar Pradesh – 226010</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="80">
-        <div class="contact-card">
-          <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
-          <div>
-            <h6>Phone Numbers</h6>
-            <a href="tel:+919876543210">+91 98765 43210</a>
-            <a href="tel:+915224001234">0522 – 4001234</a>
-            <a href="tel:102">Ambulance: 102</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="160">
-        <div class="contact-card">
-          <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
-          <div>
-            <h6>Email Us</h6>
-            <a href="mailto:info@ekanamedicare.com">info@ekanamedicare.com</a>
-            <a href="mailto:appointments@ekanamedicare.com">appointments@ekanamedicare.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240">
-        <div class="contact-card">
-          <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
-          <div>
-            <h6>Working Hours</h6>
-            <p>OPD: Mon–Sat 9AM–8PM</p>
-            <p>Sunday: 10AM–2PM</p>
-            <p style="color:var(--teal);font-weight:600;">Emergency: 24/7</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="map-wrap" data-aos="fade-up">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.816!2d80.9897!3d26.8467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sGomti%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="row g-5">
-      <div class="col-lg-4">
-        <div class="logo-area">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <div style="width:44px;height:44px;background:var(--gradient-primary);border-radius:12px;display:flex;align-items:center;justify-content:center;">
-              <i class="fas fa-heartbeat text-white" style="font-size:1.2rem;"></i>
-            </div>
-            <div>
-              <h4 class="mb-0">Ekana Medicare</h4>
-              <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);letter-spacing:0.04em;">MULTISPECIALITY HOSPITAL &amp; RESEARCH CENTER</div>
-            </div>
-          </div>
-          <p>Delivering world-class healthcare with compassion and advanced medical technology in the heart of Lucknow since 2010.</p>
-          <div class="footer-social mt-3">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-2 col-6">
+      <div class="footer-col">
         <h5>Quick Links</h5>
-        <ul>
-          <li><a href="#">Home</a></li>
+        <ul class="footer-links">
           <li><a href="#about">About Us</a></li>
-          <li><a href="#specialities">Departments</a></li>
           <li><a href="#doctors">Our Doctors</a></li>
-          <li><a href="#appointment">Appointment</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#facilities">Facilities</a></li>
+          <li><a href="#blog">Health Blog</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
         </ul>
       </div>
-      <div class="col-lg-2 col-6">
+
+      <div class="footer-col">
         <h5>Departments</h5>
-        <ul>
-          <li><a href="#">Cardiology</a></li>
-          <li><a href="#">Gynecology</a></li>
-          <li><a href="#">Pediatrics</a></li>
-          <li><a href="#">Orthopedics</a></li>
-          <li><a href="#">Neurology</a></li>
-          <li><a href="#">Radiology</a></li>
+        <ul class="footer-links">
+          <li><a href="#specialities">Cardiology</a></li>
+          <li><a href="#specialities">Neurology</a></li>
+          <li><a href="#specialities">Orthopedics</a></li>
+          <li><a href="#specialities">Pediatrics</a></li>
+          <li><a href="#specialities">Gynecology</a></li>
+          <li><a href="#specialities">Emergency Medicine</a></li>
         </ul>
       </div>
-      <div class="col-lg-4">
-        <h5>Newsletter</h5>
-        <p style="font-size:0.85rem;">Subscribe for health tips, hospital updates &amp; exclusive health package offers.</p>
-        <div class="newsletter-input-wrap">
-          <input type="email" placeholder="Your email address">
-          <button>Subscribe</button>
-        </div>
-        <div class="mt-4">
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.45);margin-bottom:4px;">NABH Accredited · ISO 9001:2015</div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;">
-            <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:0.3rem 0.8rem;font-size:0.72rem;color:rgba(255,255,255,0.6);">NABH</span>
-            <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:0.3rem 0.8rem;font-size:0.72rem;color:rgba(255,255,255,0.6);">ISO 9001</span>
-            <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:0.3rem 0.8rem;font-size:0.72rem;color:rgba(255,255,255,0.6);">CGHS</span>
-            <span style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:0.3rem 0.8rem;font-size:0.72rem;color:rgba(255,255,255,0.6);">Ayushman Bharat</span>
-          </div>
-        </div>
+
+      <div class="footer-col">
+        <h5>Stay Updated</h5>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i> Near Ekana Stadium, Gomti Nagar Extension, Lucknow – 226010</li>
+          <li><i class="fa-solid fa-phone"></i> +91 522 456 7890</li>
+          <li><i class="fa-solid fa-envelope"></i> care@ekanamedicare.in</li>
+        </ul>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
       </div>
     </div>
-    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <span>© 2026 Ekana Medicare Multispeciality Hospital &amp; Research Center. All rights reserved.</span>
-      <span>Designed with <i class="fas fa-heart" style="color:#ef4444;font-size:0.8rem;"></i> for Healthcare Excellence</span>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="ekYear">2026</span> Ekana Medicare Multispeciality Hospital &amp; Research Center. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- SCRIPTS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<!-- ============ SCRIPTS ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.1.4/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
 <script>
-// AOS Init
-AOS.init({ once: true, duration: 800, offset: 60 });
+document.addEventListener('DOMContentLoaded', function(){
 
-// Navbar scroll
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('mainNav');
-  if (window.scrollY > 60) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
+  /* ---------- Year ---------- */
+  var yEl = document.getElementById('ekYear');
+  if(yEl){ yEl.textContent = new Date().getFullYear(); }
 
-// Counter animation
-function animateCounters() {
-  document.querySelectorAll('[data-count]').forEach(el => {
-    const target = parseInt(el.getAttribute('data-count'));
-    const suffix = target >= 1000 ? '+' : '+';
-    let start = 0;
-    const duration = 2000;
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        el.textContent = target.toLocaleString() + suffix;
-        clearInterval(timer);
-      } else {
-        el.textContent = Math.floor(start).toLocaleString() + '+';
-      }
-    }, 16);
-  });
-}
-
-// Trigger counters on page load
-window.addEventListener('load', () => {
-  setTimeout(animateCounters, 800);
-});
-
-// FAQ toggle
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-
-// Appointment handler
-function handleAppointment() {
-  const name = document.querySelector('.appt-form-wrap input[type="text"]').value;
-  if (!name.trim()) {
-    alert('Please fill in your name to proceed.');
-    return;
+  /* ---------- Broken-image fallback ---------- */
+  function fallbackSVG(){
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">'
+      + '<rect width="400" height="400" fill="#0F4C81"/>'
+      + '<rect width="400" height="400" fill="#14B8A6" opacity="0.35"/>'
+      + '<g fill="#ffffff" opacity="0.9">'
+      + '<rect x="172" y="120" width="56" height="160" rx="10"/>'
+      + '<rect x="120" y="172" width="160" height="56" rx="10"/>'
+      + '</g></svg>';
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
   }
-  alert('✅ Appointment request submitted!\n\nOur team will call you within 30 minutes to confirm your appointment.\n\nThank you, ' + name + '!');
-}
-
-// Smooth nav links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id === '#') return;
-    const target = document.querySelector(id);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  document.querySelectorAll('img.ph-img').forEach(function(img){
+    img.addEventListener('error', function(){
+      this.onerror = null;
+      this.src = fallbackSVG();
+    }, { once:true });
   });
+
+  /* ---------- AOS ---------- */
+  if(window.AOS){ AOS.init({ duration:750, easing:'ease-out-cubic', once:true, offset:60 }); }
+
+  /* ---------- Vanilla Tilt ---------- */
+  if(window.VanillaTilt){
+    VanillaTilt.init(document.querySelectorAll('.tilt'), { max:6, speed:400, glare:true, 'max-glare':0.12, scale:1.01 });
+  }
+
+  /* ---------- Navbar scroll state ---------- */
+  var nav = document.getElementById('ekNav');
+  var backToTop = document.getElementById('backToTop');
+  function onScroll(){
+    if(window.scrollY > 30){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+    if(window.scrollY > 500){ backToTop.classList.add('show'); } else { backToTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+  backToTop.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+
+  /* ---------- Swiper: Doctors ---------- */
+  if(window.Swiper){
+    var doctorsSwiper = new Swiper('.doctors-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      grabCursor: true,
+      breakpoints: {
+        576: { slidesPerView: 2 },
+        992: { slidesPerView: 3 },
+        1200: { slidesPerView: 4 }
+      },
+      navigation: { nextEl: '.doc-next', prevEl: '.doc-prev' }
+    });
+
+    /* ---------- Swiper: Testimonials ---------- */
+    var testiSwiper = new Swiper('.testi-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      grabCursor: true,
+      loop: true,
+      autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
+      pagination: { el: '.testi-swiper .swiper-pagination', clickable: true },
+      breakpoints: {
+        700: { slidesPerView: 2 },
+        1100: { slidesPerView: 3 }
+      }
+    });
+  }
+
+  /* ---------- GSAP hero entrance ---------- */
+  if(window.gsap){
+    gsap.registerPlugin(ScrollTrigger);
+
+    var heroTl = gsap.timeline({ delay:.5 });
+    heroTl
+      .from('.trust-badge', { y:-18, opacity:0, duration:.6, ease:'power2.out' })
+      .from('.hero-title', { y:26, opacity:0, duration:.7, ease:'power2.out' }, '-=.35')
+      .from('.hero-sub', { y:18, opacity:0, duration:.6, ease:'power2.out' }, '-=.4')
+      .from('.hero-cta a', { y:16, opacity:0, duration:.5, stagger:.12, ease:'power2.out' }, '-=.3')
+      .from('.hero-stats', { y:16, opacity:0, duration:.6, ease:'power2.out' }, '-=.25')
+      .from('.hero-img-wrap', { scale:.92, opacity:0, duration:.8, ease:'power3.out' }, '-=.9')
+      .from('.experience-badge', { scale:0, opacity:0, duration:.5, ease:'back.out(2)' }, '-=.3')
+      .from('.vitals-card', { x:-26, opacity:0, duration:.6, ease:'power2.out' }, '-=.3')
+      .from('.float-icon', { scale:0, opacity:0, duration:.5, stagger:.1, ease:'back.out(2)' }, '-=.35');
+
+    /* Counters */
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var textNode = el.firstChild;
+      ScrollTrigger.create({
+        trigger: el, start:'top 88%', once:true,
+        onEnter: function(){
+          var obj = { val:0 };
+          gsap.to(obj, {
+            val: target, duration:1.8, ease:'power1.out',
+            onUpdate: function(){ textNode.nodeValue = Math.floor(obj.val).toLocaleString('en-IN'); }
+          });
+        }
+      });
+    });
+
+    /* Dashboard progress bars */
+    ScrollTrigger.create({
+      trigger: '.dash-card', start:'top 82%', once:true,
+      onEnter: function(){
+        document.querySelectorAll('.dash-bar-fill').forEach(function(bar){
+          bar.style.width = bar.getAttribute('data-fill') + '%';
+        });
+      }
+    });
+
+    /* Magnetic buttons */
+    document.querySelectorAll('.magnetic').forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width/2;
+        var y = e.clientY - r.top - r.height/2;
+        gsap.to(btn, { x: x*0.22, y: y*0.32, duration:.3, ease:'power2.out' });
+      });
+      btn.addEventListener('mouseleave', function(){
+        gsap.to(btn, { x:0, y:0, duration:.45, ease:'power3.out' });
+      });
+    });
+  }
+
+  /* ---------- Live vitals ticker ---------- */
+  var hrEl = document.getElementById('vitalHr');
+  var spo2El = document.getElementById('vitalSpo2');
+  if(hrEl && spo2El){
+    setInterval(function(){
+      var hr = 70 + Math.floor(Math.random()*8);
+      var spo2 = 96 + Math.floor(Math.random()*3);
+      hrEl.textContent = hr + ' bpm';
+      spo2El.textContent = spo2 + '%';
+    }, 2200);
+  }
+
+  /* ---------- Appointment form ---------- */
+  var apForm = document.getElementById('appointForm');
+  if(apForm){
+    apForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!apForm.checkValidity()){
+        apForm.classList.add('was-validated');
+        return;
+      }
+      document.getElementById('appointFormWrap').style.display = 'none';
+      document.getElementById('appointSuccess').style.display = 'block';
+    });
+  }
+
+  /* ---------- Newsletter form ---------- */
+  var nlForm = document.getElementById('newsletterForm');
+  if(nlForm){
+    nlForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = nlForm.querySelector('button');
+      var icon = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+      nlForm.querySelector('input').value = '';
+      setTimeout(function(){ btn.innerHTML = icon; }, 2000);
+    });
+  }
+
+  /* ---------- Preloader ---------- */
+  var preloader = document.getElementById('preloader');
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      preloader.classList.add('loaded');
+      if(window.ScrollTrigger){ ScrollTrigger.refresh(); }
+    }, 500);
+  });
+
 });
 </script>
 </body>
